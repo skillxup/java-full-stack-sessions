@@ -1,0 +1,18 @@
+1. appearance
+2. development
+3. deployment
+-------------------------------------------
+
+full stack: 3 - tier architecture
+1. frontend
+2. backend
+3. datbase
+
+-------------------------------------------
+
+1. visual studio code (ide)
+2. eclipse
+
+----------------------------------------
+
+collaboration: github
