@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Html Concepts </title>
+        <meta charset="utf-8" />
+
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+
+    </head>
+
+    <body>
+        <form>
+            <table border="1" width="400px" align="center">
+                <tr>
+                    <th colspan="2">user form registration</th>
+                </tr>
+                <tr>
+                    <td>Full Name</td>
+                    <td><input type="text" name="fullname" value="" placeholder="ex., joh paul" required /></td>
+                </tr>
+                <tr>
+                    <td>Email Address</td>
+                    <td><input type="email" name="emailaddress" value="" /></td>
+                </tr>
+                <tr>
+                    <td>Mobile Number</td>
+                    <td><input type="text" name="mobilenumber" value="" /></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="password" value="" /></td>
+                </tr>
+                <tr>
+                    <td>Date of Birth</td>
+                    <td><input type="date" name="dateofbirth" value="" /></td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td><input type="number" name="age" value="" /></td>
+                </tr>
+                <tr>
+                    <td>Url</td>
+                    <td><input type="url" name="url" value="" /></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <input type="radio" name="gender" value="male" /> male <br />
+                        <input type="radio" name="gender" value="female" /> female 
+                    </td>
+                </tr>
+                <tr>
+                    <td>Skills</td>
+                    <td>
+                        <input type="checkbox" name="skills[]" value="java" /> java <br />
+                        <input type="checkbox" name="skills[]" value="spring boot" /> spring boot <br />
+                        <input type="checkbox" name="skills[]" value="spring mvc" /> spring mvc <br />
+                        <input type="checkbox" name="skills[]" value="hybernate" /> hybernate <br />
+                        <input type="checkbox" name="skills[]" value="other" /> other  
+                    </td>
+                </tr>
+                <tr>
+                    <td>Country</td>
+                    <td>
+                        <select name="country">
+                            <option value=""> choose any country </option>
+                            <option value="india">india</option>
+                            <option value="usa">usa</option>
+                            <option value="uae">uae</option>
+                            <option value="canada" selected>canada</option>
+                            <option value="other">other</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Country</td>
+                    <td>
+                        <select name="country" multiple>
+                            <option value=""> choose any country </option>
+                            <option value="india">india</option>
+                            <option value="usa">usa</option>
+                            <option value="uae">uae</option>
+                            <option value="canada" selected>canada</option>
+                            <option value="other">other</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>File Upload</td>
+                    <td><input type="file" name="fileupload" /></td>
+                </tr>
+                <tr>
+                    <td>About You</td>
+                    <td><textarea name="aboutyou"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit"> submit </button>
+                        <input type="reset" name="reset" value="reset" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
