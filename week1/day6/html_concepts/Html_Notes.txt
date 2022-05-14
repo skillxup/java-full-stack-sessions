@@ -1,0 +1,72 @@
+-> What is Html?
+    - Html stands for Hyper Text Markup Language
+    - Used to Create the Structure of a Web Page
+    - Web Page: a Page which consists of diff., formats of Content
+    - Content: Text, Image, Audio, Videos, Forms, Links, Lists etc., 
+
+-> How to Create a Web Page?
+    - There are 2 important points: 1. Elements (Tags), 2. Attributes
+
+-> Elements: 
+    - an Element is a re-presentation of format of content
+    - ex., p, img, h1, 
+    - there are 2 types of elements: 1. block 2. inline
+    
+    1. block: 
+    syntax: <elementName>
+                .....
+                ......
+                ......
+            </elementName>
+    ex., <p> .......... </p>, <div> .......... </div>
+
+    2. inline:
+    syntax: <elementName />
+    ex., <hr />, <img />, <input />
+
+-> Attributes: 
+    - an Attribute is a name which adds the behavior of the elementName
+    
+    1. block: 
+    syntax: <elementName attributeName1="itsValue" attributeName2="itsValue" attributeName3>
+                .....
+                ......
+                ......
+            </elementName>
+    ex., <p title=""> .......... </p>, <div class=""> .......... </div>
+
+    2. inline:
+    syntax: <elementName attributeName1="itsValue" attributeName2="itsValue" attributeName3 />
+    ex., <hr />, <img />, <input type="text" />
+
+
+    *notes:
+        1. not all the elements are independent; some of the elements are dependent upon the attributes;
+        2. not all the attributes have value; some attributes will work independent
+
+-> Head: 
+    1. Displaying the Title of the WebPage
+    2. Describing the Page Information to Search Engines
+    3. Adding Resources of Styling & Scripting to your Page
+
+-> Body: 
+    1. Displaying the Data of your WebPage
+
+-> h1 to h6, p, img, ol, ul, form, table etc., 
+-> semantic elements: 
+    header -<header>
+    footer
+    main
+    nav
+    section
+    article
+    aside
+
+-> media related: 
+    audio
+    video
+
+    figure
+
+-> div: block element - which can have n no of elements 
+-> span: inline element - high - light the particular phrase or context
