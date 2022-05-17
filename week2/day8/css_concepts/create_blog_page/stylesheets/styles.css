@@ -1,0 +1,74 @@
+* {
+    margin: 0px auto;
+}
+
+html, 
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background:  #eaecee;
+}
+
+.blog__wrapper {
+    background-color: #fff;
+    padding: 10px 15px;
+    width: 960px;
+}
+
+.blog__content {
+    border: 1px solid #000;
+    width: 940px;
+    height: auto;
+    min-height: 120px;
+    padding: 10px 10px;
+    margin: 10px 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color:  #e74c3c;
+}
+
+p, li {
+    color:  #85c1e9;
+}
+
+a {
+    color:  #d35400;
+}
+
+img.blog__img {
+    width: 120px;
+    height: 80px;
+    float: left;
+}
+
+/* specifying custom class */
+p.custom__para {
+    color: #fe2aed;
+    font-weight: bold;
+}
+
+.list__item {
+    background-color: #fefefe;
+    color: #e74c3c;
+}
+
+.list__item__block {
+    border-bottom: 2px solid #e74c3c;
+}
+
+/* specifying custom id */
+#img__box {
+    border: 3px solid #d35400;
+}
+
+#img__left {
+    float: left;
+}
+
+#img__right {
+    float: right;
+}
