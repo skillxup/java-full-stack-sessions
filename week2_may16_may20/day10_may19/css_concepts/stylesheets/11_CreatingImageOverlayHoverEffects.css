@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+/* font-family: 'Source Sans Pro', sans-serif; */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+body {
+    background-color: #f9f9f9;
+    font-size: 16px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.main-title {
+    color: #2d2d2d;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 0.7em 0;
+}
+
+.container {
+    padding: 1em 0;
+    float: left;
+    width: 50%;
+}
+
+/* media queries */
+@media screen and (max-width: 992px) {
+    .container {
+        display: block;
+        width: 33.33333%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        display: block;
+        width: 100%;
+    }
+}
+
+.container .title {
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.content {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.content .content-overlay {
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    height: 99%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    transition: all 0.4s ease-in-out 0s;
+    -webkit-transition: all 0.4s ease-in-out 0s;
+    -moz-transition: all 0.4s ease-in-out 0s;
+}
+
+.content:hover .content-overlay {
+    opacity: 1;
+}
+
+.content-image {
+    width: 100%;
+}
+
+.content-details {
+    position: absolute;
+    text-align: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+}
+
+.content:hover .content-details {
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+}
+
+.content-details h3 {
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+}
+
+.content-details p {
+    color: #fff;
+    font-size: 0.8em;
+}
+
+.fadein-bottom {
+    top: 80%;
+}
+
+.fadein-top {
+    top: 20%;
+}
+
+.fadein-left {
+    left: 20%;
+}
+
+.fadein-right {
+    left: 80%;
+}

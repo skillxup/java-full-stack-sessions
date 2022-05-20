@@ -1,0 +1,55 @@
+-> What is CSS & Use?
+    - CSS acronymn is Cascading Style Sheets
+    - It is used to Apply the Styles to the Html Content - makes your Web Page more Attractive
+
+-> How to use CSS in Html?
+    - There are 3 different ways: 
+    1. Inline 
+    2. Embedded
+    3. External
+
+-> Imp., point in CSS - to Apply Styles: 
+    syntax: propertyName: itsValue;
+    ex., color, background, border, font, etc., 
+
+-> Applying colors to Content: 
+    - There are 3 different ways to apply the colors to content
+    1. Name re-presentation
+    2. Numerical re-presentation
+    3. HexaDecimal re-presentation
+
+-> Apply Styles Customly: 
+    - There are 2 different ways
+    1. Class 
+    2. Id 
+
+-> List Items with Icons
+-> Simple Drop Down Menu Navigation
+-> FlexBox
+-> Responsive Card Layout
+-> Responsive Gallery ShowCase with Hover Effects
+
+-> BEM in CSS: 
+    - BEM stands for Block, Element and Modifier
+    [block]__[element]--[modifier]
+
+    - Block: 
+        .content { }
+        .menu { }
+        .search { }
+
+        header, container, menu, checkbox, textbox
+
+    - Element: 
+        .content__article { }
+        .menu__item { }
+        .search__input { }
+
+        menu item, list item, checkbox option, header title
+
+    - Modifier: 
+        .content__article--featured { }
+        .menu__item--link { }
+        .search__input--icon { }
+
+        disabled, highlighted, checked, fixed, size big
