@@ -1,0 +1,20 @@
+-> Bootstrap: Bootstrap is a Css Framework - which makes you to design the Web Pages Quickly and that too in Responsive
+
+-> Resolution: Device Width
+    1. Xtra Small Device: < 576px 
+    2. Small Device: >= 576px to < 768px 
+    3. Medium Device: >= 768px to < 992px 
+    4. Large Device: >= 992px to < 1200px 
+    5. Xtra Large Device: >= 1200px
+
+-> Two diff., layouts: 
+    1. Fixed 
+    2. Fluid
+    
+-> Created the Common Layout with Custom Styles
+-> Typography with Classes
+-> Contextual Classes: success, warning, danger, info, primary, dark, light, active, secondary
+-> Implementing the Classes to Tables
+-> Working with Lists and List Groups
+-> Working with Forms, Input, Input Groups
+-> Working with Buttons
