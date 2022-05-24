@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- meta tags -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- title, bootstrap css and custom css -->
+        <title>Bootstrap Concepts</title>
+        <link rel="stylesheet" href="customStyles.css" />
+    </head>
+    <body>
+        <!-- container -->
+        <div class="container">
+            <!-- content -->
+            <div class="row">
+                <div class="col-sm-3 left__column">
+                    <div class="listings">
+                        <h3>Biology and medicine</h3>
+
+                        <ul>
+                            <li class="list__items">FLT3LG (Fms-related tyrosine kinase 3 ligand), a protein</li>
+                            <li class="list__items">Fluffy transcription factor, gene of Neurospora crassa</li>
+                            <li class="list__items">Fluorouracil (5-FU), and leucovorin (folinic acid)</li>
+                            <li class="list__items">A chemotherapy regimen for treating colon cancer</li>
+                            <li class="list__items">Follicular lymphoma in medicine</li>
+                            <li class="list__items">Frontal lobe, the largest brain lobe</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-9 right__column">
+                    <div class="row navbar">
+                        <div class="col-sm-12 text-sm-end">
+                            <a href="#" class="text-dark navlinks"> Home </a>
+                            <a href="#" class="text-dark navlinks"> About Us </a>
+                            <a href="#" class="text-dark navlinks"> Contact Us </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 main__content">
+                            <h3>Typical web page structure and formatting guidelines</h3>
+
+                            <p>After years of experimenting, most of us web folks have the best practices of website content nailed down, and we feel like this template covers the bases. Here are a few key elements</p>
+
+                            <hr />
+
+                            <!-- # vertical form -->
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label class="form-label"> Email Address </label>
+                                            <input type="text" class="form-control" placeholder="john@gmail.com" />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label"> Password </label>
+                                            <input type="text" class="form-control" placeholder="j0hN#214" />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <div class="form-check">
+                                                <input type="checkbox" checked class="form-check-input" /> 
+                                                <span>remember me!</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <button type="submit" class="btn btn-primary"> login me! </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <hr />
+
+                            <!-- # horizontal form -->
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <form>
+                                        <div class="row mb-3">
+                                            <label class="col-sm-4 form-label text-sm-end d-sm-none"> Secret Code </label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" placeholder="3Nj2mK045Gwy" hidden />
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <label class="col-sm-4 form-label text-sm-end"> Email Address </label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" placeholder="john@gmail.com" />
+                                                <span class="form-text"> ex., john@gmail.com - should be min 8 chars</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <label class="col-sm-4 form-label text-sm-end"> Mobile Number </label>
+                                            <div class="col-sm-6">
+                                                <div class="row">
+                                                    <div class="col-sm-3">
+                                                        <select class="form-select">
+                                                            <option value="">+(003)</option>
+                                                            <option value="">+(432)</option>
+                                                            <option value="">+(422)</option>
+                                                            <option value="">+(764)</option>
+                                                            <option value="">+(091)</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input type="text" class="form-control" />
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <input type="text" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <label class="col-sm-4 form-label text-sm-end"> Hobbies </label>
+                                            <div class="col-sm-6">
+                                                <div class="form-check form-check-inline">
+                                                    <input type="checkbox" class="form-check-input me-1" /> Sports 
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input type="checkbox" class="form-check-input me-1" /> Riding  
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input type="checkbox" class="form-check-input me-1" /> Hiking  
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input type="checkbox" class="form-check-input me-1" /> Others  
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <label class="col-sm-4 form-label text-sm-end"> Country </label>
+                                            <div class="col-sm-6">
+                                                <select class="form-select">
+                                                    <option value=""> choose any country </option>
+                                                    <option value=""> india </option>
+                                                    <option value=""> canada </option>
+                                                    <option value=""> australia </option>
+                                                    <option value=""> usa </option>
+                                                    <option value=""> other </option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <label class="col-sm-4 form-label text-sm-end"> Password </label>
+                                            <div class="col-sm-6">
+                                                <input type="text" class="form-control" placeholder="j0hN#214" />
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <label class="col-sm-4 form-label text-sm-end"> Choose Photo </label>
+                                            <div class="col-sm-6">
+                                                <input type="file" class="form-control" />
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <label class="col-sm-4 form-label text-sm-end"> Description </label>
+                                            <div class="col-sm-6">
+                                                <textarea class="form-control"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <div class="col-sm-6 offset-sm-4">
+                                                <div class="form-check form-switch">
+                                                    <input type="checkbox" class="form-check-input me-1" />
+                                                    <label class="form-label"> Custom Label </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <div class="col-sm-6 offset-sm-4">
+                                                <div class="form-check">
+                                                    <input type="checkbox" checked class="form-check-input" /> 
+                                                    <span>remember me!</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <div class="col-sm-6 offset-sm-4">
+                                                <button type="submit" class="btn btn-primary"> login me! </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <hr />
+
+                            <!-- # input groups -->
+                            <form>
+                                <div class="row mb-3">
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <span class="input-group-text">
+                                                user name 
+                                            </span>
+                                            <input type="text" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" />
+                                            <span class="input-group-text">
+                                                user name 
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <span class="input-group-text">
+                                                <span class="bi-person"></span>
+                                            </span>
+                                            <input type="text" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" />
+                                            <span class="input-group-text">
+                                                <span class="bi-envelope"></span> 
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <span class="input-group-text">
+                                                <input type="checkbox" />
+                                            </span>
+                                            <input type="text" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" />
+                                            <span class="input-group-text">
+                                                <input type="radio" /> 
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <span class="input-group-text">
+                                                $
+                                            </span>
+                                            <input type="text" class="form-control" />
+                                            <span class="input-group-text">
+                                                .00 
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <span class="input-group-text">
+                                                usd 
+                                            </span>
+                                            <input type="text" class="form-control" />
+                                            <span class="input-group-text">
+                                                .50 
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <span class="input-group-text">
+                                                country 
+                                            </span>
+                                            <select class="form-select">
+                                                <option value=""> choose any country </option>
+                                                <option value=""> india </option>
+                                                <option value=""> canada </option>
+                                                <option value=""> australia </option>
+                                                <option value=""> usa </option>
+                                                <option value=""> other </option>
+                                            </select>
+                                            <div class="input-group-text">
+                                                submit 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" />
+                                            <span class="input-group-text">
+                                                user name 
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                            <hr />
+
+                            <form>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" />
+                                            <button type="button" class="btn btn-secondary">
+                                                <i class="bi-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <hr />
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- bootstrap js -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -1,0 +1,51 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+
+:root {
+    --light-blue: #ebf5fb;
+    --bit-light-blue: #aed6f1;
+    --white: #fff;
+    --black-border: #000;
+    --light-grey: #eaecee;
+}
+
+body {
+    background-color: var(--light-blue);
+}
+
+.container, 
+.container-fluid {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--black-border);
+}
+
+.left__column {
+    background-color: var(--bit-light-blue);
+    border-right: 1px solid var(--black-border);
+}
+
+.left__column .list__items {
+    line-height: 1.8em;
+}
+
+.right__column {
+    margin: 0;
+    background-color: var(--white);
+}
+
+.navbar {
+    padding: 0px;
+    background-color: var(--light-grey);
+    height: 40px;
+    border-bottom: 1px solid var(--black-border);
+}
+
+.navbar a.navlinks {
+    text-decoration: none;
+    line-height: 40px;
+    padding: 0px 5px;
+}
+
+.main__content {
+    background-color: var(--white);
+}
