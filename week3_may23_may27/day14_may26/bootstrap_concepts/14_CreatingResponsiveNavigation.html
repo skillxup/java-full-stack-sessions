@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- meta tags -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- title, bootstrap css and custom css -->
+        <title>Bootstrap Concepts</title>
+        <link rel="stylesheet" href="customStyles.css" />
+        <style type="text/css">
+            @media all and (min-width: 992px) {
+                .navbar .nav-item .dropdown-menu { display: none; }
+                .navbar .nav-item:hover .nav-link { };
+                .navbar .nav-item:hover .dropdown-menu { display: block; }
+                .navbar .nav-item .dropdown-menu { margin-top: 0; }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- responsive navigation -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand"> resp., nav </a>
+
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar1">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbar1">
+                    <div class="navbar-nav">
+                        <a href="#" class="nav-item nav-link active"> Home </a>
+                        <a href="#" class="nav-item nav-link"> About Us </a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> Services </a>
+                            <div class="dropdown-menu">
+                                <a href="#" class="dropdown-item"> Consulting </a>
+                                <a href="#" class="dropdown-item"> Training </a>
+                                <a href="#" class="dropdown-item"> Staffing </a>
+                                <a href="#" class="dropdown-item"> Recruitment </a>
+                                <a href="#" class="dropdown-item"> Resume Building </a>
+                            </div>
+                        </div>
+                        <a href="#" class="nav-item nav-link"> Portfolio </a>
+                        <a href="#" class="nav-item nav-link"> Products </a>
+                    </div>
+                    <div class="d-flex ms-auto">
+                        <div class="input-group">
+                            <input type="text" class="form-control" />
+                            <button type="button" class="btn btn-secondary">
+                                <i class="bi-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="d-flex ms-auto">
+                        <div class="navbar-nav">
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> My Account </a>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item"> Login / Register </a>
+                                    <a href="#" class="dropdown-item"> Dashboard </a>
+                                </div>
+                            </div>
+                            <a href="#" class="nav-item nav-link"> Contact Us </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- header -->
+        <header class="section-header py-1">
+            <div class="container">
+                <h2>Demo Page</h2>
+            </div>
+        </header>
+
+        <!-- container -->
+        <div class="container">
+            <!-- section -->
+            <section class="section-container py-5">
+                <h6>Over the years of developing websites for clients, I’ve learned that the age-old adage.</h6>
+
+                <p>Of course, there are companies out there that have great web writers internally, but most don’t. And the thought of a company turning a great website content strategy (that we slaved over) into an ineffective “brochure site” gives me heartburn. But sometimes you have to pick your battles.</p>
+
+                <p class="text">Pre-writing questions: Before starting any given page, you really need to wrap your heads around the primary goal of the page and to whom this page is targeted. What’s their pain? What’s in it for them? Where are they in their buying process? And what keywords or phrases would they most likely use to search for your solution? The best writers are those who can put themselves in the buyer’s shoes and write as if they are having a one-on-one conversation with that buyer.</p>
+
+                <a href="#" class="btn btn-link"> go to page </a>
+            </section>
+        </div>
+
+        <!-- container -->
+        <div class="container">
+            <!-- content -->
+            <div class="row">
+                <div class="col-sm-3 left__column">
+                    <div class="listings">
+                        <h3>Biology and medicine</h3>
+
+                        <ul>
+                            <li class="list__items">FLT3LG (Fms-related tyrosine kinase 3 ligand), a protein</li>
+                            <li class="list__items">Fluffy transcription factor, gene of Neurospora crassa</li>
+                            <li class="list__items">Fluorouracil (5-FU), and leucovorin (folinic acid)</li>
+                            <li class="list__items">A chemotherapy regimen for treating colon cancer</li>
+                            <li class="list__items">Follicular lymphoma in medicine</li>
+                            <li class="list__items">Frontal lobe, the largest brain lobe</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-9 right__column">
+                    <div class="row navbar">
+                        <div class="col-sm-12 text-sm-end">
+                            <a href="#" class="text-dark navlinks"> Home </a>
+                            <a href="#" class="text-dark navlinks"> About Us </a>
+                            <a href="#" class="text-dark navlinks"> Contact Us </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 main__content">
+                            <h3>Typical web page structure and formatting guidelines</h3>
+
+                            <p>After years of experimenting, most of us web folks have the best practices of website content nailed down, and we feel like this template covers the bases. Here are a few key elements</p>
+
+                            <hr />
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- bootstrap js -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </body>
+</html>
