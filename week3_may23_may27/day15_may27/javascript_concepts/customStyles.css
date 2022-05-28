@@ -1,0 +1,20 @@
+* {
+    margin: 0px auto;
+}
+
+html, 
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #f2f2f2;
+}
+
+.container {
+    width: 920px;
+    padding: 10px 15px;
+    background-color: #fff;
+}
+
