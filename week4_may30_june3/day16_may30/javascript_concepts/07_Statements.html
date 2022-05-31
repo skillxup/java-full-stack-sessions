@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Concepts</title>
+
+    <link rel="stylesheet" href="customStyles.css" />
+    <style type="text/css"></style>
+
+    <script type="text/javascript" src="customScripts.js"></script>
+    <script type="text/javascript"></script>
+</head>
+<body>
+    <div class="container">
+        <script type="text/javascript">
+            // decision making statements: if, if else, if else if, switch case
+            // in javascript: 0,  , null, false - are considered as false 
+            let num1 = 0;
+
+            // if
+            if(num1) {
+                document.write("the value of num1: " + num1 + " is true<br />");
+            } else {
+                document.write("the value of num1: " + num1 + " is false<br />");
+            }
+
+            document.write("------------------------------------------<br />");
+
+            let num2 = 100;
+            if(num2 < 200) {
+                document.write("the value of num2: " + num2 + " is less than 200 <br />");
+                if(num2 == 150) {
+                    document.write("the value of num2: " + num2 + " is equal to 150<br />");
+                } else if(num2 < 150) {
+                    document.write("the value of num2: " + num2 + " is less than 150 <br />");
+                }
+            } else {
+                document.write("the value of num2: " + num2 + " is either equal or greater than 200 <br />");
+            }
+
+            document.write("------------------------------------------<br />");
+
+            let name = "hp";
+            switch(name) {
+                case "dell": 
+                    document.write("the value of name: " + name + " is matching with the case 'dell' <br />");
+                    break;
+
+                case "hp": 
+                    document.write("the value of name: " + name + " is matching with the case 'hp' <br />");
+                    break;
+
+                case "lenovo": 
+                    document.write("the value of name: " + name + " is matching with the case 'lenovo' <br />");
+                    break;
+
+                default:  
+                    document.write("none of the case is matching <br />");
+            }
+        </script>
+    </div>
+</body>
+</html>

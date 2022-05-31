@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Concepts</title>
+
+    <link rel="stylesheet" href="customStyles.css" />
+    <style type="text/css"></style>
+
+    <script type="text/javascript" src="customScripts.js"></script>
+    <script type="text/javascript">
+        // anonymous function
+        let anonymousFunc = function(a, b) {
+            let r = (a ^ b);
+            return r;
+        }
+
+        // arrow function
+        let arrowFunc = (a, b) => {
+            let r = (a ^ b);
+            return r;
+        }
+
+        function myCallBackFunc(v) {
+            document.write("the callBack res: " + v + "<br />");
+        }
+
+        // call back function
+        function myMainFunc(a, b, callBack) {
+            let r = (a * b);
+            callBack(r);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <script type="text/javascript">
+            let a = 4;
+            let b = 3;
+            
+            let r = 0;
+
+            r = anonymousFunc(a, b);
+            document.write("the anonFunc res: " + r + "<br />");
+
+            r = arrowFunc(a, b);
+            document.write("the arrowFunc res: " + r + "<br />");
+
+            // callback - a function which is given as a parameter inside the another function
+            myMainFunc(a, b, myCallBackFunc);
+        </script>
+    </div>
+</body>
+</html>

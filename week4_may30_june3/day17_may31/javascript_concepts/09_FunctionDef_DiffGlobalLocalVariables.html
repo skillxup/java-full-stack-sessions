@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Concepts</title>
+
+    <link rel="stylesheet" href="customStyles.css" />
+    <style type="text/css"></style>
+
+    <script type="text/javascript" src="customScripts.js"></script>
+    <script type="text/javascript">
+        // function definition
+        function myFirstFunc() {
+            // declaring the local variables
+            let lA = 7;
+            let lB = 3;
+
+            document.write("this is my first function at active window <br />");
+            document.write("the value of gA inside myFirstFunc(): " + gA + "<br />");
+            document.write("the value of gB inside myFirstFunc(): " + gB + "<br />");
+            
+            document.write("--------------------------------<br />");
+
+            document.write("the value of lA inside myFirstFunc(): " + lA + "<br />");
+            document.write("the value of lB inside myFirstFunc(): " + lB + "<br />");
+        }
+
+        // document.write("the value of lA outside myFirstFunc(): " + lA + "<br />");
+        // document.write("the value of lB outside myFirstFunc(): " + lB + "<br />");
+        
+        
+        
+    </script>
+</head>
+<body>
+    <div class="container">
+        <script type="text/javascript">
+            // declaring the global variables
+            let gA = 3;
+            let gB = 7;
+            
+            // function call
+            myFirstFunc();
+
+            document.write("--------------------------------<br />");
+
+            document.write("the value of gA outside myFirstFunc(): " + gA + "<br />");
+            document.write("the value of gB outside myFirstFunc(): " + gB + "<br />");
+        </script>
+    </div>
+</body>
+</html>
