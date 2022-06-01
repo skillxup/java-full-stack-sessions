@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Concepts</title>
+
+    <link rel="stylesheet" href="customStyles.css" />
+    <style type="text/css"></style>
+
+    <script type="text/javascript" src="customScripts.js"></script>
+    <script type="text/javascript">
+        function windowSize() {
+            var w = window.innerWidth;
+            var h = window.innerHeight;
+
+            var wh = `width: ${w}, height: ${h}`;
+            document.getElementById("windowsize").innerHTML = wh;
+        }
+
+        function getResolution() {
+            var w = screen.width;
+            var h = screen.height;
+
+            var cd = screen.colorDepth;
+
+            var wh = `width: ${w}, height: ${h}, adding colorDepth: ${cd}`;
+            document.getElementById("screenresolution").innerHTML = wh;
+        }
+
+        function getUrl() {
+            var url = window.location.href;
+            var protocol = window.location.protocol;
+            var host = window.location.host;
+            var hostname = window.location.hostname;
+
+            var totalUrl = `url: ${url}, <br /> protocol: ${protocol}, <br /> host: ${host}, <br /> hostname: ${hostname}`;
+            document.getElementById("url").innerHTML = totalUrl;
+        }
+
+        function loadPage() {
+            var pageLoad = window.location.assign("https://www.quackit.com/html/templates/download/bootstrap/corporate-1/index.html");
+            document.getElementById("pageload").innerHTML = pageLoad;
+        }
+
+        function getViews() {
+            var gv = history.length;
+            var v = `you have accessed ${gv} web pages in this session`;
+            document.getElementById("showviews").innerHTML = v;
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+        function goForward() {
+            window.history.forward();
+        }
+
+        function goSpecificPage() {
+            window.history.go(2);
+        }
+
+        function checkCookiesEnabledOrNot() {
+            if(navigator.cookieEnabled) {
+                var cks = `yes, cookies are enabled in your browser`;
+                document.getElementById("chkcookies").innerHTML = cks;
+                document.getElementById("chkcookies").style.color = "green";
+            } else {
+                var cks = `yes, cookies are not enabled in your browser`;
+                document.getElementById("chkcookies").innerHTML = cks;
+                document.getElementById("chkcookies").style.color = "red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- window -->
+        <button type="button" onclick="windowSize()" class="btn btn-info mb-2"> get window size </button>
+
+        <div id="windowsize" class="alert alert-info mb-2"></div>
+
+        <hr />
+
+        <!-- screen -->
+        <button type="button" onclick="getResolution()" class="btn btn-info mb-2"> get resolution </button>
+
+        <div id="screenresolution" class="alert alert-info mb-2"></div>
+
+        <hr />
+
+        <!-- location -->
+        <button type="button" onclick="getUrl()" class="btn btn-info mb-2"> get url </button>
+
+        <div id="url" class="alert alert-info mb-2"></div>
+
+        <hr />
+
+        <!-- loading page -->
+        <button type="button" onclick="loadPage()" class="btn btn-info mb-2"> load page </button>
+
+        <div id="pageload" class="alert alert-info mb-2"></div>
+
+        <hr />
+
+        <!-- history -->
+        <button type="button" onclick="getViews()" class="btn btn-info mb-2"> get views </button>
+
+        <div id="showviews" class="alert alert-info mb-2"></div>
+
+        <hr />
+
+        <button type="button" onclick="goBack()" class="btn btn-info mb-2"> go back </button>
+
+        <button type="button" onclick="goForward()" class="btn btn-info mb-2"> go forward </button>
+
+        <button type="button" onclick="goSpecificPage()" class="btn btn-info mb-2"> go specifi page </button>
+
+        <hr />
+
+        <!-- navigator -->
+        <button type="button" onclick="checkCookiesEnabledOrNot()" class="btn btn-info mb-2"> check cookies enabled or not </button>
+
+        <div id="chkcookies" class="alert alert-info mb-2"></div>
+
+        <hr />
+
+        <script type="text/javascript">
+        
+        </script>
+    </div>
+</body>
+</html>
