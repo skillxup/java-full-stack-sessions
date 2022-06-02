@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Concepts</title>
+
+    <link rel="stylesheet" href="customStyles.css" />
+    <style type="text/css"></style>
+
+    <script type="text/javascript" src="customScripts.js"></script>
+    <script type="text/javascript">
+        "use strict";
+        x = 5;
+        console.log(x);
+        
+        
+        // anonymous function
+        let anonymousFunc = function(a, b) {
+            let r = (a ^ b);
+            return r;
+        }
+
+        // arrow function
+        let arrowFunc = (a, b) => {
+            let r = (a ^ b);
+            return r;
+        }
+
+        function myCallBackFunc(v) {
+            document.write("the callBack res: " + v + "<br />");
+        }
+
+        // call back function
+        function myMainFunc(a, b, callBack) {
+            let r = (a * b);
+            callBack(r);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <script type="text/javascript">
+            
+            let a = 4;
+            let b = 3;
+            
+            let r = 0;
+
+            r = anonymousFunc(a, b);
+            document.write("the anonFunc res: " + r + "<br />");
+
+            r = arrowFunc(a, b);
+            document.write("the arrowFunc res: " + r + "<br />");
+
+            // callback - a function which is given as a parameter inside the another function
+            myMainFunc(a, b, myCallBackFunc);
+
+            // **********************************************
+            // its just a discussion about how the global variable is updating its value - its not a concept of closures
+            // declaring the global variable
+            var counter = 0;
+            console.log("before func call, displaying the counter value");
+            console.log(counter);
+
+            // a function dedicated to manipulate the 'counter' variable
+            function makeCounter() {
+                return counter += 1;
+            }
+
+            // calling a function
+            makeCounter();
+            console.log("after func call, displaying the counter value");
+            console.log(counter);
+
+            makeCounter();
+            console.log("after 2nd tim func call, displaying the counter value");
+            console.log(counter);
+
+            counter = 10;
+            console.log("after changing or updating the new value, displaying the counter value");
+            console.log(counter);
+
+            makeCounter();
+            console.log("after changing, 1st time func call, displaying the counter value");
+            console.log(counter);
+            // **********************************************
+
+            // **********************************************
+            // its something to understand the global variable is not accessed or manipulated in side the function
+
+            // declare global variable 
+            var counter2 = 0;
+
+            // def., of makeCounter2()
+            function makeCounter2() {
+                // declaring the local variable
+                var counter2 = 0;
+
+                // manipulating the 'counter' variable
+                return counter2 += 1;
+            }
+
+            console.log("giving a call to func., 1st time");
+            console.log(makeCounter2());
+
+            console.log("giving a call to func., 2nd time");
+            console.log(makeCounter2());
+            // **********************************************
+
+            // main understanding of closures from here
+            // **********************************************
+            // nested functions
+            function makeCounter3() {
+                var counter3 = 0;
+
+                // nested function
+                function make3() {
+                    counter3++;
+                    return counter3;
+                }
+                return make3;
+            }
+
+            var myCounter3 = makeCounter3();
+            console.log("giving a call to myCounter3 func.,");
+            console.log(myCounter3());
+
+            console.log("giving a call to myCounter3 func.,");
+            console.log(myCounter3());
+            // **********************************************
+
+            // **********************************************
+            // anonymous function
+            var myCounter4 = (function() {
+                var counter4 = 0;
+
+                // nested anonymous function
+                return function() {
+                    counter4++;
+                    return counter4;
+                }
+            })();
+
+            console.log("giving a call to myCounter4 func.,");
+            console.log(myCounter4());
+
+            console.log("giving a call to myCounter4 func.,");
+            console.log(myCounter4());
+            // **********************************************
+
+            // **********************************************
+            // getter and setter
+            var getValue, setValue;
+
+            // anonymous function
+            (function() {
+                var secret = 0;
+
+                // getter function
+                getValue = function() {
+                    return secret;
+                }; 
+
+                // setter function
+                setValue = function(x) {
+                    if(typeof x === "number") {
+                        secret = x;
+                    }
+                };
+
+            })();
+
+            // calling the function
+            console.log("output from getValue.,");
+            console.log(getValue());
+
+            setValue(10);
+
+            console.log("output from getValue.,");
+            console.log(getValue());
+            // **********************************************
+
+            // **********************************************
+            // strict mode
+            
+
+            
+            // **********************************************
+        </script>
+    </div>
+</body>
+</html>
