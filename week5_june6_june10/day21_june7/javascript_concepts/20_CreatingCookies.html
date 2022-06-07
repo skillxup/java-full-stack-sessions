@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Concepts</title>
+
+    <link rel="stylesheet" href="customStyles.css" />
+    <style type="text/css"></style>
+
+    <script type="text/javascript" src="customScripts.js"></script>
+    <script type="text/javascript">
+        // a custom function to set cookies
+        function setCookie(name, value, daysToLive) {
+            var cookie = name + '=' + encodeURIComponent(value);
+            if(typeof daysToLive == "number")  {
+                cookie += "; max-age=" + (daysToLive*24*60*60);
+                // setting the cookie data into cookie property
+                document.cookie = cookie;
+            }
+        }
+
+        // a custom function to get cookie
+        function getCookie(name) {
+            var cookieArr = document.cookie.split(";");
+            for(let i = 0; i < cookieArr.length; i++) {
+                var cookiePair = cookieArr[i].split("=");
+                if(name == cookiePair[0].trim()) {
+                    return decodeURIComponent(cookiePair[1]);
+                }
+            }
+
+            return null;
+        }
+
+        // a custom function to check cookies
+        function checkCookie() {
+            var firstName = getCookie("firstName");
+
+            if(firstName != null) {
+                alert("welcome again, " + firstName);
+            } else {
+                firstName = prompt("please enter your first name: ");
+                if(firstName != "" && firstName != null) {
+                    setCookie("firstName", firstName, 1);
+                }
+            }
+        }
+
+        // window.onload = checkCookie;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <button type="button" class="btn btn-primary" onclick="checkCookie()"> check & set cookie </button>
+
+        <script type="text/javascript">
+            // creating a cookie
+            
+            // document.cookie = "name=" + encodeURIComponent("John Steker");
+            // document.cookie = "firstName=John; max-age=" + 30*24*60*60;
+        </script>
+    </div>
+</body>
+</html>
