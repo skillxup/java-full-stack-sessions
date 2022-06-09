@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Concepts</title>
+
+    <link rel="stylesheet" href="customStyles.css" />
+    <style type="text/css"></style>
+
+    <script type="text/javascript" src="customScripts.js"></script>
+    <script type="text/javascript"></script>
+</head>
+<body>
+    <div class="container">
+        <script type="text/javascript">
+            // ecmascript6 (es6)
+            
+            // const usage
+            const PI = 3.14;
+            console.log(PI);
+
+            // PI = 7.9;
+            // console.log(PI);
+
+            // object property value
+            const PERSON = {name: "peter", age: 23};
+            console.log(PERSON);
+            console.log(PERSON.name);
+            console.log(PERSON.age);
+
+            // array element 
+            const COLORS = ["red", "green", "blue"];
+            console.log(COLORS);
+            console.log(COLORS[0]);
+            console.log(COLORS[1]);
+            console.log(COLORS[2]);
+
+            // updating the value of particular item
+            COLORS[1] = "pink";
+            console.log(COLORS);
+
+            // let usage - for loop
+            for(let i = 0; i < 5; i++) {
+                console.log(i);
+            }
+
+            // for.. of
+            let letters = ["a", "e", "i", "o", "u"];
+            for(let letter of letters) {
+                console.log(letter);
+            }
+
+            let str1 = "hello";
+            for(let char of str1) {
+                console.log(char);
+            }
+
+            // template literals
+            let str2 = `the javascript is a 
+                client side programming language`;
+            
+            let a = 10;
+            let b = 20;
+
+            let result = `the sum of ${a} and ${b} is ${a + b}`;
+            console.log(result);
+
+            // default values for function parameters
+            // arrow functions
+            
+
+        </script>
+    </div>
+</body>
+</html>

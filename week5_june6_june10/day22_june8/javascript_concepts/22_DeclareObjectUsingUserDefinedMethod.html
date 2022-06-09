@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Concepts</title>
+
+    <link rel="stylesheet" href="customStyles.css" />
+    <style type="text/css"></style>
+
+    <script type="text/javascript" src="customScripts.js"></script>
+    <script type="text/javascript">
+        function Person(nickname, country) {
+            // the keyword 'this' is a reference of current running object
+            // this.propertyname = value;
+            this.nickname = nickname;
+            this.country = country;
+
+            // getInfo() - anonymous function
+            this.getInfo = function() {
+                // closure with arrow function
+                return () => {
+                    // document.write(this.constructor.name);
+                    document.write("hello, i'm : " + this.nickname + ", and i'm staying at country: " + this.country + "<br />");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <script type="text/javascript">
+            // declaring the object using user defined method
+            // p1, p2, p3 - are the objects
+            // Person() - user defined method
+            // new - is an operator
+
+            let printInfo;
+
+            var p1 = new Person('rick', 'argentina');
+            printInfo = p1.getInfo(); // you are giving a call to getInfo with particular object name
+            printInfo();
+
+
+            var p2 = new Person('james', 'florida');
+            printInfo = p2.getInfo(); // you are giving a call to getInfo with particular object name
+            printInfo();
+
+            var p3 = new Person('peter', 'los vegas');
+            printInfo = p3.getInfo(); // you are giving a call to getInfo with particular object name
+            printInfo();
+        </script>
+    </div>
+</body>
+</html>
