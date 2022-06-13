@@ -1,0 +1,142 @@
+-> What is Javascript?
+    - Javascript is a most popular & widely used client - side scripting language.
+    - client - side: refers to scripts that run within your web - browser.
+    - Javascript is designed to add interactivity and dynamic effects to the web - page by manipulating the content returned from a web server.
+    - Javascript is an object - oriented programming language. 
+
+-> What can you do with Javascript?
+    1. modify the content of a web - page either by adding or removing elements
+    2. change the style and position of the elements on a web - page
+    3. monitor the events like., click , hover, etc., 
+    4. perform and control transitions and animations 
+    5. create alert pop - ups  or warning messages 
+    6. operations based on user inputs and display the results
+    7. validate user inputs before submitting it to the server
+
+-> Adding Javascript code to your web - pages
+    1. External
+    2. Embedded
+    3. Inline
+
+-> The DataTypes in Javascript:
+    - There are 2 different types of data
+        1. Primitive
+            1. Number: 0 - 9; 53, 65.33, -75, -53.42, 3e4, 5^2
+            2. String: a - z, A - Z; 0 - 9; symbols; - ' ... ' or " ... " or ` ... `
+            3. Boolean: true or false;
+
+        2. Abstract
+            1. array
+            2. function
+            3. class and object
+
+        3. Misc., 
+            1. undefined
+            2. null
+
+-> Keywords: 
+    - Keyword is a Pre - Defined word
+    - The concept of keyword is used to do an action which is already defined by javascript developer; where the browser can understand and executed your program accordingly;
+    - list of keywords: and, or, if, try, else, switch etc., 
+
+-> Comment: 
+    - It's a point of skipping the statement(s) at the time of execution
+    - It gives a clear idea to the programmer what that concept is saying
+    - We can create in comment in 2 different ways (same like css)
+        1. Single Line - // ................
+        2. Multi Line - /* ..... */
+
+-> Variables: 
+    - a variable is a name - which holds the data; and that can be used where ever or when ever it is required;
+    - There are 3 different ways, that we can declared the variables
+        1. using the keyword - 'var'
+        2. using the keyword - 'let'
+        3. using the keyword - 'const'
+
+-> Operators: 
+    - an operator is a symbol, which is used to evaluate the expression
+    - there are different types of operators:
+        1. arithmatic
+        2. assignment
+        3. comparison (relational)
+        4. conditional (ternary)
+        5. logical
+
+-> Statements: 
+    - there are 2 types of statements
+        1. decision making statements: based on the decision the set of statements will be executed: 
+            if, if else, if else if else, switch case
+
+        2. loop statements: untill unless the condition gets false, the set of statements will be executed continuously
+            while, do while, for
+
+-> Arrays: 
+    - an array is set of different types of data / values / elements 
+    - to access all the items we use indexing
+
+-> Functions: 
+    - a function is a reusable set of statements
+    - function call and its definition
+    - difference between global variables and local variables
+    - passing parameters to function
+    - return statement
+    - anonymous function
+    - arrow function
+    - callback function
+
+-> Events, Nodes, Selectors:
+    - understand the 'document object model' - defines the logical structure of the documents and the way in which they can be accessed and manipulated by the application program
+    - selecting the elements
+
+-> Timers: 
+    - setInterval()
+    - setTimeout()
+
+-> Date and Time
+-> Math Operations
+
+-> BOM (browser object model)
+    - Window
+    - Screen
+    - Location
+    - History
+    - Navigator
+    - Dialog Boxes
+    - Timers
+
+-> Event Listeners
+
+-> Closures: A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function.
+
+-> JSON: Javascript Object Notation; It is used to parse the data between the Client and Server; Working with RestApi's;
+
+-> Error / Exception Handling
+    - There are 2 types of errors
+        1. Compile Time Errors - Standard Javascript Errors
+        2. RunTime Errors - Logical Errors
+
+        ex., 
+            throw 123; 
+            throw "missing"; 
+            throw true;
+            throw { name: "invalid", message: "data" };
+            throw new Error("any message");
+
+-> Regular Expressions: 
+    - the regular expressions can also simply called as 'regex' or 'RegExp'
+    - these are specially formatted text used to find the patternsin text
+    - regular expressions are one of the most powerful tools available, and effecient text processing and manipulations
+    - ex. username: jO23$W@453
+    - there are different methods: 
+    exec(), test(), search(), replace(), match(), split()
+
+-> Cookies: 
+    - a small text file that lets you to store a small amount of data on user's computer.
+
+-> ES6 Features;
+-> Object Oriented Programming: 
+    Class, Object, Properties, Methods, Inheritance
+-> Promise: 
+-> Local Storage and Session Storage: 
+    - the session storage is similar to local storage;
+    - the diff., is that while the data is local storage doesn't expire, whereas the data with session storage is cleared or erased when the page sessions ends
