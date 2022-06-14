@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Concepts</title>
+
+    <link rel="stylesheet" href="customStyles.css" />
+    <style></style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="customScripts.js"></script>
+    <script>
+
+    </script>
+</head>
+<body>
+    <div id="result">
+        <h4>content of the result DIV box will be replaced by the server Date and Time</h4>
+    </div>
+
+    <button type="button"> load date and time </button>
+
+    <script>
+        // get the data dynamically into the given selector from the server code
+        $(document).ready(function() {
+            $("#button").click(function() {
+                $.get("<write_server_code_file>", function(data) {
+                    $("#result").html(data);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

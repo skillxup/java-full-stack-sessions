@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Concepts</title>
+
+    <link rel="stylesheet" href="customStyles.css" />
+    <style></style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="customScripts.js"></script>
+    <script>
+        // its ajax load first example
+        // $(document).ready(function() {
+        //     $("button").click(function() {
+        //         $("#box").load("loadContent.txt");
+        //     })
+        // });
+
+        // ajax load another way
+        $(document).ready(function() {
+            $("button").click(function() {
+                $("#box").load("loadContent.txt", 
+                function(responseTxt, statusTxt, jqXHR) {
+                    if(statusTxt == "success") {
+                        alert("new content loaded successfully!");
+                    } else if(statusTxt == "error") {
+                        alert("error: " + jqXHR.status + " " + jqXHR.statusTxt);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- ajax load - load() -->
+    <h4>simple ajax load</h4>
+
+    <p id="hint">this is a sample para</p>
+
+    <img src="images/cruise.png" alt="" title="" width="190px" />
+
+    <div id="box">
+        <h4>click button to load the content inside the div</h4>
+    </div>
+
+    <button type="button"> load content </button>
+
+    <script>
+        
+    </script>
+</body>
+</html>

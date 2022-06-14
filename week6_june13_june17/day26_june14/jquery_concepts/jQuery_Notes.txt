@@ -1,0 +1,14 @@
+-> What is jQuery?
+    - jQuery is a fast, light-weight and feature rich javascript library.
+    - Write less and do more
+    - jQuery also gives you the ability to create the Ajax based application.
+
+-> What we can do with jQuery?
+    - select elements to perform manipulation
+    - create effect like show or hide elements
+    - manipulation of DOM elements
+
+-> Ajax: 
+    - Ajax stands for Asynchronous Javascript and Xml.
+    - Ajax is used to load the data from the server to the client without reloading the total page
+    - ajax with get and post requests - $.get(), $.post()
