@@ -1,0 +1,33 @@
+<!-- navigation -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark mb-5">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLinkActive="active" routerLink="/"> angular app</a>
+
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar1">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbar1">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" routerLinkActive="active" routerLink="/home"> Home </a>
+        <a class="nav-item nav-link" routerLinkActive="active" routerLink="/about"> About Us </a>
+        <a class="nav-item nav-link" routerLinkActive="active" routerLink="/products"> Products </a>
+        <a class="nav-item nav-link" routerLinkActive="active" routerLink="/contact"> Contact Us </a>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-12">
+      <p></p>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
