@@ -1,0 +1,37 @@
+-> What is an Angular?
+   - an Angular is a Javascript Framework
+   - Used to create the Single Page Applications
+   - An Angular is build with Typescript
+   - Typescript: is a Super Set of Javascript
+        - Faster
+        - Secure
+        - Can find the Errors at Coding
+    
+-> Why should we have to use NodeJs when you are planning to run the Angular App?
+    - you don't need node.js to run your application, but you need node. js to 'develop your angular app' to 'use necessary tools'. NodeJS gives you the tool 'npm' that allows you to download 'libraries and packages' that you use in Angular.
+
+-> How to setup an Angular?
+    - NodeJs: 
+        1. Nodejs RunTime
+        2. Core Packages (optional)
+        3. NPM Package Manager
+    - check: node --version
+             npm --version
+    - Angular: 
+        > npm install -g @angular/cli
+        > ng --version
+
+-> Creating the Project in Angular:
+    - ng new my-angular-app
+    - cd my-angular-app
+    - ng serve (or) npm start
+
+-> Appl flow;
+	index.html <- main.ts <- app/app.module.ts <- app.component.ts
+	package, module
+
+-> Angular fundamentals: 
+	template, metadata, directive, component, event binding, property binding, services, module {fn, value, service, component}
+
+-> editing the sample html app component
+-> creating a new component	
