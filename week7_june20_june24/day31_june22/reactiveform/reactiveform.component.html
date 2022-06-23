@@ -1,0 +1,175 @@
+<div class="row">
+    <div class="col-12">
+        <div>
+            <!-- form starts -->
+            <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+                <div class="group-gap">
+                    <!-- upload image -->
+                    <div class="avatar-edit">
+                        <input type="file" id="imageUpload" accept=".png, .jpg, .jpeg" #fileInput (change)="uploadFile($event)" />
+
+                        <label for="imageUpload" *ngIf="editFile" [ngClass]="['custom-label', 'upload-image']"></label>
+
+                        <label for="removeUpload" [ngClass]="['custom-label', 'remove-image']" (click)="removeUploadedFile()"></label>
+                    </div>
+
+                    <!-- image preview -->
+                    <div class="avatar-preview">
+                        <div id="imagePreview" [style.backgroundImage]="url('+ imageUrl+ ')"></div>
+                    </div>
+                </div>
+
+                <!-- fullName -->
+                <div formGroupName="fullName">
+                    <!-- firstName -->
+                    <div class="mb-3">
+                        <label [ngClass]="{'error': submitted && myForm.fullName.controls.firstName.errors}"> First Name </label>
+
+                        <input type="text" class="form-control" formControlName="firstName" [ngClass]="{'error': submitted && myForm.fullName.controls.firstName.errors}" />
+
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.fullName.controls.firstName.errors.required">
+                            <sup>*</sup> enter first name
+                        </div>
+
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.fullName.controls.firstName.errors.minlength">
+                            <sup>*</sup> first name should be min 4 chars long
+                        </div>
+
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.fullName.controls.firstName.errors.pattern">
+                            <sup>*</sup> should have a - z, A - Z, with even space, and no special symbols are allowed
+                        </div>
+                    </div>
+
+                    <!-- lastName -->
+                    <div class="mb-3">
+                        <label [ngClass]="{'error': submitted && myForm.fullName.controls.lastName.errors}"> Last Name </label>
+
+                        <input type="text" class="form-control" formControlName="lastName" [ngClass]="{'error': submitted && myForm.fullName.controls.lastName.errors}" />
+
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.fullName.controls.lastName.errors.required">
+                            <sup>*</sup> enter last name
+                        </div>
+                    </div>
+                </div>
+
+                <!-- email -->
+                <div class="mb-3">
+                    <label [ngClass]="{'error': submitted && myForm.email.errors}"> Email Address </label>
+
+                    <input type="email" class="form-control" formControlName="email" [ngClass]="{'error': submitted && myForm.email.errors}" />
+
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.email.errors.required">
+                        <sup>*</sup> email address is mandatory 
+                    </div>
+
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.email.errors.pattern">
+                        <sup>*</sup> entered email address is invalid 
+                    </div>
+                </div>
+
+                <!-- phoneNumber -->
+                <div class="mb-3">
+                    <label [ngClass]="{'error': submitted && myForm.phoneNumber.errors}"> Phone Number </label>
+
+                    <input type="text" class="form-control" formControlName="phoneNumber" [ngClass]="{'error': submitted && myForm.phoneNumber.errors}" />
+
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.phoneNumber.errors.required">
+                        <sup>*</sup> phone number is mandatory 
+                    </div>
+
+                    <div class="invalid-feedback" *ngIf="submitted && myForm.phoneNumber.errors.pattern">
+                        <sup>*</sup> entered phone number is invalid 
+                    </div>
+                </div>
+
+                <!-- address -->
+                <div class="group-gap" formGroupName="address">
+                    <h4 class="mb-2"> Address </h4>
+                    <div class="mb-2">
+                        <label [ngClass]="{'error': submitted && myForm.address.controls.street.errors}"> Street </label>
+
+                        <input type="text" class="form-control" formControlName="street" [ngClass]="{'error': submitted && myForm.address.controls.street.errors}" />
+
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.address.controls.street.errors.required">
+                            <sup>*</sup> street is mandatory 
+                        </div>
+                    </div>
+
+                    <div class="mb-2">
+                        <label [ngClass]="{'error': submitted && myForm.address.controls.cityName.errors}"> City Name </label>
+
+                        <select class="custom-select d-block w-100" (change)="changeCity($event)" formControlName="cityName" [ngClass]="{'error': submitted && myForm.address.controls.cityName.errors}">
+                            <option value=""> choose city name </option>
+                            <option *ngFor="let city of City" [ngValue]="city">{{city}}</option>
+                        </select>
+
+                        <div class="invalid-feedback" *ngIf="submitted && myForm.address.controls.cityName.errors.required">
+                            <sup>*</sup> choose any city as it is mandatory 
+                        </div>
+                    </div>
+                </div>
+
+                <!-- gender -->
+                <div class="group-gap">
+                    <h4 class="mb-2"> Gender </h4>
+                    <div class="d-block mb-2">
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="male" class="custom-control-input" name="gender" formControlName="gender" value="male" checked />
+
+                            <label class="custom-control-label"> Male </label>
+                        </div>
+
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="female" class="custom-control-input" name="gender" formControlName="gender" value="female" />
+
+                            <label class="custom-control-label"> Female </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- password and confirmpassword -->
+                <div formGroupName="PasswordValidation">
+                    <div class="group-gap">
+                        <div class="mb-3">
+                            <label [ngClass]="{'error': submitted && myForm.PasswordValidation.controls.password.errors}"> Password </label>
+
+                            <input type="password" class="form-control" formControlName="password" [ngClass]="{'error': submitted && myForm.PasswordValidation.controls.password.errors}" />
+
+                            <div class="invalid-feedback" *ngIf="submitted && myForm.PasswordValidation.controls.password.errors">
+                                <sup>*</sup> password is important
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label [ngClass]="{'error': submitted && myForm.PasswordValidation.controls.confirmPassword.errors}"> Confirm Password </label>
+
+                            <input type="password" class="form-control" formControlName="confirmPassword" [ngClass]="{'error': submitted && myForm.PasswordValidation.controls.confirmPassword.errors}" />
+
+                            <div class="invalid-feedback" *ngIf="submitted && myForm.PasswordValidation.controls.confirmPassword.errors">
+                                <sup>*</sup> confirm password is also important
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- add super powers dynamically (add new input elements) -->
+                <div class="group-gap" formArrayName="addDynamicElement">
+                    <h4 class="mb-3"> Add Super Powers </h4>
+                    <div class="mb-3">
+                        <button type="button" class="btn btn-success mb-3" (click)="addSuperPowers()"> Add Powers </button>
+
+                        <ul class="subjectList">
+                            <li *ngFor="let item of addDynamicElement.controls; let i = index;">
+                                <input type="text" class="form-control" [formControlName]="i" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- submit button -->
+                <button type="submit" class="btn btn-success"> Create Super Hero </button>
+            </form>
+        </div>
+    </div>
+</div>
