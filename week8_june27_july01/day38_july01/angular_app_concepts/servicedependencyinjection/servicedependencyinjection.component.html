@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-sm-8 offset-sm-2">
+        <app-newaccount></app-newaccount>
+
+        <hr />
+
+        <app-account
+            *ngFor = "let account of accounts; let i = index;" 
+            [account] = "account" 
+            [id] = "i" 
+        ></app-account>
+    </div>
+</div>

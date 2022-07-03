@@ -1,0 +1,96 @@
+<div class="row">
+    <div class="col-8 offset-2">
+        <h4> Crud Operations : User Data </h4>
+
+        <hr />
+
+        <table class="table table-bordered">
+            <tr>
+                <th colspan="4">User List</th>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <th>Full Name</th>
+                <th>Email Address</th>
+                <th>&nbsp;</th>
+            </tr>
+            <tr *ngFor="let user of users">
+                <td>{{user.id}}</td>
+                <td>{{user.fullname}}</td>
+                <td>{{user.emailaddress}}</td>
+                <td>
+                    <button type="button" class="btn btn-info me-3" (click)="showEditUserForm(user)"> edit record &raquo;</button>
+
+                    <button type="button" class="btn btn-danger me-3" (click)="removeUser(user)"> delete record &raquo; </button>
+                </td>
+            </tr>
+        </table>
+
+        <hr />
+
+        <button type="button" class="btn btn-success" (click)="showAddUserForm()"> add new user </button>
+
+        <!-- add new user form -->
+        <div class="mt-4">
+            <form *ngIf="userForm">
+                <h4>Add New User</h4>
+
+                <hr />
+
+                <div class="row mb-3">
+                    <label class="col-4"> Full Name </label>
+                    <div class="col-6">
+                        <input type="text" class="form-control" name="fullname" [(ngModel)]="newUser.fullname" />
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-4"> Email Address </label>
+                    <div class="col-6">
+                        <input type="text" class="form-control" name="emailaddress" [(ngModel)]="newUser.emailaddress" />
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-6 offset-3">
+                        <button type="submit" class="btn btn-primary me-3 mb-3" (click)="saveUser(newUser)"> add user </button>
+
+                        <button type="button" class="btn btn-warning me-3 mb-3" (click)="cancelNewUser()"> cancel new user </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- edit existing user -->
+        <div class="mt-4">
+            <form *ngIf="editUserForm">
+                <h4>Edit Existing User</h4>
+
+                <hr />
+
+                <div class="row mb-3">
+                    <label class="col-4"> Full Name </label>
+                    <div class="col-6">
+                        <input type="text" class="form-control" name="fullname" [(ngModel)]="editedUser.fullname" />
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label class="col-4"> Email Address </label>
+                    <div class="col-6">
+                        <input type="text" class="form-control" name="emailaddress" [(ngModel)]="editedUser.emailaddress" />
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-6 offset-3">
+                        <button type="submit" class="btn btn-primary me-3 mb-3" (click)="updateUser()"> update user </button>
+
+                        <button type="button" class="btn btn-warning me-3 mb-3" (click)="cancelEditUser()"> cancel edit user </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

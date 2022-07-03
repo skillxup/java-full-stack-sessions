@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-sm-8 offset-sm-2">
+        <div class="form-group">
+            <div class="row">
+                <label class="col-sm-4">Account Name</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" #accountName />
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <label class="col-sm-4">Account Status</label>
+                <div class="col-sm-6">
+                    <select #status>
+                        <option value="active"> active </option>
+                        <option value="inactive"> inactive </option>
+                        <option value="unknown"> unknown </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <button 
+            type="button" 
+            class="btn btn-primary"
+            (click)="onCreateAccount(accountName.value, status.value)"
+            > add account </button>
+
+    </div>
+</div>
