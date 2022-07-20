@@ -1,0 +1,51 @@
+Object Oriented Programming part in Java
+===========================================
+- the OOP is a programming paradigm based on the concept of 'objects' that contains 'data' and 'methods'
+- the primary purpose of OOP is used to increase the flexibility and maintainability of programs
+- the OOP brings together the data and its methods in a single location (object) which makes it easier to understand how a program works
+
+Things what we are covering:
+------------------------------------
+1. what is an object
+2. what is a class
+3. constructor in java
+4. OOP features:
+    1. abstraction
+    2. encapsulation
+    3. inheritance
+    4. polymorphism
+5. abstract class and methods
+6. interfaces in java
+------------------------------------
+
+1. what is an object: object -> is an instance of -> class
+    - object is a bundle of data and its behavior
+    - objects have 2 characteristics: states and behaviors
+    
+    examples of states and behaviors:
+    example1: 
+        object: house
+        state: address, color, area
+        behavior: open door, close door
+    
+    Example Code: AnExample1OfObject.java
+
+    example2: 
+        object: car
+        state: color, brand, weight, model
+        behavior: break, accelerate, slow down, gear change
+
+- Characteristics of Objects: 
+    1. abstraction: an abstraction is a process where you show only 'relevant' data and 'hide' unecessary details of an object from the user
+
+    2. encapsulation: encapsulation simply means binding the object state(fields) and behavior(methods) together, if you are creating class, you are doing encapsulation
+
+    3. message passing: a single object by itself may not be very useful. an application contains many objects. one object interacts with another object by invoking methods on that object. it is also referred as 'method invocation'
+
+2. what is a class: a class can be considered as a blueprint using which you can create as many objects as you require. 
+    
+    Example Code: AnExampleOfClass.java
+
+3. what is constructor: the constructor looks like a function (method) but it is infact not a method. it's name is same as class name and does not return any value. 
+    example: MyClass obj1 = new MyClass();
+    
