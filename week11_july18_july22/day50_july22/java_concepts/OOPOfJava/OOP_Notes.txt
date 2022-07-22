@@ -1,0 +1,109 @@
+Object Oriented Programming part in Java
+===========================================
+- the OOP is a programming paradigm based on the concept of 'objects' that contains 'data' and 'methods'
+- the primary purpose of OOP is used to increase the flexibility and maintainability of programs
+- the OOP brings together the data and its methods in a single location (object) which makes it easier to understand how a program works
+
+Things what we are covering:
+------------------------------------
+1. what is an object
+2. what is a class
+3. constructor in java
+4. OOP features:
+    1. abstraction
+    2. encapsulation
+    3. inheritance
+    4. polymorphism
+5. abstract class and methods
+6. interfaces in java
+------------------------------------
+
+1. what is an object: object -> is an instance of -> class
+    - object is a bundle of data and its behavior
+    - objects have 2 characteristics: states and behaviors
+    
+    examples of states and behaviors:
+    example1: 
+        object: house
+        state: address, color, area
+        behavior: open door, close door
+    
+    Example Code: AnExample1OfObject.java
+
+    example2: 
+        object: car
+        state: color, brand, weight, model
+        behavior: break, accelerate, slow down, gear change
+
+- Characteristics of Objects: 
+    1. abstraction: an abstraction is a process where you show only 'relevant' data and 'hide' unecessary details of an object from the user
+
+    2. encapsulation: encapsulation simply means binding the object state(fields) and behavior(methods) together, if you are creating class, you are doing encapsulation
+
+    3. message passing: a single object by itself may not be very useful. an application contains many objects. one object interacts with another object by invoking methods on that object. it is also referred as 'method invocation'
+
+2. what is a class: a class can be considered as a blueprint using which you can create as many objects as you require. 
+    
+    Example Code: AnExampleOfClass.java
+
+3. what is constructor: the constructor looks like a function (method) but it is infact not a method. it's name is same as class name and does not return any value. 
+    example: MyClass obj1 = new MyClass();
+
+4. OOP features: 
+    1. abstraction: an abstraction is a process where you show only 'relevant' data and 'hide' unecessary details of an object from the user
+        - abstract method: 
+            1. a method that is declared but not defined. only method signature no body.
+            2. declared using the abstract keyword
+                exa., abstract public void playInstrument();
+            3. used to put some kind of compulsion on the class who inherits the class has abstract class. the class that inherits must provide the implementation of all abstract methods of parent class else declare the subclass as abstract
+            4. these cannot be abstract:
+                - constructors
+                - static methods
+                - private methods
+                - methods that are declared 'final'
+            Example: AbstractClassExample.java
+            Example: DogAbstraction.java
+
+    2. encapsulation: the encapsulation simply means binding object state (fields) and behavior (methods) together
+    Example: EncapsulationExample.java
+
+    3. inheritance: the process by which one class acquires the properties and functionalists of another class
+    Example: MathTeacher.java
+
+    - There are different types of Inheritance:
+        1. Single Inheritance: refers to a child and parent class relationship where a class extends the another class. B -> A
+
+        2. Multilevel Inheritance: refers to a child and parent class relationship where a class extends the child class. C -> B -> A
+
+        3. Hierarchial Inheritance: refers to a child and parent class relationship where more than one class extends the same class. B -> A, C -> A
+
+        4. Multiple Inheritance: refers to the concept of one class extending more than one classes, which means a child class has 2 parent classes. (note: Java doesn't support the Multiple inheritance). C -> B, C -> A
+
+    4. polymorphism: the polymorphism allows you to perform a single action in different ways
+    Example: UnderstandingPolymorphism.java
+
+    - Types of polymorphism: 
+        1. Static polymorphism: the polymorphism that is resolved during compiler time is known as static
+
+        2. Dynamic polymorphism: the polymorphism is a process in which a call to an overidden method is resolved at runtime
+    Example: DogOverriding.java
+
+- Interfaces: an interface is a blueprint of a class, which can be declared by using 'interface' keywword. the 'interfaces' can contain only 'static constants' and 'abstract methods'. 
+    syntax: class className extends superClass implements interface1, interface2, ...
+
+    1. all methods in an interface are implicitly public and abstract
+    2. an interface may contain final variables
+    3. a class can extend only one other class, but it caan be implemented any number of interfaces
+    4. when a class implements an interface it has to give the definition of all the abstract methods of interface, else it can be declared as an abstract class
+    5. an interface reference can point to objects, of its implementation classes
+
+- Generalization and Specialization: 
+    - the process of identifying the similarities among different classes is called Generalization.
+
+- Access Specifiers: 
+    - decide the scope of a data member, method or class - public, private keywords
+    - there are 4 types of access specifiers: 
+        1. public
+        2. private
+        3. protected
+        4. default
