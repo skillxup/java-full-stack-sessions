@@ -1,0 +1,218 @@
+Object Oriented Programming part in Java
+===========================================
+- the OOP is a programming paradigm based on the concept of 'objects' that contains 'data' and 'methods'
+- the primary purpose of OOP is used to increase the flexibility and maintainability of programs
+- the OOP brings together the data and its methods in a single location (object) which makes it easier to understand how a program works
+
+Things what we are covering:
+------------------------------------
+1. what is an object
+2. what is a class
+3. constructor in java
+4. OOP features:
+    1. abstraction
+    2. encapsulation
+    3. inheritance
+    4. polymorphism
+5. abstract class and methods
+6. interfaces in java
+------------------------------------
+
+1. what is an object: object -> is an instance of -> class
+    - object is a bundle of data and its behavior
+    - objects have 2 characteristics: states and behaviors
+    
+    examples of states and behaviors:
+    example1: 
+        object: house
+        state: address, color, area
+        behavior: open door, close door
+    
+    Example Code: AnExample1OfObject.java
+
+    example2: 
+        object: car
+        state: color, brand, weight, model
+        behavior: break, accelerate, slow down, gear change
+
+- Characteristics of Objects: 
+    1. abstraction: an abstraction is a process where you show only 'relevant' data and 'hide' unecessary details of an object from the user
+
+    2. encapsulation: encapsulation simply means binding the object state(fields) and behavior(methods) together, if you are creating class, you are doing encapsulation
+
+    3. message passing: a single object by itself may not be very useful. an application contains many objects. one object interacts with another object by invoking methods on that object. it is also referred as 'method invocation'
+
+2. what is a class: a class can be considered as a blueprint using which you can create as many objects as you require. 
+    
+    Example Code: AnExampleOfClass.java
+
+3. what is constructor: the constructor looks like a function (method) but it is infact not a method. it's name is same as class name and does not return any value. 
+    example: MyClass obj1 = new MyClass();
+
+4. OOP features: 
+    1. abstraction: an abstraction is a process where you show only 'relevant' data and 'hide' unecessary details of an object from the user
+        - abstract method: 
+            1. a method that is declared but not defined. only method signature no body.
+            2. declared using the abstract keyword
+                exa., abstract public void playInstrument();
+            3. used to put some kind of compulsion on the class who inherits the class has abstract class. the class that inherits must provide the implementation of all abstract methods of parent class else declare the subclass as abstract
+            4. these cannot be abstract:
+                - constructors
+                - static methods
+                - private methods
+                - methods that are declared 'final'
+            Example: AbstractClassExample.java
+            Example: DogAbstraction.java
+
+    2. encapsulation: the encapsulation simply means binding object state (fields) and behavior (methods) together
+    Example: EncapsulationExample.java
+
+    3. inheritance: the process by which one class acquires the properties and functionalists of another class
+    Example: MathTeacher.java
+
+    - There are different types of Inheritance:
+        1. Single Inheritance: refers to a child and parent class relationship where a class extends the another class. B -> A
+
+        2. Multilevel Inheritance: refers to a child and parent class relationship where a class extends the child class. C -> B -> A
+
+        3. Hierarchial Inheritance: refers to a child and parent class relationship where more than one class extends the same class. B -> A, C -> A
+
+        4. Multiple Inheritance: refers to the concept of one class extending more than one classes, which means a child class has 2 parent classes. (note: Java doesn't support the Multiple inheritance). C -> B, C -> A
+
+    4. polymorphism: the polymorphism allows you to perform a single action in different ways
+    Example: UnderstandingPolymorphism.java
+
+    - Types of polymorphism: 
+        1. Static polymorphism: the polymorphism that is resolved during compiler time is known as static
+
+        2. Dynamic polymorphism: the polymorphism is a process in which a call to an overidden method is resolved at runtime
+    Example: DogOverriding.java
+
+- Interfaces: an interface is a blueprint of a class, which can be declared by using 'interface' keywword. the 'interfaces' can contain only 'static constants' and 'abstract methods'. 
+    syntax: class className extends superClass implements interface1, interface2, ...
+
+    1. all methods in an interface are implicitly public and abstract
+    2. an interface may contain final variables
+    3. a class can extend only one other class, but it caan be implemented any number of interfaces
+    4. when a class implements an interface it has to give the definition of all the abstract methods of interface, else it can be declared as an abstract class
+    5. an interface reference can point to objects, of its implementation classes
+
+- Generalization and Specialization: 
+    - the process of identifying the similarities among different classes is called Generalization.
+
+- Access Specifiers: 
+    - decide the scope of a data member, method or class - public, private keywords
+    - there are 4 types of access specifiers: 
+        1. public - accessible to all, other objects can also access this member variable or function.
+
+        2. private - not accessible by other objects, private members can be accessed only by the methods in the same class. 
+            - objects accessible only in class in which they are declared
+        
+        3. protected - the scope of a protected variable is within the class which declares it and in the class which inherits from the class (scope is class and subclass)
+        
+        4. default - scope is package level. we do not need to explicitly mention default as when we do not mention any access specifiers it is considered as default
+
+-> Enchancement of Constructors: 
+    - There are 3 types of constructors
+        1. default: if you do not implement any constructor in your class, then the java compiler inserts a default constructor. 
+
+        2. no-arg: the constructor with no arguments is known as no-arg constructor
+
+        3. parameterized: the constructor with n no of arguments which are passed at object declaration as a parameters 
+    - Example: ConstructorExample2.java
+
+    - what if you implement only parameterized constructor in class:
+    Example: OnlyParameterizedConstructor.java
+
+    - Constructor Chaining: when a constructor calls another constructor of same class
+    Example: MyChildClass.java
+
+    - super keyword:  
+        - whenever a child class constructor gets invoked it implicitly invokes the constructor of parent class
+
+        - the use of super keyword: 
+            1. to access the data members of parent class when both parent and child class have member with same name
+            2. to explicitly call the no-arg and parameterized constructor of parent class
+            3. to access the method of parent class when child class has overriden that method
+
+        - 1. how to use super keyword to access the variables of parent class
+        Example: Sublass.java - about variable(s) access
+        - small change: System.out.println(super.num);
+
+        - 2. use of super keyword to invoke constructor of parent class
+        Example: SubClassInvokeConstructor.java
+
+        - 3. parameterized super() call to invoke parameterized constructor of parent class
+        Example: ParameterizedSuperKeyword.java
+
+        - 4. how to use super keyword in case of method overriding
+        Example: SuperKeywordMethodOverriding.java
+
+        - 5. what if the child class is not overriding any method: no need of super
+
+    
+    - Constructor Overloading: the constructor overloading is a concept of having more than one constructor with different parameters list, in such a way so that each constructor performs a different task.
+
+-> What is Overriding?
+    - In Java, method overriding occurs when a subclass (child class) has the same method as the parent class. In other words, method overriding occurs when a subclass provides a particular implementation of a method declared by one of its parent classes.
+
+-> What is Overloading?
+    - In Java, two or more methods may have the same name if they differ in parameters (different number of parameters, different types of parameters, or both). These methods are called overloaded methods and this feature is called method overloading.
+
+-> Overloading vs Overriding:
+    - What is Overloading and Overriding? When two or more methods in the same class have the same name but different parameters, it's called Overloading. 
+    - When the method signature (name and parameters) are the same in the superclass and the child class, it's called Overriding.
+
+-> Method Overloading: 
+    - allows a class to have 'more than one method with the same name', if their argument lists are different
+    - it is simmilar to 'constructor overloading'
+    Example: ConstructorExample2.java
+
+    - There are 3 ways to overload a method: 
+        1. number of parameters
+            add(int, int)
+            add(int, int, int)
+
+        2. data type of parameters
+            add(int, int)
+            add(float, float) 
+
+        3. sequence of data types of parameters
+            add(int, float)
+            add(float, int)
+
+    - invalid case of method overloading:
+        int add(int, int)
+        float add(int, int)
+
+    - method overloading is an example of 'Static Polymorphism'
+        - Static Polymorphism (Compile Time): 
+        Example: StaticPolymorphism.java
+
+    - few points to note: 
+        1. Static Polymorphism is also know as Compile Time Binding or Early Binding
+        2. Static Binding happens at Compile Time. 
+
+    Examples of Method Overloading:
+    
+    Example1: Overloading - Different Number of Parameters in Arguments List
+        Example: DifferentNoParamsArgsList.java
+
+    Example2: Overloading - Difference in Data Types of Parameters
+        Example: DifferenceDataTypesParams.java
+
+    Example3: Overloading - Sequence of Data Types of Arguments
+        Example: SequenceDataTypesArgs.java
+
+    - Method Overloading and Type Promotion: 
+        - Type Promotion: when a data type of smaller size is promoted to the data type of bigger size
+        - for example: 'byte' data type can be promoted to 'short' data type
+        Example: MethodOverloadingTypePromotion.java
+
+    - the data type on the left side can promoted to any of the data type present in the right side of it: 
+        1. byte -> short -> int -> long / float -> double
+        2. char -> int -> long -> float -> double
+
+    - Let us have few Valid / Invalid Cases of Method Overloading:
+        - case 1: 
+        
