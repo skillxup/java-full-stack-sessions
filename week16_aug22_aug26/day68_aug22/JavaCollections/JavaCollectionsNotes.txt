@@ -1,0 +1,79 @@
+-> Java Collections Framework
+    - the Java Collections Framework is a collection of Interfaces and Classes which helps in storing and processing the data effeciently.
+
+    - this Framework has several useful classes which have tons of useful functions which makes a programmer task is easy.
+
+    - List of Java Collections: 
+        1. ArrayList
+        2. LinkedList
+        3. Vector
+        4. HashSet
+        5. LinkedHashSet
+        6. TreeSet
+        7. HashMap
+        8. TreeMap
+        9. LinkedHashMap
+        10. HashTable
+        11. Iterator and ListIterator
+        12. Comparable and Comparator
+    
+-> Java Collections - List: 
+    - a List is an ordered collection (sequence).
+    - Lists may contain duplicate elements
+    - Elements can be inserted or accessed by their position in the list, using a zero - based index.
+
+- a List ie., categorized into 1. ArrayList and 2. LinkedList
+
+-> ArrayList: 
+    - an ArrayList class implements the List Interface and it is based on an Array Data Structure.
+
+    - It is used because of the Functionality and Flexibility
+    - ArrayList is a resizable-array implement of the List interface.
+    - It implements all optional list operations, and permits all elements including NULL.
+
+
+    - Why ArrayList is better than Array?
+        - an Array is having a limitation as which is a fixed - length
+        - Where we cannot add more elements once it is reached
+
+        - ArrayList can be a dynamically grown and shrink after addition and removal
+        - an ArrayList is a class, that enables us to use predefined methods.
+
+    - How to Create an ArrayList?
+        - syntax: 
+            ArrayList<String> aList = new ArrayList<String>();
+            ArrayList<Integer> aList = new ArrayList<Integer>();
+
+    - How to add Elements to an ArrayList?
+        - syntax: 
+            aList.add("steve");
+            aList.add(2, "steve");
+
+        - Example: 
+            AddElementsArrayList.java
+
+    - Change an Element in ArrayList: 
+        - using the set() method to change an element in ArrayList
+        - we provide the index and new element to set() method
+
+        - Example: 
+            ChangeElementArrayList.java
+
+    - Remove an Element in ArrayList:
+        - we use remove() method to remove elements
+        - Example: 
+            RemoveElementArrayList.java
+
+    - Iterating ArrayList: 
+        - looping 
+        - Example: 
+            IteratingArrayList.java
+
+    - ArrayList Size: 
+        - size()
+        - ArrayListSize.java
+        - Example: 
+            ArrayListSize.java
+
+        - Example: 
+            ArrayListAddRemoveChangeSize.java
