@@ -1,0 +1,188 @@
+-> Java Collections Framework
+    - the Java Collections Framework is a collection of Interfaces and Classes which helps in storing and processing the data effeciently.
+
+    - this Framework has several useful classes which have tons of useful functions which makes a programmer task is easy.
+
+    - List of Java Collections: 
+        1. ArrayList
+        2. LinkedList
+        3. Vector
+        4. HashSet
+        5. LinkedHashSet
+        6. TreeSet
+        7. HashMap
+        8. TreeMap
+        9. LinkedHashMap
+        10. HashTable
+        11. Iterator and ListIterator
+        12. Comparable and Comparator
+    
+-> Java Collections - List: 
+    - a List is an ordered collection (sequence).
+    - Lists may contain duplicate elements
+    - Elements can be inserted or accessed by their position in the list, using a zero - based index.
+
+- a List ie., categorized into 1. ArrayList and 2. LinkedList
+
+-> ArrayList: 
+    - an ArrayList class implements the List Interface and it is based on an Array Data Structure.
+
+    - It is used because of the Functionality and Flexibility
+    - ArrayList is a resizable-array implement of the List interface.
+    - It implements all optional list operations, and permits all elements including NULL.
+
+
+    - Why ArrayList is better than Array?
+        - an Array is having a limitation as which is a fixed - length
+        - Where we cannot add more elements once it is reached
+
+        - ArrayList can be a dynamically grown and shrink after addition and removal
+        - an ArrayList is a class, that enables us to use predefined methods.
+
+    - How to Create an ArrayList?
+        - syntax: 
+            ArrayList<String> aList = new ArrayList<String>();
+            ArrayList<Integer> aList = new ArrayList<Integer>();
+
+    - How to add Elements to an ArrayList?
+        - syntax: 
+            aList.add("steve");
+            aList.add(2, "steve");
+
+        - Example: 
+            AddElementsArrayList.java
+
+    - Change an Element in ArrayList: 
+        - using the set() method to change an element in ArrayList
+        - we provide the index and new element to set() method
+
+        - Example: 
+            ChangeElementArrayList.java
+
+    - Remove an Element in ArrayList:
+        - we use remove() method to remove elements
+        - Example: 
+            RemoveElementArrayList.java
+
+    - Iterating ArrayList: 
+        - looping 
+        - Example: 
+            IteratingArrayList.java
+
+    - ArrayList Size: 
+        - size()
+        - ArrayListSize.java
+        - Example: 
+            ArrayListSize.java
+
+        - Example: 
+            ArrayListAddRemoveChangeSize.java
+        
+    - Sort ArrayList: 
+        - sort()
+        - Example: SortArrayList.java
+
+    - Methods of ArrayList Class: 
+        1. add(Object o) - 
+            obj.add('hello');
+        2. add(int index, Object o) - 
+            obj.add(2, 'bye');
+        3. remove(Object o) - 
+            obj.remove('hello');
+        4. remove(int index) - 
+            obj.remove(3);
+        5. set(int index, Object o) - 
+            obj.set(2, 'tom');
+        6. int indexOf(Object o) - 
+            int pos = obj.indexOf('tom');
+        7. Object get(int index) - 
+            String str = obj.get(2);
+        8. int size() - 
+            int numberofitems = obj.size();
+        9. boolean contains(Object o) - 
+            obj.contains('tom')
+        10. clear() - 
+            obj.clear();
+
+    Initialize:
+    1. ArrayList Initialization using Array.asList() method: 
+        Example: ArrayListInitialization.java
+
+    2. Anonymous Inner Class method to Initialize an ArrayList
+        Example: AnonymousInnerClassMethodInitialize.java
+
+    3. Normal way of ArrayList Initialization
+        Example: NormalArrayListInitialization.java
+
+    4. Initializing an ArrayList with Multiple Same Elements using Collections.nCopies()
+        Example: InitializingArrayListMultipleElements.java
+
+
+    Looping: 
+        - There are 4 ways to loop ArrayList
+
+        1. for loop
+        2. Advanced for loop
+        3. while loop
+        4. iterator
+
+        Example: LoopingExample.java
+
+        - How to Iterate arrayList Elements using Enumeration Interface:
+            Example: IterateArrayListElementsusingEnumerationInterface.java
+
+    Finding Length of ArrayList:
+        - Example: FindingArrayListSize.java
+        - Example: AnotherExampleFindingArrayListSize.java
+
+    
+    Sorting: 
+        - Sort ArrayList / Sort ArrayList in Ascending Order
+            Example: SortArrayListinAscendingOrder.java
+            Example: SortArrayListinAscendingOrderwithIntegerType.java
+
+        - Sort ArrayList in Descending Order 
+            Example: SortArrayListinDescendingOrder.java
+            
+            Sort ArrayList entered by User in Descending Order
+            Example: SortEnteredArrayListInDescendingOrder.java
+
+        - Sort ArrayList of Objects using Comparable and Comparator
+            Example: SortArrayListOfObjects.java
+
+            - What's the need of Comparable and Comparator?
+            Example: CreatingGroupOfPropertiesMethodsOfStudent.java
+                and now, we have an ArrayList of Student Object, which can be defined like this: 
+            Example: CreatingArrayListOfStudentObject.java
+
+            Sorting of ArrayList<Object> with Comparable: 
+            Example: ImplementingComparable.java
+
+        - Comparable: 
+            - Comparable Interface is mainly used to sort the Arrays (or Lists) of Custom Objects.
+
+            - Lists of Objects that implement Comparable Interface can be sorted automatically by Collections.sort (Arrays.sort)
+
+            - Example: Sorting Arrays and Wrapper Class
+                SortingArraysandWrapperClass.java
+
+            - Example: Sorting Custom Object by Implementing Comparable Interface
+                Author.java
+                SortAuthNames.java
+
+        - Comparator: 
+            - with the concept of Comparable we can sort the objects based on any data member., for example., if we have AuthorName, BookName, AuthorAge 
+            
+            - but, 'what if we want to have multiple choices and we can sort objects based on any choice'
+
+            // Sorting arrayList al by AuthorAge
+            Collections.sort(al, new AuthorAgeComparator())
+
+            // Sorting arrayList al by BookName
+            Collections.sort(al, new BookNameComparator())
+
+            Example: 
+                Authorcpt.java
+                AuthorAgeComparator.java
+                BookNameComparator.java
+            
