@@ -1,0 +1,944 @@
+Object Oriented Programming part in Java
+===========================================
+- the OOP is a programming paradigm based on the concept of 'objects' that contains 'data' and 'methods'
+- the primary purpose of OOP is used to increase the flexibility and maintainability of programs
+- the OOP brings together the data and its methods in a single location (object) which makes it easier to understand how a program works
+
+Things what we are covering:
+------------------------------------
+1. what is an object
+2. what is a class
+3. constructor in java
+4. OOP features:
+    1. abstraction
+    2. encapsulation
+    3. inheritance
+    4. polymorphism
+5. abstract class and methods
+6. interfaces in java
+------------------------------------
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. what is an object: object -> is an instance of -> class
+    - object is a bundle of data and its behavior
+    - objects have 2 characteristics: states and behaviors
+    
+    examples of states and behaviors:
+    example1: 
+        object: house
+        state: address, color, area
+        behavior: open door, close door
+    
+    Example Code: AnExample1OfObject.java
+
+    example2: 
+        object: car
+        state: color, brand, weight, model
+        behavior: break, accelerate, slow down, gear change
+
+- Characteristics of Objects: 
+    1. abstraction: an abstraction is a process where you show only 'relevant' data and 'hide' unecessary details of an object from the user
+
+    2. encapsulation: encapsulation simply means binding the object state(fields) and behavior(methods) together, if you are creating class, you are doing encapsulation
+
+    3. message passing: a single object by itself may not be very useful. an application contains many objects. one object interacts with another object by invoking methods on that object. it is also referred as 'method invocation'
+
+2. what is a class: a class can be considered as a blueprint using which you can create as many objects as you require. 
+    
+    Example Code: AnExampleOfClass.java
+
+3. what is constructor: the constructor looks like a function (method) but it is infact not a method. it's name is same as class name and does not return any value. 
+    example: MyClass obj1 = new MyClass();
+
+4. OOP features: 
+    1. abstraction: an abstraction is a process where you show only 'relevant' data and 'hide' unecessary details of an object from the user
+        - abstract method: 
+            1. a method that is declared but not defined. only method signature no body.
+            
+            2. declared using the abstract keyword
+                exa., abstract public void playInstrument();
+            
+            3. used to put some kind of compulsion on the class who inherits the class has abstract class. the class that inherits must provide the implementation of all abstract methods of parent class else declare the subclass as abstract
+            
+            4. these cannot be abstract:
+                - constructors
+                - static methods
+                - private methods
+                - methods that are declared 'final'
+            Example: AbstractClassExampleDemoSample.java
+            Example: DogAbstraction.java
+
+    2. encapsulation: the encapsulation simply means binding object state (fields) and behavior (methods) together
+    Example: EncapsulationExample.java
+
+    3. inheritance: the process by which one class acquires the properties and functionalists of another class
+    Example: MathTeacher.java
+
+    - There are different types of Inheritance:
+        1. Single Inheritance: refers to a child and parent class relationship where a class extends the another class. B -> A
+
+        2. Multilevel Inheritance: refers to a child and parent class relationship where a class extends the child class. C -> B -> A
+
+        3. Hierarchial Inheritance: refers to a child and parent class relationship where more than one class extends the same class. B -> A, C -> A
+
+        4. Multiple Inheritance: refers to the concept of one class extending more than one classes, which means a child class has 2 parent classes. (note: Java doesn't support the Multiple inheritance). C -> B, C -> A
+
+        Refer: Java-Types-Of-Inheritance.jpg
+        
+    4. polymorphism: the polymorphism allows you to perform a single action in different ways
+    Example: UnderstandingPolymorphism.java
+
+    - Types of polymorphism: 
+        1. Static polymorphism: the polymorphism that is resolved during compiler time is known as static
+
+        2. Dynamic polymorphism: the polymorphism is a process in which a call to an overidden method is resolved at runtime
+    Example: DogOverriding.java
+
+- Interfaces: an interface is a blueprint of a class, which can be declared by using 'interface' keywword. the 'interfaces' can contain only 'static constants' and 'abstract methods'. 
+    syntax: class className extends superClass implements interface1, interface2, ...
+
+    1. all methods in an interface are implicitly public and abstract
+    2. an interface may contain final variables
+    3. a class can extend only one other class, but it caan be implemented any number of interfaces
+    4. when a class implements an interface it has to give the definition of all the abstract methods of interface, else it can be declared as an abstract class
+    5. an interface reference can point to objects, of its implementation classes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Generalization and Specialization: 
+    - the process of identifying the similarities among different classes is called Generalization.
+
+- Access Specifiers: 
+    - decide the scope of a data member, method or class - public, private keywords
+    - there are 4 types of access specifiers: 
+        1. public - accessible to all, other objects can also access this member variable or function.
+
+        2. private - not accessible by other objects, private members can be accessed only by the methods in the same class. 
+            - objects accessible only in class in which they are declared
+        
+        3. protected - the scope of a protected variable is within the class which declares it and in the class which inherits from the class (scope is class and subclass)
+        
+        4. default - scope is package level. we do not need to explicitly mention default as when we do not mention any access specifiers it is considered as default
+
+-> Enchancement of Constructors: 
+    - There are 3 types of constructors
+        1. default: if you do not implement any constructor in your class, then the java compiler inserts a default constructor. 
+
+        2. no-arg: the constructor with no arguments is known as no-arg constructor
+
+        3. parameterized: the constructor with n no of arguments which are passed at object declaration as a parameters 
+    - Example: ConstructorExample2.java
+
+    - what if you implement only parameterized constructor in class:
+    Example: OnlyParameterizedConstructor.java
+
+    - Constructor Chaining: when a constructor calls another constructor of same class
+    Example: MyChildClass.java
+
+    - Super Keyword:  
+        - whenever a child class constructor gets invoked it implicitly invokes the constructor of parent class
+
+        - the use of super keyword: 
+            1. to access the data members of parent class when both parent and child class have member with same name
+            2. to explicitly call the no-arg and parameterized constructor of parent class
+            3. to access the method of parent class when child class has overriden that method
+
+        - 1. how to use super keyword to access the variables of parent class
+        Example: Sublass.java - about variable(s) access
+        - small change: System.out.println(super.num);
+
+        - 2. use of super keyword to invoke constructor of parent class
+        Example: SubClassInvokeConstructor.java
+
+        - 3. parameterized super() call to invoke parameterized constructor of parent class
+        Example: ParameterizedSuperKeyword.java
+
+        - 4. how to use super keyword in case of method overriding
+        Example: SuperKeywordMethodOverriding.java
+
+        - 5. what if the child class is not overriding any method: no need of super
+
+    
+    - Constructor Overloading: the constructor overloading is a concept of having more than one constructor with different parameters list, in such a way so that each constructor performs a different task.
+
+-> What is Overriding?
+    - In Java, method overriding occurs when a subclass (child class) has the same method as the parent class. In other words, method overriding occurs when a subclass provides a particular implementation of a method declared by one of its parent classes.
+
+-> What is Overloading?
+    - In Java, two or more methods may have the same name if they differ in parameters (different number of parameters, different types of parameters, or both). These methods are called overloaded methods and this feature is called method overloading.
+
+-> Overloading vs Overriding:
+    - What is Overloading and Overriding? When two or more methods in the same class have the same name but different parameters, it's called Overloading. 
+    - When the method signature (name and parameters) are the same in the superclass and the child class, it's called Overriding.
+
+-> Method Overloading: 
+    - allows a class to have 'more than one method with the same name', if their argument lists are different
+    - it is simmilar to 'constructor overloading'
+    Example: ConstructorExample2.java
+
+    - There are 3 ways to overload a method: 
+        1. number of parameters
+            add(int, int)
+            add(int, int, int)
+
+        2. data type of parameters
+            add(int, int)
+            add(float, float) 
+
+        3. sequence of data types of parameters
+            add(int, float)
+            add(float, int)
+
+    - invalid case of method overloading:
+        int add(int, int)
+        float add(int, int)
+
+    - Method Overloading is an example of 'Static Polymorphism'
+        - Static Polymorphism (Compile Time): 
+        Example: StaticPolymorphism.java
+
+    - few points to note: 
+        1. Static Polymorphism is also know as Compile Time Binding or Early Binding
+        2. Static Binding happens at Compile Time. 
+
+    Examples of Method Overloading:
+    
+    Example1: Overloading - Different Number of Parameters in Arguments List
+        Example: DifferentNoParamsArgsList.java
+
+    Example2: Overloading - Difference in Data Types of Parameters
+        Example: DifferenceDataTypesParams.java
+
+    Example3: Overloading - Sequence of Data Types of Arguments
+        Example: SequenceDataTypesArgs.java
+
+    - Method Overloading and 'Type Promotion': 
+        - Type Promotion: when a data type of smaller size is promoted to the data type of bigger size
+        - for example: 'byte' data type can be promoted to 'short' data type
+        Example: MethodOverloadingTypePromotion.java
+
+        - the data type on the left side can promoted to any of the data type present in the right side of it: 
+            1. byte -> short -> int -> long / float -> double
+            2. char -> int -> long -> float -> double
+
+        - Let us have few Valid / Invalid Cases of Method Overloading:
+        
+        - case 1: 
+            int mymethod(int a, int b, float c)
+            int mymethod(int var1, int var2, float var3)
+        result: compile time error. - argument lists are exactly same. both methods are having same number, data types and same sequence of data types
+
+        - case 2: 
+            int mymethod(int a, int b)
+            int mymethod(float var1, float var2)
+        result: perfectly fine. - valid case of overloading. here, the data types of arguments are different
+
+        - case 3: 
+            int mymethod(int a, int b)
+            int mymethod(int num)
+        result: perfectly fine. - valid case of overloading. here, the number of arguments are different
+
+        - case 4: 
+            float mymethod(int a, float b)
+            float mymethod(float var1, int var2)
+        result: perfectly fine. - valid case of overloading. here, the sequence of the data types of parameters are different.
+
+        - case 5: 
+            int mymethod(int a, int b)
+            float mymethod(int var1, int var2)
+        result: compile time error. - argument lists are exactly same.
+
+        Question 1: return type, method name and argument list same
+        Example 1: QuestionOne.java
+        Answer 1: compile time error
+
+        Question 2: return type is different, method name and argument list same
+        Example 2: QuestionTwo.java 
+        Answer 2: compile time error
+
+-> Method Overriding: 
+    - declaring a method in a 'sub class' which is already presented in the 'parent class' is known as - method overriding.
+    Example: MethodOverriding.java
+
+    - Advantages of Method Overriding: 
+        1. Method Overriding and Dynamic Method Dispatch - method overriding is an example of 'runtime polymorphism'
+        Example: DynamicMethodDispatch.java
+
+    - Rules of Method Overriding:
+        1. Argument list: the Argument list of overriding method must match the overriden method. the data types of the arguments and their sequence should exactly match
+        
+        2. Access Modifier of the overriding method cannot be more restrictive than the overriden method of a parent class.
+        Example: AccessModifierOverridingMethod.java
+        in parent class: public - in child class: protected (its not accepted)
+        Example: 
+        in parent class: protected - in child class: public (its accepted)
+
+        3. private, static and final methods cannot be overridden as they are local to the class
+
+        4. Overriding method can throw 'Unexpected Exceptions' 
+
+        -> Exception Handling: 
+            - Exception Handling is one of the most important feature of java programming that allows us to Handle the Runtime Errors caused by Exceptions.
+
+            - What is an Exception?
+                - an Exception is an unwanted event that interrupts the normal flow of the program. 
+
+                - When an Exception occurs program execution gets Terminated.
+
+            - Why an Exception occurs?
+                - Reasons: Opening a non - existing file, network connection problem, etc., 
+
+            - Advantages of Exception Handling:
+                - Exception Handling ensures that the flow of the program doesn't break when an exception occurs
+
+            - Difference between the Error and Exception:
+                - Error: the Error indicates that something severe enough had gone wrong, the application should crash rather than try to handle the error.
+
+                - Exception: the Exceptions are events that occurs in the code. A programmer can handle such conditions and take necessary actions.
+
+                - Few examples: 
+                    - NullPointException - when you try to use a reference that points to null.
+
+                    - ArithmaticException - when bad data is provided bu user, - and you are try to divide a number by zero
+                    
+                    - ArrayIndexOutOfBoundsException - when you try to access the elements of an array out of its bounds, - ex., array size is 5 and you are trying to access to the 10th element
+
+        - Types of Exceptions: 1. Checked Exceptions and 2. UnChecked Exceptions
+
+        - Checked and UnChecked Exceptions:
+            - There are 2 types of exceptions: 1. checked exception and 2. unchecked exception
+            
+            - Checked Exceptions: all exceptions oter than RunTime Exceptions are know an Checked Exceptions
+
+            - the difference between the 'checked' and 'unchecked' exceptions: is that the 'checked exceptions' are 'checked at compile time', whereas the 'unchecked exceptions' are 'checked at runtime'
+
+        - What are Checked Exceptions? 
+            - the concept of checked exceptions is checked at compile time
+        
+            - Method1: declare the exception using 'throws' keyword
+            Example: CheckedExceptions.java
+
+            - Method2: Handle them using 'try-catch' blocks
+            Example: HandleTryCatchExceptions.java
+
+            - There are few other checked exceptions:
+                1. SQLException
+                2. IOEXception
+                3. ClassNotFoundException
+                4. InvocationTargetException
+
+        - What are Unchecked Exceptions?
+            - UnChecked exceptions are not checked at Compile Time.
+            
+            - If your program is throwing an unchecked exception and even if you didn't handle / declare that exception, the program won't give a 'compilation error'
+
+            Example: UnCheckedExceptions.java
+            Example: HandleUnCheckedExceptions.java
+
+            - There are few other unchecked exceptions:
+                1. NullPointerException
+                2. ArrayIndexOutOfBoundsException
+                3. ArithmaticException
+                4. IllegalArgumentException
+                5. NumberFormatException
+
+            - Additional Points about Exceptions are at 814th line
+=====================================================
+
+        - Rules of Method Overriding:
+        5. binding of overridden methods happens at runtime which is known as 'dynamic binding' 
+
+        - What is Binding? and How many typees of Bindings?
+            - What is Binding: an Association of method call to the method body is known as Binding.
+            
+            - There are 2 types of bindings:
+                1. Static Binding: Static Binding happens at Compile Time
+                2. Dynamic Binding: Dynamic Binding happens at Run Time
+
+        - What is 'reference' and 'object'?
+            Example: ReferenceObject.java
+
+        - Static Binding or Early Binding: 
+            - the binding which can be resolved at compile time
+            - the binding of static, private and final methods is 'compile time'
+            Example: StaticBindingBoy.java
+
+        - Dynamic Binding or Late Binding: 
+            - when compiler is not able to resolve the call / binding at compile time, such binding is known as dynamic binding.
+            - 'Method Overriding' is an exact example of dynamic binding
+            - dynamic binding as in overriding both parent and child classes have same method and in this case the 'type of the object' determines which method is to be executed.
+            - the 'type of object is detrmined' at run time so this is know as dynamic binding
+            Example: DynamicBindingDemo.java
+
+        - Differences between the Static Binding and Dynamic Binding:
+            1. Static Binding happens at Compile Time while Dynamic Binding happens at Run Time
+            
+            2. Binding of private, static and final methods always happen at Compile Time since these methods cannot be overridden. 
+            When the method overriding is actually happening and the reference of the parent type is assigned to the object of child class type then such binding is resolved during RunTime
+            
+            3. The binding of 'Overloaded Methods' is static and the binding of 'Overridden Methods' is dynamic.
+
+        6. if a class is extending an 'abstract class' or implementing an 'interface' then it has to override all the abstract methods unless the class itself is a abstract class
+
+    - Abstract Class: 
+        - a class that is declared using 'abstract' keyword is known as abstract class.
+        
+        - it can have abstract methods (methods without body) as well as concrete methods (regular methods with body) 
+        
+        - a normal class (non - abstract class) cannot have abstract methods
+        
+        - * an abstract class cannot be instatiated, which means that you are not allowed to 'create an object' of it. 
+
+        Example: AbstractClassExampleDog.java
+
+        - Abstract Class Declaration: 
+            - an Abstract class outlines the methods but not necessarily implements all the methods
+
+            Example: AbstractClassDeclaration.java
+
+            - Rules: 
+                1. there are cases when it it difficult or often unnecessary to implement all the methods in parent class. 
+                
+                in these cases, we can declare the parent class as abstract, which makes it is special class which is not complete on its own. 
+                
+                a class derived from the abstract class must implement all those methods that are declared as abstract in the parent class.
+
+                2. abstract class cannot be instatiated which means you cannot create the object of it. 
+            
+                to use this class, you need to create another class that extends this class and provides the implementation of abstract methods.
+
+                then you can use the object of that child class to all non - abstract methods of a parent class as well as the implementation methods
+
+                3. if a child does not implement all the abstract methods of abstract parent class, then the child class must need to be declared abstract as well.
+
+
+        - why can't we create the object of an abstract class?
+            - because these classes are incomplete, they have abstract methods that have no body, 
+            
+            - so if java allows you to create an object of this class  then if someone calls abstract method using object then what would happen? there would be no actual implementation of the method to invoke.
+            
+            - also because of an object is concrete.
+            - an abstract class is like a template, so you can have to extend it and build on it before you can use it.
+
+        - an example to demostrate that 'object creation of abstract class is not allowed':
+        Example: ObjectCreationNotAllowedAbstract.java
+
+    - Abstract class vs Concrete class: 
+        - a class which is not abstract is referred as Concrete class.
+
+        - key points: 
+            1. an abstract class has no use until unless it is extended by some other class.
+
+            2. if you declared an 'abstract method' in a class then you must declared the class abstract as well. 
+            
+            3. it can have non - abstract method as well.
+
+        - an overview about 'abstract class and its methods':
+            1. abstract methods has no body
+
+            2. always end the declaration with semicolon(;)
+
+            3. it must be overriden. an abstract class must be extended and in the same way abstract method must be overridden
+
+            4. a class has to be declared abstract to have abstract methods
+
+        Example: AbstractClassSummary.java
+
+    - Interfaces: 
+        - an abstract class which is used for achieving partial abstraction.
+        - abstraction is a process where you can show only 'relevant' data and hide unnecessary details of an object.
+
+        - interface looks like a class but it is not a class.
+        - an interface can have methods and variables just like the class but methods declared in interface are by default abstract
+        - also, the variables declared in an interface are public, static and final by default.
+
+        - what is the use of 'interface'?
+            - since methods are in interfaces do not have body, they have to be implemented by the class before you can access them. 
+            - the class that implements interface must implement all the methods of that interface.
+            - as the java, does not allow you to extend more than one class, however you can implement more than one interfaces in your class.
+
+        - syntax: the 'interfaces' are declared by specifying a keyword 'interface'
+        Example: InterfaceSyntax.java
+
+        - an Example of Interface:
+        Example: InterfaceExample.java
+
+    - Difference between 'abstract class' and 'interface': 
+        - differences between the 'abstract class' and 'interface'
+        find out: AbstractClass_vs_Interface.docx
+
+    Difference 1:
+        1. Abstract class can extend only one class or abstract class at a time
+        Example: AbstractClassExtendOneClass.java
+
+        2. Interface can extend any number of interfaces at a time
+        Example: InterfaceExtendsNInterfaces.java
+
+    Difference 2: 
+        1. Abstract class can be extended (inherited) by a class or an abstract class
+        Example: AbstractClassExtendedAbstractClass.java
+
+        2. Interfaces can be extended only by interfaces. Classes has to implement them. Instead of Extend.
+        Example: InterfacesExtendInterfaces.java
+
+    Difference 3: 
+        1. Abstract class can have both Abstract and Concrete methods
+        Example: AbstractClassAbstractConcreteMethods.java
+
+        2. Interface can only have abstract methods, they cannot have concrete methods
+        Example: InterfaceOnlyAbstractMethods.java
+
+    Difference 4: 
+        1. In Abstract class, the keyword 'abstract' is mandatory to declare a method as an abstract
+        Example: AbstractClassKeywordMandatory.java
+
+        2. In Interface, the keyword 'abstract' is optional to declare a method as an abstract because all the methods are abstract by default
+        Example: InterfaceKeywordAbstractOptional.java
+
+    Difference 5: 
+        1. Abstract class can have protected and public abstract methods
+        Example: AbstractClassProtectedPublicAbstractMethods.java
+
+        2. Interface can have only public abstract methods
+        Example: InterfaceOnlyPublicMethods.java
+
+    Difference 6: 
+        1. Abstract class can have static, final or static final variables with any access specifier
+        Example: AbstractClassStaticFinalVariablesAccessSpecifier.java
+
+        2. Interface can have only public static final (constant) variable
+        Example: InterfacePublicStaticFinalVariable.java
+
+    - Abstract Method: 
+        - a method without body (no implementation) is know as abstract method.
+        - a method must always be declared in an abstract class. (or)
+        - if a class has an abstract method, it should be declared abstract as well.
+        - syntax of abstract class: abstract class className {}
+        - syntax of abstract method: public abstract int methodName(int n1, int n2)
+
+        - rules of abstract method:
+            1. abstract methods don't have body, they just have method signature
+            
+            2. if a class has an abstract method, it should be declared abstract, the vice versa is not true., 
+            
+            3. if a regular class extend an abstract class, then the class must have to implement all the abstract methods of abstract parent class or it has to be declared abstract as well
+
+        - 1: abstract method in an abstract class
+            Example: AbstrctMethodinAbstractClass.java
+
+        - 2: abstract method in interface
+            Example: AbstractMethodinInterface.java
+
+    - Interface and Inheritance: 
+        - an interface cannot implement another interface.
+        - it has to extend the other interface.
+        Example: SampleInterfaceDemo.java
+
+        - Tag or Marker Interface: 
+            - an empty interface is known as tag or marker interface.
+            - example., Serializable, EventListener, Remote(java.rmi.Remote) are tag interfaces.
+            - these interfaces do not have any field and methods in it.
+            - the Tag or Marker Interface looks like: 
+            Example: TagOrMarkerInterface.java
+
+        - Nested Interfaces: 
+            - an interface which declared inside another interface or class is called nested interface
+            - they are also called as 'inner interface'
+            - for example., Entry Interface in collections framework is declared inside Map interface, that's why we don't use it directly rather we use it like this: Map.Entry
+
+            - key points: 
+                1. we can't instantiate an interface. this means we cannot create the object of an interface.
+                
+                2. interface provides full abstraction as none of its methods have body. on the other hand abstract class provides partial abstraction as it can have abstract and concrete (methods with body) methods both.
+                
+                3. implements keyword is used by classes to implement an interface
+                
+                4. while providing implementation in class of any method of an interface, it needs to be mentioned as public
+                
+                5. class that implements any interface must implement all the methods of that interface, else the class should be declared abstract
+                
+                6. interface cannot be declared as a private, protected or transient
+                
+                7. all the interface methods are by default abstract and public
+                
+                8. variables declared in interface are public, static and final by default
+
+                Example: VariablesDeclaredPublicStaticFinal.java
+
+                9. interface variables must be initialized at the time of declaration otherwise compiler will throw an error
+
+                Example: 
+                interface Try {
+                    inx x; // compile - time error
+                }
+
+                10. inside any implementation class, you cannot change the variables declared in interface because by default they are public, static and final.
+
+                Example: 
+                class Sample implements Try {
+                    public static void main(String args[]) {
+                        x = 20; // compile - time error
+                    }
+                }
+
+                11. an interface can extend any interface but cannot implement it. class implements interface and 
+                interface extends interface
+
+                12. a class can implement any number of interfaces
+
+                13. if there are two or more same methods in two interfaces and a class implements both interfaces, implementation of the method once is enough
+
+                Example: ClassImplementsBothInterfaces.java
+
+                14. a class cannot implement two interfaces that have methods with same but different return type
+
+                Example: ClassCannotImplementsWithDifferentReturnType.java
+
+                15. variable names conflicts can be resolved by interface name
+                Example: VariablesConflictsResolvedInterfaceName.java
+
+        - Advantages of Interface: 
+            1. without bothering about the implementation part, we can achieve the security of implementation
+
+            2. in java, Multiple Inheritance is not allowed, however you can use interface to make use of it as you can implement more than one interface.
+                
+
+        - Does Java support Multiple Inheritance?
+            - when one class extends more than once classes then it is called 'Multiple Inheritance'
+
+            - Multiple Inheritance is a feature of an object-oriented concept, where a class can inherit properties of more than one parent class. The problem occurs when there exist methods with the same signature in both the superclasses and subclass
+
+            - Can we implement more than one interfaces in a class?
+                - Yes, we can implement more than one interface
+                Example: ImplementMoreThanOneInterface.java
+
+    - Encapsulation: 
+        - The encapsulation simply means binding object state (fields) and behavior (methods) together
+        
+        - The idea behind the encapsulation is to hide the 'implementation details from users'
+
+        - If a 'data member is private' it means it 'can only be accessed' within the 'same class'. No outside class can access 'private data member (variable) of other class'.
+
+        How to implement the encapsulation?
+
+        1. make the instance variables private so that they cannot be accessed directly from outside the class. you can only set and get values of these variables through the methods of the class
+
+        2. have getter and setter methods in the class to set and get the values of the fields 
+
+        Example: GetterSetterMethodsOfEncapsulation.java
+
+        - Access Modifiers: 
+            - an access modifier restricts the access of a class, constructor, data member and method in another class.
+            - we have access modifier: 
+                1. default
+                2. private
+                3. protected
+                4. public
+
+            1. Default access modifier: 
+                - when we do not mention any access modifier, it is called as a default access modifier
+                
+                - the scope of this modifier is limited to the package only
+                
+                - if we have a class with a default access modifier in a package, only those classes can have an access this class
+                
+                - no other class outside this package can access this class
+
+                - similarly, if we have a default method or data member in a class, it would not be visible in the class of another package
+
+                Example:  
+                    Addition.java
+                    Test.java
+
+            2. Private access modifier: 
+                - the scope of private access modifieris limited to the 'class only'
+
+                1. private data members and methods are only accessible within the class
+
+                2. class and interface cannot be declared as private
+
+                3. if a class has 'private constructor' then you cannot create the object of that class from outside of the class
+
+
+                Example: ABC.java
+
+                The above ABC.java code will give a compilation error because of we are trying to access the private data member and method of a class ABC. - The private data member and methods are only accessible within the class.
+
+            3. Protected access modifier: 
+
+                - protected data member and method are only accessible by the classess of the same package and the subpackagespresent in any package
+
+                - you can also say that the protected access modifier is similar to default access modifier with one exception that it has a visibility in sub classes
+
+                - classes cannot be declared protected
+
+                - this access modifier is generally used in a parent child relationship
+
+                Example: 
+                    ProtectedAddition.java
+                    ProtectedTest.java
+
+            4. Public access modifier: 
+                
+                - the members, methods and classes that are declared public can be accessed from anywhere
+
+                Example: 
+                    PublicAddition.java
+                    PublicTest.java
+
+            - The scope of access modifiers: 
+                Doc: ScopeOfAccessModifiers.docx
+
+        - Packages: 
+            - a package is a pack or group of classes, interfaces and other packages.
+            - we use packages to organize our classes and interfaces.
+            - we have two types of packages: 
+                1. built-in packages: 
+                    - packages which are already defined like., 
+                    example: import java.util.Scanner, java.io.*, java.lang.* etc., 
+
+                    -> java: is a top level package
+                    -> util: is a sub package
+                    -> Scanner: is a class which is present in the sub package of util
+
+                2. user defined packages: 
+                    - which we create manually
+
+            - Advantages of using packages: 
+                1. Reusability
+                2. Better Organization
+                3. Name Conflicts: we can define 2 classes with the same name in different packages so to avoid name collision, we can use packages
+
+            - Example 1: Understanding Packages 
+                1. You need to create the required file which you have planned to do., - Example: LetMeCalculatePackage.java
+                    - in this file you have to import - 'import packagename.*' the required package - ex., package letmecalculate - of course you to run this file 'LetMeCalculatePackage.java'
+                    
+                    - whereas to access the definition of package you have create the dir name with the same name as package name ex., we have created the package name as 'letmecalculate' - so you have to create a new dir with the name of package: 'letmecalculate'
+
+            - Example 2: Creating a class inside package while importing another package
+                - Example: creating a dir., in that two files:
+                anotherpackage/
+                    1. AnotherPackageExample.java
+                    2. PackageCalculator.java
+
+                - package declaration
+                - package import
+
+            - Example 3: Using fully qualified name while importing a class
+                - you can use fully qualified name to avoid the import statement.
+                Example: FullQualifiedAvoidImport.java
+
+            - SubPackages:
+                - a package inside another another package
+                
+                - for example., if we create a package inside 'letmecalculate' package then that will be called as a sub package
+                
+                - lets say, we have created another package inside the 'letmecalculate' and the subpackage name is 'multiple', so if we create a class in this subpackage it should have this package declaration in the very beginning
+
+        Points to Remember:
+            1. sometimes class name conflict may occur. 
+                - for example., if we are having two packages 'abcpackage' and 'xyzpackage' and both the packages have a class with the same name., let it be JavaExample.java, suppose a class import both these packages like this: 
+                
+                import abcpackage.*;
+                import xyzpackage.*;
+
+                This will throw the compilation error. to avoid such errors you need to use fully qualified name method
+
+                abcpackage.JavaExample obj = new abcpackage.JavaExample();
+                xyzpackage.JavaExample obj2 = new xyzpackage.JavaExample();
+
+                - this is a way that you can avoid the import package statements and avoid the name conflict error
+
+            2. If we create a package inside a package while importing another package then the package declaration should be the first statement
+
+                package abcpackage;
+                import xyzpackage.*;
+
+            3. a class can have only one package declaration but it can have more than one package 'import statement'
+
+                package abcpackage;
+                import xyzpackage;
+                import anotherpackage;
+                import anything;
+
+            4. The wild card import like package.* should be used carefully when working with subpackages. ex., we have a package 'abc' and inside that package we have another package foo, and now foo is a subpackage
+
+                classes inside abc are: Example1, Example2, Example3
+                classes inside foo are: Demo1, Demo2 
+
+            so if we import the package 'abc' using wildcard like this: 
+
+                import abc.*;
+
+            then it will only import classes of Example1, Example2, Example3 but it will not import the classes of sub package
+
+            to import the classes of subpackage then, 
+
+                import abc.foo.*;
+
+            then it will import even the Demo1, Demo2 but now it will import Example1, Example2, Example3
+
+            so to import all the classes present in package and subpackage then we need to use the 2 import statements
+
+                import abc.*;
+                import abc.foo.*;
+
+        -> Garbage Collection: 
+            - when the JVM starts, it creates a heap area which is known as runtime data area.
+            - this is where all the objects are stored.
+            - as it is limited, it is required to manage efficiently by removing the objects that are no longer in use.
+            - the process of removing unused objects from heap memory is know as garbage collection
+
+            - When does Java perform Garbage Collection?
+                1. When the object is no longer reachable:
+                    Example: 
+                        Example obj = new Example();
+                        obj = null;
+
+                    Example: 
+                        char[] sayHello = {"h", "e", "l", "l", "o"};
+                        String str = new String(sayHello);
+                        str = null;
+
+                2. When one reference is copied to another reference: 
+                    Example: 
+                        Example obj1 = new Example();
+                        Example obj2 = new Example();
+                        obj2 = obj1;
+
+            - How to request JVM for Garbage Collection:
+                    - Garbage Collection Example: 
+                    Example: 
+                        GarbageCollectionExample.java
+            
+===========================================
+
+-> Exception Handling: (refer to 279th line)
+    - The Exception Handling allows us to handle runtime errors caused by exception.
+    - What is an Exception?
+        - an Exception is an unwanted event that interrupts the normal flow of the program.
+        
+        - When an Exception occurs program execution gets terminated.
+        
+        - By handling the exceptions we can provide a meaningful message to the user about the issue rather than a system generated message
+
+    - Why an Exception occurs?
+        - There might be some reasons: Network Connection Problem, Bad Input Data Provided by User etc., 
+
+    - Try - catch: 
+        - a try - catch is a block that contains set of statements where an exception can occur.
+
+        - a try block is always followed by a catch block, which handles the exception that occurs in associated try block.
+
+        - a try block must be followed by catch block or finally or both
+
+        - syntax: TryCatchSyntax.java
+
+        Example: TryCatchExample1.java
+
+    - Multiple catch blocks: 
+
+        1. a single try block can have any number of catch blocks
+
+        2. a generic catch block can handle all the exceptions
+
+        Example: CatchingMultipleExceptions.java
+
+        Example1: ArithmeticExceptionExample.java
+        Example2: ArrayIndexOutOfBoundsExceptionExample.java
+        Example3: NumberFormatExceptionExample.java
+        Example4: StringIndexOutOfBoundsExceptionExample.java
+        Example5: NullPointerExceptionExample.java
+
+        3. if no exception occurs in try block then the catch blocks are completely ignored
+
+        4. corresponding catch blocks execute for that specific type of exception
+
+        5. you can also throw exception, which is an advanced concept which you can write a customized error message
+
+    - Nested Try - catch:
+
+        - when a try catch block is present in another try block then it is called nested try catch block 
+
+        - syntax: NestedTryCatchBlockSyntax.java
+        Example: NestedTryCatchBlockExample.java
+        
+        Example: AnotherNestedTryBlockExample.java
+
+    - Finally block: 
+        - a finally block contains all the crucial statements that must be executed whether the try block executed or catch block executed but then the finally block executed
+
+        - syntax: FinallyBlockSyntax.java
+        - Example: FinallyBlockExample.java
+
+        - few points regarding finally block:
+            1. a Finally block must be associated with a Try Block, you cannot use Finally without a Try Block.
+
+            2. Finally Block is optional
+
+            3. When there is no Exception in Try Block then the Finally Block is executed after the Try Block
+
+            4. An Exception in the Finally Block, behaves exactly like any other Exception
+
+            5. The statements present in the Finally Block execute even if the Try Block contains control transfer statements like return, break or continue
+
+        Example: TryBlockReturnFinallyExample.java
+
+        - cases when the finally block doesn't execute: 
+
+            - the death of a Thread
+            - using of the System.exit() method
+            - due to an exception arising in the finally block
+
+        - Finally and Close():
+            - close() 
+                - a close() is a statement which is used to all the open streams in a program. 
+
+                Example: FinallyCloseStatement.java
+
+        - Finally Block without Catch:
+            - a  try-finally block is possible without catch block.
+
+            Example: FinallyBlockWithOutCatch.java
+        
+        - Finally Block and System.exit(): 
+            - System.exit() - statement behaves differently than 'return statement'
+
+            Example: SystemExitStatement.java
+
+        Examples: Try Catch Finally Blocks
+        Example 1: Finally Block when no Exception occurs in Try Block
+            FinallyBlockNoExceptionOccursTryBlock.java
+
+        Example 2: Finally Block when an Exception occurs in Try Block
+            FinallyBlockWithExceptionOccursTryBlock.java
+
+        Example 3: When Exception occurs in Try Block and handled properly in Catch Block
+            ExceptionOccursHandledCatchBlock.java
+
+    - Throw Exception:
+        - As we have discussed different defined Exception Classes such as ArithmaticException, NullPointerException, ArrayIndexOutOfBoundsException etc., 
+
+        - these Exceptions are set to trigger on different - 2 conditions.
+        - we can define our own set of conditions or rules and Throw an Exception explicitly using the 'throw' keyword
+
+
+    - Custom Exceptions: 
+        - Custom Exception can also be defined as User Defined Exception
+        - Example: UserDefinedExceptionExample1.java
+
+        - Notes: 
+            1. User Defined Exception must extend Exception Class
+            2. The Exception is thrown using 'throw' keyword
+        
+        - Example 2: UserDefinedExceptionExample2.java with keyword - 'throws'
+        - Example 3: ThrowExample1.java
+
+    - Throws Exception: 
+        - there are 2 types of Exceptions: 1. Checked and 2. UnChecked
+        
+        - What is the need of having 'throws' keyword when you can handle exception using 'try-catch'?
+            - The 'throws' does the same thing that try - catch does but there are some cases where you prefer 'throws' over 'try - catch'
+            
+            - Example 1: ThrowsUsageExample1.java (it's just for understanding)
+            - Example 2: ThrowsKeywordExample1.java
+
