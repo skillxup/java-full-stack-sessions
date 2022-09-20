@@ -1,0 +1,46 @@
+-> Enums:
+    - An Enum is a special type of data type which is basically a collection (set) of constants.
+    - Lets write how to define Enum
+    Example: DefineEnumSyntax.java
+
+-> How to assign value to a enum type?
+    Syntax: Directions dir = Directions.NORTH;
+    Here the variable dir is of type Directions (this is enum type). This variable can take any value, out of the possible four values (EAST, WEST, NORTH, SOUTH).
+
+Use of Enum types if-else statements
+    Example: UseEnumInIfElseStatement.java
+
+Enum Example with If-Else:
+    Example: EnumExampleWithIfElse.java
+
+Enum Example with Switch Case:
+    Example: EnumExampleWithSwitchCase.java
+
+Enum Example with Iterate: 
+    Example: EnumExampleWithIterate.java
+
+
+Enum Fields and Methods:
+    Example: EnumFieldsandMethods.java
+
+-> Important points:
+    1. While defining Enums, the consts should be declared first, prior to any fields or methods
+
+    2. When there are fields and methods declared inside Enum, the list of enum constants must end with a semicolon(;)
+
+*************************************************************************************
+
+-> Annotations: 
+    - The Java Annotations allows to add metadata information into our source code, although they are not a part of the program itself.
+    
+    - Annotations were added to java from JDK 5. 
+
+    - Annotations has no direct effect on the operation of the code they annotate.
+
+-> Here we are going to discuss: 
+    1. Usage of annotations
+    2. How to apply annotations
+    3. What predefined annotation types
+    4. How to create the custom annotations
+
+
