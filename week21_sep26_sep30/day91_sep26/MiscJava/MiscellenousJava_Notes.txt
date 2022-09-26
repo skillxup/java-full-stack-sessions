@@ -1,0 +1,62 @@
+-> Topics that we are going to discuss: 
+	1. String
+	2. Multithreading
+	3. Serialization
+	4. AWT
+	5. Swing
+	6. Autoboxing and Unboxing
+	7. Wrapper Class
+
+****************************************************************************
+
+1. Strings in Java: 
+	- String is a sequence of characters eg., "Hello"
+	- It is an immutable object which means it is constant and cannot be changed once it is created.
+	
+	Here we are going to discuss: About String Class and String Methods
+
+-> Creating a String: 
+	- There are 2 ways to Create a String: 
+	1. String literal
+	2. Using new keyword
+
+	1. String literal: 
+		- a string literal is a sequence of characters enclosed in double quotation marks ( " " )
+		- strings can be created by assigning a String literal to a String instance: 
+
+		String str1 = "JavDoc";
+		String str2 = "JavDoc";
+
+	2. Using New Keyword: 
+		- to create a new instance of a string, we use 'new' keyword.
+		- when you create a string using new keyword, it gets a heap memory rather than string 'constant pool'
+
+		String str3 = new String("JavaDoc");
+		String str4 = new String("JavaDoc");
+
+	Example: StringLiteralvsNewString.java
+	Example: AnotherStringArrayExample.java
+	Example: DisplayingFirstAndLastCharacterOfAString.java
+	Example: CompareStringLiteralVsNewStringUsingEquals.java
+	Example: StringConcatenation.java
+
+	- Java String Methods: 
+		1. char charAt(int index)
+		2. boolean equals(Object obj)
+		3. boolean equalsIgnoreCase(String string)
+		4. int compareTo(String string)
+		5. int compareToIgnore(String string)
+		6. boolean startsWith(String prefix, int offset)
+		7. boolean startsWith(String prefix)
+		8. boolean endsWith(String suffix)
+		9. int hashCode()
+		10. int indexOf(int ch)
+		11. int indexOf(int ch, int fromIndex)
+		12. int lastIndexOf(int ch)
+		13. int lastIndexOf(int ch, int fromIndex)
+		14. int indexOf(String str)
+		15. int lastIndexOf(String str)
+		16. String substring(int beginIndex)
+		17. String substring(int beginIndex, int endIndex)
+		18. String concat(String str)
+		19. String replace(char oldChar, char newChar)

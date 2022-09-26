@@ -1,0 +1,350 @@
+-> Enums:
+    - An Enum is a special type of data type which is basically a collection (set) of constants.
+
+    - Lets write how to define Enum
+    Example: DefineEnumSyntax.java
+
+-> How to assign value to a enum type?
+    Syntax: Directions dir = Directions.NORTH;
+    Here the variable dir is of type Directions (this is enum type). This variable can take any value, out of the possible four values (EAST, WEST, NORTH, SOUTH).
+
+Use of Enum types if-else statements
+    Example: UseEnumInIfElseStatement.java
+
+Enum Example with If-Else:
+    Example: EnumExampleWithIfElse.java
+
+Enum Example with Switch Case:
+    Example: EnumExampleWithSwitchCase.java
+
+Enum Example with Iterate: 
+    Example: EnumExampleWithIterate.java
+
+
+Enum Fields and Methods:
+    Example: EnumFieldsandMethods.java
+
+-> Important points:
+    1. While defining Enums, the consts should be declared first, prior to any fields or methods
+
+    2. When there are fields and methods declared inside Enum, the list of enum constants must end with a semicolon(;)
+
+*************************************************************************************
+
+-> Annotations: 
+    - The Java Annotations allows to add metadata information into our source code, although they are not a part of the program itself.
+    
+    - Annotations were added to java from JDK 5. 
+
+    - Annotations has no direct effect on the operation of the code they annotate.
+
+-> Here we are going to discuss: 
+    1. Usage of annotations
+    2. How to apply annotations
+    3. What predefined annotation types
+    4. How to create the custom annotations
+
+1. What's the use of annotations?
+    1. Instructions to the compiler: 
+        - There are three built-in annotations
+        - Those are: @Deprecated, @Override and @SuppressWarnings
+        - and these can be used for giving certain instructions to the compiler.
+
+        - for example, the @Override annotation is used for instructing compiler that the annotated method is overriding the method. 
+
+    2. Compile-time instructions: 
+        - annotations can provide compile - time instructions to the compiler that can be further used by software build tools for generating code, XML files etc., 
+
+    3. Runtime instructions: 
+        - We can define annotations to be available at runtime which we can access using 'java reflection' and can be used to give instructions to the program at runtime. 
+
+-> Annotations Basics: 
+    - An annotation always starts with the symbol @ followed by the annotation name. 
+    - The symbol @ indicates to the compiler that this an annotation
+
+    For eg., @Override
+
+-> Where we can use annotations?
+    - annotations can be applied to the classes, interfaces, methods and fields.
+    - eg., 
+
+    @Override
+    void myMethod() { }
+
+-> Built-In Annotations: 
+    - Java has 3 built-in annotations: 
+        1. @Override
+        2. @Deprecated
+        3. SuppressWarnings
+
+1. @Override: 
+    - while overriding a method in the child class, we should use this annotation to mark that method.
+    
+    - This makes code readable and avoid maintenance issues, such as: while changing the method signature of parent class, you must change the signature in child classes otherwise compiler would throw compilation error. 
+
+    - this is difficult to trace when you haven't used this annotation
+
+    Example: UnderatandingOverrideAnnotation.java
+    Example: OverrideAnnotationSubClass.java
+
+- Why we use @Override annotation?
+    - Using @Override annotation while overriding a method is considered as a best practice for coding, because of two reasons / advantages:
+        1. If programmer makes any mistake such as wrong method name, wrong parameter types while overriding, you would get a compile time error. 
+        
+        - As by using this annotation you instruct compiler that you are overriding this method.
+
+        - If you don't use the annotation then the sub class method would behave as a new method in sub class.
+
+        2. It improves the readability of the code. So if you change the signature of overridden method then all the sub classes that overrides the particular method would throw a compilation error, which would eventually help you to change the signature in the sub class. 
+
+        - If you have a lots of classes in your application then this annotation would really helps you to identify the classes that require changes when you change the signature of a method.
+
+
+2. @Deprecated:
+    - The @Deprecated annotation indicates that the marked element (class, method or field) is deprecated and should no longer be used. 
+
+    - The compiler generates a warning whenever a program uses a method, class or a field that has already been marked with the @Deprecated annotation. 
+
+    - When an element is deprecated, it should also be documented using Javadoc @deprecated tag
+
+    Syntax: 
+    @Deprecated
+    public void anyMethodHere() {}
+
+    - What is the meaning of Deprecated?
+        - a deprecated class or method is like that, it is no longer important.
+        - It is so unimportant, in fact, that you should no longer use it, since it has been superseded and may cease to exist in the future. 
+
+        - Java provides a way to express deprecation, because a class evolves, its API (application programming interface) invetibly changes: methods are renamed for consistency, new and better methods are added, fields change.
+
+    - How to Deprecate?
+        - we deprecate a method, class or field by using @Deprecated annotation
+        - and we use @deprecated Javadoc in the comment section
+
+        Example: DeprecateAnnotationExample.java
+
+3. @SuppressWarnings: 
+    - This annotation instructs compiler to ignore specific warnings. 
+    - For example., 
+    We are giving a call to deprecated method (lets assume that the method deprecatedMethod() is marked with @Deprecated annotation) so the compiler that would suppress that deprecation warning.
+
+    Syntax / Example: 
+    @SuppressWarnings("deprecation")
+    void myMethod() {
+        myObject.deprecatedMethod()
+    }
+
+
+-> Create Custom Annotations: 
+    - Annotations are created by using @interface, followed by annotation name
+    
+    - An annotation can have elements as well. They look like methods. For example., we can 4 elements., we should not provide the implementations for these elements.
+    
+    - All annotations extends java.lang.annotation.Annotation interface. Annotations cannot include any extends clause.
+
+    Example: CreateCustomAnnotation.java
+
+-> Using @interface:
+    @interface MyCustomAnnotation {
+        int count();
+        String[] books();
+    }
+
+    Usage: 
+    @MyCustomAnnotation(
+        count = 2, 
+        books = {"Php", "Java"}
+    )
+
+    public class MyClass {}
+
+-> Using @Documented: The @Documented annotation indicates that elements using this annotation should be documented by JavaDoc.
+    java.lang.annotation.Documented
+    @Documented
+    public @interface MyCustomAnnotation {
+        // code
+    }
+
+    @MyCustomAnnotation
+    public class MyClass {
+        // code
+    }
+
+-> Using @Target: It specifies where we can use the annotation.
+    import java.lang.annotation.ElementType;
+    import java.lang.annotation.Target;
+
+    @Target({ElementType.METHOD})
+    public @interface MyCustomAnnotation {
+        // code 
+    }
+
+    public class MyClass {
+        @MyCustomAnnotation
+        public void myMethod() {
+            // code 
+        }
+    }
+
+Notes: 
+    1. If you do not define any Target type that means annotation can be applied to any element
+
+    2. Apart from ElementType.METHOD an annotation can have possible Target values: 
+        ElementType.METHOD
+        ElementType.PACKAGE
+        ElementType.PARAMETER
+        ElementType.TYPE
+        ElementType.ANNOTATION_TYPE
+        ElementType.CONSTRUCTOR
+        ElementType.LOCAL_VARIABLE
+        ElementType.FIELD
+
+-> @Inherited: The @Inherited annotation signals that a custom annotation used in a class should be inherited by all of its sub classes.
+
+    java.lang.annotation.Inherited
+    @Inherited
+    public @interface MyCustomAnnotation {
+        // code
+    }
+
+    @MyCustomAnnotation
+    public class MyParentClass {
+        // code 
+    }
+
+    public class MyChildClass extends MyParentClass {
+        // code 
+    }
+
+-> @Retention: It indicates how long the annotations with the annotated type are to be retained
+
+    import java.lang.annotation.Retention;
+    import java.lang.annotation.RetentionPolicy;
+
+    @Retention(RetentionPolicy.RUNTIME)
+    @interface MyCustomAnnotation() {
+        // code
+    }
+
+    RetentionPolicy.RUNTIME: the annotation should be available to runtime, for inspection via java reflection.
+
+    RetentionPolicy.CLASS: the annotation would be in the .class file but it would not be available at runtime.
+
+    RetentionPolicy.SOURCE: the annotation would be available in the source code of the program. it would neither be in the .class file nor be available at the runtime.
+
+*************************************************************************************
+
+-> Regular Expressions (regex): 
+    - Regular Expressions are used for defining String patterns that can be used for searching, manipulating and editing a text. 
+
+    - These expressions are known as Regex
+
+    Example: RegexExample1.java
+
+    - To define patterns and to use them: 
+        1. java.util.regex.Pattern - Used for defining patterns
+        2. java.util.regex.Matcher - Used for performing match operations on text using patterns
+
+1. java.util.regex.Pattern class: 
+    1. Pattern.matches(): 
+        Example: 
+        
+        String content = "This is a tutorial Website!";
+        String patternString = ".*tutorial.*";
+        boolean isMatch = Pattern.matches(patternString, content);
+        System.out.printlin("The text contains 'tutorial'?" + isMatch);
+
+        Limitations: this is a way that we can search a single occurance of a pattern in a text. For matching multiple occurances we can use the Pattern.compile() method.
+
+    2. Pattern.compile(): 
+        - If we want to do a 'CASE SENSITIVE' search or want to multiple occurances then we have to compile the pattern using Pattern.compile() before searching in a text. 
+
+        Example: 
+
+        String content = "This is tutorial Website";
+        String patternString = ".*tuTorIal.*";
+        Pattern pattern = Pattern.compile(patternString, Pattern.CASE_INSENSITIVE);
+
+    3. Pattern.matcher(): 
+        - We can use the Pattern.matcher() for matching the String.
+
+        Example: 
+        
+        String content = "This is a tutorial Website";
+        String patternString = ".*tuTorIal.*";
+        Pattern pattern = Pattern.compile(patternString, Pattern.CASE_INSENSITIVE);
+
+        Matcher matcher = pattern.matcher(content)
+        boolean isMatched = matcher.matches();
+        System.out.printlin("Is it a Match?: " + isMatched);
+
+    4. Pattern.split(): 
+        - To split a text into multiple strings based on a delimiter 
+
+        Example: RegexSplitExample.java
+
+2. java.util.regex.Matcher Class:
+    - the concept about Matcher
+
+    - Creating a Matcher instance: 
+    Example: 
+    
+    String content = "some text";
+    String patternString = ".*somestring.*";
+    Pattern pattern = Pattern.compile(patternString);
+    Matcher matcher = pattern.matcher(content);
+
+    - Main methods: 
+    - matches: it matches the regular expression against the whole text passed to the Pattern.matcher() method while creating Matcher instance.
+
+        Example: 
+        ....
+        Matcher matcher = pattern.matcher(content);
+        boolean isMatch = matcher.matches();
+
+    - lookingAt(): similar to matches() method except that it matches the regular expression only against the beginning of the text, while matches() search in the whole text.
+
+    - find(): Searches the occurances of the regular expressions in the text. Mainly used when we are searching for multiple occurances.
+
+    - start() and end(): Both these methods are generally used along with the find() method. They are used for getting the start and end indexes of a match that is being found using find() method.
+
+    
+    Example: FindOutMultipleOccurancesUsingMatcher.java
+
+
+1) String Literals: if we want to search for a particular string in a text eg., "abc", then we can write: Pattern.matches("abc", "abc")
+
+2) Character Clases: A character class matches a single character, in the input text against multiple characters in the character class. 
+    Pattern.matches("[pqr]", "abcd"); - it would give false as no p, q, r in the text
+    Pattern.matches("[pqr]", "r"); - return true as character r is found
+    Pattern.matches("[pqr]", "pq"); - return false as any one of them can be in text not both.
+
+- List of various classes constructs: 
+    [abc]: it would match with text if the text is having either of one of them (a, b, or c) and only once.
+    [^abc]: any single character except a, b, or c (^ denote negation)
+    [a-zA-Z]: a through z, or A through Z, inclusive (range)
+    [a-z&&[def]]: any one of them (d, e or f)
+    [a-z&&[^bc]]: a through z, except for b and c
+    [a-z&&[^m-p]]: a through z, and not m through p
+
+- Predefined Character Classes - Metacharacters: 
+    ., \d , \D, \s, \S, \w, \W
+
+- Boundary Matchers: 
+    ^ - Matches the beginning of a line 
+    $ - Matches the ending of a line
+    \b - Matches a Word Boundary 
+    \B - Matches a Non - Word Boundary 
+    \A - Matches the beginning of the input text
+    \G - Matches the end of the previous match
+    \Z - Matches the end of the input text except the final terminator if any
+    \z - Matches the end of the input text
+
+    Examples: 
+        Pattern.matches("^Hello$", "Hello")
+
+- Quantifiers: 
+    Refer to the document: RegularExpressions_Quantifiers.docx
+
+Example: 
+    RegularExpressionsAdvance.java
