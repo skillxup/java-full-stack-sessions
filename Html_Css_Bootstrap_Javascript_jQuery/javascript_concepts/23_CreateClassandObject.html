@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Concepts</title>
+
+    <link rel="stylesheet" href="customStyles.css" />
+    <style type="text/css"></style>
+
+    <script type="text/javascript" src="customScripts.js"></script>
+    <script type="text/javascript">
+        // understanding the class concept
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            getInfo() {
+                document.write(`i'm ${this.name}, and my age ${this.age} <br />`);
+            }
+        }
+
+        // *************************************
+        // enhancing the class with inheritance
+        // the class Rectangle as a main / parent class
+        class Rectangle {
+            // parent class constructor
+            constructor(length, width) {
+                console.log("this is a parent class constructor");
+                this.length = length;
+                this.width = width;
+            }
+
+            getArea() {
+                return this.length * this.width;
+            }
+        }
+
+        // the class Square as a child / sub class to / under main / parent class of Rectangle
+        class Square extends Rectangle {
+            // child class constructor
+            constructor(length) {
+                super(length, length);
+                console.log("this is a child class constructor");
+            }
+
+            getPerimeter() {
+                return 2 * (this.length + this.width);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <script type="text/javascript">
+            // this is a concept of understanding about the class and object
+            var p1 = new Person('james', 23);
+            p1.getInfo();
+
+            var p2 = new Person('peter', 24);
+            p2.getInfo();
+
+            // ***************************************
+            // understanding the inheritance
+            // declaring the object to the class
+            let rectangle = new Rectangle(5, 10);
+            document.write(`finding the area: ${rectangle.getArea()} <br />`);
+
+            // declaring the object to the child class
+            let square = new Square(5);
+            document.write(`square of : ${square.getArea()} <br />`);
+
+            document.write(`finding the perimeter: ${square.getPerimeter()} <br />`);
+        </script>
+    </div>
+</body>
+</html>

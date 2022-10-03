@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Concepts</title>
+
+    <link rel="stylesheet" href="customStyles.css" />
+    <style type="text/css"></style>
+
+    <script type="text/javascript" src="customScripts.js"></script>
+    <script type="text/javascript">
+        function calcCircleArea(radius) {
+            var area = (Math.PI) * radius * radius;
+            return area;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <script type="text/javascript">
+            var d = new Date();
+            document.write("the cur date d: " + d + "<br />");
+            document.write("-------------------------<br />");
+
+            d = new Date("1 June 2022");
+            document.write("the cur date d: " + d + "<br />");
+            document.write("-------------------------<br />");
+
+            document.write(d.toDateString() + "<br />");
+            document.write(d.toLocaleDateString() + "<br />");
+            document.write(d.toString() + "<br />");
+            document.write("-------------------------<br />");
+
+            document.write(d.getDate() + "<br />");
+            document.write("-------------------------<br />");
+
+            d.setDate(d.getDate() + 7);
+            document.write(d.toString() + "<br />");
+            document.write("-------------------------<br />");
+
+            // math operations
+            document.write(Math.E + "<br />");
+            document.write(calcCircleArea(5) + "<br />");
+            document.write(Math.abs(-4) + "<br />");
+            document.write(Math.random() + "<br />");
+        </script>
+    </div>
+</body>
+</html>

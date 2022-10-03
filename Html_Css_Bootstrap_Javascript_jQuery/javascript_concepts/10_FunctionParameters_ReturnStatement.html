@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Concepts</title>
+
+    <link rel="stylesheet" href="customStyles.css" />
+    <style type="text/css"></style>
+
+    <script type="text/javascript" src="customScripts.js"></script>
+    <script type="text/javascript">
+        // function def.,
+        function takeParameters(n1 = 1, n2 = 2) {
+            let n3 = null;
+            n3 = (n1 ** n2);
+            document.write("the exp., res: " + n3 + "<br />");
+        }
+
+        // funcion def., 
+        function returnFunction(nV1, nV2) {
+            let rV = null;
+            rV = (nV1 ** nV2);
+            return rV;
+        } 
+    </script>
+</head>
+<body>
+    <div class="container">
+        <script type="text/javascript">
+            let a = 3;
+            let b = 5;
+
+            // function call with parameters
+            takeParameters(a, b);
+            document.write("-----------------------------<br />");
+            a = 9;
+            b = 3;
+
+            takeParameters(a, b);
+            document.write("-----------------------------<br />");
+
+            takeParameters();
+            document.write("-----------------------------<br />");
+
+            // understanding the cncept of return statement
+            let newValue1 = 3;
+            let newValue2 = 8;
+            let newResult = 0;
+
+            newResult = returnFunction(newValue1, newValue2);
+            document.write("the newResult: " + newResult + "<br />");
+        </script>
+    </div>
+</body>
+</html>

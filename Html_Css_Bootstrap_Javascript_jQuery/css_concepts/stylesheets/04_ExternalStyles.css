@@ -1,0 +1,14 @@
+body {
+    background-color: antiquewhite;
+}
+
+p {
+    color: blue;
+    text-align: center;
+    font-size: 18px;
+}
+
+h1 {
+    font-size: x-large;
+    font-family: inherit;
+}

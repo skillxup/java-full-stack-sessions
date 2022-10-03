@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Concepts</title>
+
+    <link rel="stylesheet" href="customStyles.css" />
+    <style type="text/css"></style>
+
+    <script type="text/javascript" src="customScripts.js"></script>
+    <script type="text/javascript"></script>
+</head>
+<body>
+    <div class="container">
+        <script type="text/javascript">
+            // regular expressions
+
+            // literal syntax
+            var regex = /^Mr\./; // ex., Mr.
+
+            // constructor syntax
+            var regex2 = new RegExp("^Mr\\.");
+
+            // characters: ., *, ?, +, [], (), {}, $, |, \
+            /*
+                [abc], [^abc], [a-z], [A-Z], [0-9], [a-zA-Z0-9], [a-zA-Z0-9 ]
+            */
+
+            // implement the regex
+            var regex = /ca[fk]e/;
+            var str = "He was eating cake in the cafe";
+
+            var matches = str.match(regex);
+            document.write(`<div class='alert alert-info mb-2'>${matches}</div>`);
+            document.write(`<div class='alert alert-info mb-2'>${matches.length}</div>`);
+
+            if(regex.test(str)) {
+                document.write(`<div class='alert alert-info mb-2'>match found</div>`);
+            } else {
+                document.write(`<div class='alert alert-info mb-2'>match not found</div>`);
+            }
+
+            // escape characters
+            // ., \d, \D, \s, \S, \w, \W, 
+
+            // implement another regex
+            var regex = /\S/g;
+            var replacement = "-";
+            var str = "He was eating cake in the cafe";
+
+            document.write(`<div class='alert alert-info mb-2'>${str.replace(regex, replacement)}</div>`);
+
+            document.write(`<div class='alert alert-info mb-2'>${str.replace(/ /g, "-")}</div>`);
+
+            // repetition quantifiers
+            // p+, p*, p?, p{2}, p{2,}, p{2,4}, p{,3}
+            var regex = /[\s,]+/;
+            var str = "My favourite colors are red, green and blue";
+
+            document.write(`<div class='alert alert-info mb-2'>${str}</div>`);
+
+            var parts = str.split(regex);
+            document.write(`<div class='alert alert-info mb-2'>${parts}</div>`);
+
+            for(var part of parts) {
+                document.write(`<div class='alert alert-info mb-2 text-danger'>${part}</div>`);
+            }
+
+            // position anchors
+            // ^p, p$
+
+            var regex = /^J/;
+            var names = ["James Bond", "Clark Kent", "John Rambo"];
+
+            for(var name of names) {
+                if(regex.test(name)) {
+                    document.write(`<div class='alert alert-info mb-2 text-danger'>${name}</div>`);
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>

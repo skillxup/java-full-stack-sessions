@@ -1,0 +1,139 @@
+/* responsive: media-queries */
+@media (min-width: 576px) {
+    main {
+        column-count: 2;
+        column-gap: 20px;
+    }
+
+    section {
+        break-inside: avoid;
+    }
+}
+
+@media (min-width: 992px) {
+    main {
+        column-count: 3;
+        column-gap: 10px;
+    }
+
+    section {
+        break-inside: avoid;
+    }
+}
+
+/* styles */
+:root {
+    --blue: #3498db;
+    --lightblue: #ebf5fb;
+    --red: #e74c3c;
+    --yellow: #c9c243;
+    --orange: #ffa644;
+    --green: #2ecc71;
+}
+
+body {
+    background-color: var(--lightblue);
+    font-family: inherit;
+    color: #34495e;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 20px;
+}
+
+header {
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 20px 20px 0px;
+}
+
+.title {
+    font-size: 2.6em;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.figure-img {
+    display: block;
+    width: 100%;
+    object-fit: fill;
+    box-shadow: 0 0 5px var(--red);
+}
+
+h2 {
+    font-size: 1.4em;
+    padding: 10px;
+    color: var(--blue);
+    text-shadow: 0px 0px 2px var(--orange);
+}
+
+p {
+    margin-bottom: 1em;
+    padding: 0px 10px;
+}
+
+.info-link {
+    text-decoration: none;
+    color: var(--green);
+    padding: 10px;
+    display: block;
+}
+
+section {
+    border-top: 3px solid var(--red);
+    border-radius: 3px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.section-img {
+    display: block;
+    padding: 10px;
+    margin: 0px auto;
+}
+
+.bigtitle {
+    padding: 0;
+}
+
+.bigtitle-title {
+    color: #fff;
+    background-color: var(--red);
+    margin-bottom: 10px;
+}
+
+.bigbottom-link {
+    background-color: var(--green);
+    color: #fff;
+}
+
+.profile {
+    width: 80%;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    border-top: 3px solid var(--red);
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.options-link {
+    text-decoration: none;
+    font-size: 0.9em;
+    color: var(--red);
+}
+
+.options-link:hover, 
+.link-active {
+    color: var(--green);
+}

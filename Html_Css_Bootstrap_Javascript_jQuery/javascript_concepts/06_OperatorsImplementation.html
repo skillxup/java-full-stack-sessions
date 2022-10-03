@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Concepts</title>
+
+    <link rel="stylesheet" href="customStyles.css" />
+    <style type="text/css"></style>
+
+    <script type="text/javascript" src="customScripts.js"></script>
+    <script type="text/javascript"></script>
+</head>
+<body>
+    <div class="container">
+        <script type="text/javascript">
+            // declare the required variables
+            let a = 4;
+            let b = 8;
+
+            let r = null;
+
+            // arithmatic: 
+            // 1. binary: +, -, *, /, %, **
+            // 2. unary: ++ (increment), -- (decrement)
+
+            r = (a ** b);
+            document.write("the value of r = (a[" + a + "] * b[" + b + "]): " + r + "<br />");
+            document.write("----------------------------------<br />");
+
+            document.write("the previous value of a with ++ : " +  a + "<br />");
+            a++; // a = a + 1
+            document.write("the updated value of a with ++ : " +  a + "<br />");
+            document.write("----------------------------------<br />");
+
+            // assignment: +=, -=, *=, /=, %=
+            document.write("the previous value of a with += : " +  a + "<br />");
+            a += b; // a = a + b;
+            document.write("the updated value of a with += : " +  a + "<br />");
+            document.write("----------------------------------<br />");
+
+            // comparison (relational): ==, !=, ===, !==, <, >, <=, >=
+            let num1 = 4;
+            let num2 = "4";
+            let num3 = 4.0;
+
+            let res = false;
+
+            document.write("the value of num1: " + num1 + ", and its datatype: " + typeof num1 + "<br />");
+            document.write("-----------------------------------------<br />");
+
+            document.write("the value of num2: " + num2 + ", and its datatype: " + typeof num2 + "<br />");
+            document.write("-----------------------------------------<br />");
+            
+            document.write("the value of num3: " + num3 + ", and its datatype: " + typeof num3 + "<br />");
+            document.write("-----------------------------------------<br />");
+
+            res = (num1 == num2);
+            document.write("the value of num1 == num2: " + res + "<br />");
+            document.write("-----------------------------------------<br />");
+
+            res = (num1 === num2);
+            document.write("the value of num1 === num2: " + res + "<br />");
+            document.write("-----------------------------------------<br />");
+
+            // conditional or ternary: ? : 
+            res = ((num1 === num2) ? "yes, its true!" : "no, its not true");
+            document.write("the res: with ? : " + res + "<br />");
+            document.write("-----------------------------------------<br />");
+
+            // logical: &&, ||, !
+            res = ((num1 >= num3) && (num3 === num2));
+            document.write("the res: with res = ((num1 >= num3) && (num3 === num2)) : " + res + "<br />");
+            document.write("-----------------------------------------<br />");
+
+            res = ((num1 >= num3) || (num3 === num2));
+            document.write("the res: with res = ((num1 >= num3) || (num3 === num2)) : " + res + "<br />");
+            document.write("-----------------------------------------<br />");
+
+            res = !((num1 >= num3) && (num3 === num2));
+            document.write("the res: with res = ((num1 >= num3) && (num3 === num2)) : " + res + "<br />");
+            document.write("-----------------------------------------<br />");
+
+            res = !((num1 >= num3) || (num3 === num2));
+            document.write("the res: with res = ((num1 >= num3) || (num3 === num2)) : " + res + "<br />");
+            document.write("-----------------------------------------<br />");
+        </script>
+    </div>
+</body>
+</html>

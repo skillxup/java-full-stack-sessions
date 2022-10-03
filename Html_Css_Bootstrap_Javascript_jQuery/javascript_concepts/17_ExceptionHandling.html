@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Concepts</title>
+
+    <link rel="stylesheet" href="customStyles.css" />
+    <style type="text/css"></style>
+
+    <script type="text/javascript" src="customScripts.js"></script>
+    <script type="text/javascript">
+        function myFunc() {
+            let x = 0;
+            let y = 6;
+            let r = 0;
+
+            try {
+                if(x == 0) {
+                    r = (x / y);
+                    document.getElementById("show").innerHTML = "the r: " + r + "<br />";
+                } else {
+                    throw new Error("unable to do exp., becuase of x value is 0! <br />");
+                }
+            } catch(error) {
+                document.getElementById("show").innerHTML = error;
+            } finally {
+                document.getElementById("show").innerHTML += "finally, the program ends! <br />";
+            }
+        }
+
+
+        function myFunc2() {
+            var num = prompt("enter a positive integer between 0 to 100");
+            var start = Date.now();
+
+            try {
+                if(num > 0 && num <= 100) {
+                    alert(Math.pow(num, num));
+                } else {
+                    throw new Error("an invalid value is entered");
+                }
+            } catch(e) {
+                alert(e.message);
+            } finally {
+                alert("Execution took: " + (Date.now() - start) + "ms");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <button type="button" class="btn btn-primary mb-2" onclick="myFunc()"> click me </button>
+
+        <div id="show" class="alert alert-info"></div>
+
+        <hr />
+
+        <button type="button" class="btn btn-primary mb-2" onclick="myFunc2()"> click me2 </button>
+
+        <div id="show" class="alert alert-info"></div>
+
+        <hr />
+
+        <script type="text/javascript">
+            
+        </script>
+    </div>
+</body>
+</html>

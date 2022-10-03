@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Concepts</title>
+
+    <link rel="stylesheet" href="customStyles.css" />
+    <style type="text/css"></style>
+
+    <script type="text/javascript" src="customScripts.js"></script>
+    <script type="text/javascript">
+        async function myFunc() {
+            let myPromise = new Promise(function(resolve, reject) {
+                let val1 = 10;
+                try {
+                    if(val1 != 0) {
+                        resolve(`the value of val1 ${val1} is resolved`);
+                    } else {
+                        throw new Error(`the value of val1 ${val1} is rejected`);
+                    }
+                } catch(error) {
+                    reject(error);
+                }
+            });
+
+            let getRes = await myPromise;
+            document.getElementById("res").innerHTML = getRes;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div id="res" class="alert alert-info"></div>
+        <script type="text/javascript">
+            // creating a function
+            myFunc();
+        </script>
+    </div>
+</body>
+</html>

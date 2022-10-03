@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Concepts</title>
+
+    <link rel="stylesheet" href="customStyles.css" />
+    <style type="text/css"></style>
+
+    <script type="text/javascript" src="customScripts.js"></script>
+    <script type="text/javascript">
+        function firstFun() {
+            var res = "its first function";
+            document.getElementById("show").innerHTML = res;
+        }
+
+        function secondFunc() {
+            var res = "its second function";
+            document.getElementById("show2").innerHTML = res;
+        }
+
+        function sayHello() {
+            var res = "hi, how are you doing?";
+            document.getElementById("show3").innerHTML = res;
+        }
+
+        function setHoverColor() {
+            document.getElementById("show3").style.background = "yellow";
+            document.getElementById("show3").style.color = "red";
+        }
+
+        function setNormalColor() {
+            document.getElementById("show3").style.background = "white";
+            document.getElementById("show3").style.color = "black";
+        }
+
+    </script>
+</head>
+<body>
+    <div class="container">
+
+        <button type="button" class="btn btn-info mb-2" id="myBtn"> click me </button>
+        <div id="show" class="alert alert-info"></div>
+
+        <hr />
+
+        <button type="button" class="btn btn-info mb-2" id="myBtn2"> click me </button>
+        <div id="show2" class="alert alert-info"></div>
+
+        <hr />
+
+        <button type="button" class="btn btn-info mb-2" id="myBtn3"> click me </button>
+        <div id="show3" class="alert alert-info"></div>
+
+        <hr />
+
+        <script type="text/javascript">
+            var btn = document.getElementById("myBtn");
+            btn.onclick = firstFun;
+
+            var btn2 = document.getElementById("myBtn2");
+            btn2.addEventListener("click", secondFunc);
+
+            var btn3 = document.getElementById("myBtn3");
+            btn3.addEventListener("click", sayHello);
+            btn3.addEventListener("mouseover", setHoverColor);
+            btn3.addEventListener("mouseout", setNormalColor);
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Concepts</title>
+
+    <link rel="stylesheet" href="customStyles.css" />
+    <style type="text/css"></style>
+
+    <script type="text/javascript" src="customScripts.js"></script>
+    <script type="text/javascript">
+        function mySave() {
+            var myContent = document.getElementById("myTextarea").value;
+            localStorage.setItem("myContent", myContent);
+        }
+
+
+        function myLoad() {
+            var myContent = localStorage.getItem("myContent");
+            document.getElementById("myText").innerHTML = myContent;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h4>understanding about local storage</h4>
+
+        <textarea class="" id="myTextarea"></textarea>
+
+        <p></p>
+
+        <button type="button" onclick="mySave()"> save data </button>
+
+        <button type="button" onclick="myLoad()"> load data </button>
+
+        <p></p>
+
+        <div id="myText"></div>
+        
+        <script type="text/javascript">
+            
+        </script>
+    </div>
+</body>
+</html>
