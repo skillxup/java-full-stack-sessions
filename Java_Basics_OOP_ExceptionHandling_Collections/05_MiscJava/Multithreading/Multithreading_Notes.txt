@@ -1,0 +1,170 @@
+
+2. Multithreading:
+	- a thread is a light - weight smallest part of a process that can run concurrently with the other parts of the same process. 
+	
+	- Threads are independent because they all have separate path of execution that's the reason, if the exception occurs in one thread, it doesn't effect the other threads.
+
+	- All threads of a process share the common memory.
+
+	- The process of executing multiple threads simulteneously is called multithreading.
+
+Summarize:
+	1. The main purpose of multithreading is to provide simulteneous execution of two or more parts of a program to maximum utilize the CPU time. A multithreaded program contains two or more parts that can run concurrently. Each such part of a program called cthread.
+
+	2. Threads are light-weight sub-process, they share the common memory space. IN multithreading environment, programs that are benefited from multithreading, utilize the maximum CPU time so that the idle time can be kept to minimum.
+
+	3. A thread can be in one of the following states: 
+		NEW - a thread that has not yet started is in this state
+		RUNNABLE - a thread executing in the Java virtual machine is in this state
+		BLOCKED - a thread that is blocked waiting for a monitor lock 
+		WAITING - a thread that is waiting indefinitely for another thread to perform a particular action 
+		TIMED_WAITING - a thread that is waiting for another thread to perform an action for up to a specified waiting time 
+		TERMINATED - a thread that has exited
+
+-> Multitasking vs Multithreading vs Multiprocessing vs parallel processing: 
+	- Multitasking: ability to execute more than one task at the same time is known as multitasking
+
+	- Multithreading: It is a process of executing multiple threads simulteneously. Multithreading is also know as Thread-based Multitasking
+
+	- Multiprocessing: it is same as multitasking, however in multiprocessing more than one CPU's are involved. On the other hand, one cPU is involved in multitasking
+
+	- Parallel processing: It refers to the utilization of multiple CPU's in a single computer system.
+
+-> Creating a thread: 
+	- There are 2 ways to create a thread:
+		1. by extending Thread class
+		2. by implementing Runnable interface
+
+	- have some methods: 
+		1. getName(): used for obtaining a thread's name
+		2. getPriority(): obtain a thread's priority 
+		3. isAlive(): determine if a thread is still running
+		4. join(): wait for a thread to terminate 
+		5. run(): entry point for the thread
+		6. sleep(): suspend a thread for a period of time
+		7. start(): start a thread by calling its run() method
+
+	Method1: Thread creation by extending Thread class
+	Example: MultiThreadingCreateExtendingThreadClassExample1.java
+	Example: MultiThreadingCount.java
+	Example: MultithreadingImplementsRunnable.java
+	Example: MultiThreadingCountRunnable.java
+
+- Thread priorities: 
+	1. thread priorities are the integers which decide how one thread should be treated with respect to the others
+
+	2. thread priority decides when to switch from one running thread to another, process is called context switching
+
+	3. a thread can voluntarily release control and the highest priority thread that is ready to run is given the CPU.
+
+	4. to set the priority of the thread setPriority() method is used which is a method of the class Thread Class.
+
+	5. in place of defining the priority in integers, we can use MIN_PRIORITY, NORM_PRIORITY or MAX_PRIORITY
+
+- Methods: isAlive() and join()
+	- the main thread should finish last else other threads which have spawned from the main thread will also finish
+
+	- to know whether the thread has finished we can call isAlive() on the thread which returns true if the thread is not finished
+
+	- another way to achieve this by using join() method, this method when called from the parent thread makes parent thread wait till the child thread terminates
+
+	- these methods are defined in the Thread class
+
+	- we have used isAlive() method
+
+-> Synchronization:
+	- Multithreading introduces asynchronous behavior to the programs. If a thread is writing some data another thread may be reading the same data at that time. This may bring inconsistency.
+
+	- When two or more threads need access to a shared resource there should be some way that the resource will be used only by one resource at a time.  The process to acheive this is called synchronization
+
+	- To implement the synchronization behavior java has synchronous method. Once a thread is inside a synchronized method, no other thread can call any other synchronized method on the same object. All the other threads then wait untill the first thread come out of the synchronized block.
+
+	- When we want to synchronize access to objects of a class which was not designed for the multithreading access and the code of the method which needs to be accessed synchronously is not available with us, in this case we cannot add the synchronized to the approriate methods. In the java we have the solution for this, put the calls to the methods defined by this class inside a synchronized block
+
+	Synchronized(object) { 
+		// ..
+	}
+
+-> Inner-thread Communication:
+	- We have few methods which java threads can communicate with each other.
+	- These are: wait(), notify(), notifyAll().
+	- All these methods can only be called from within a synchronized method.
+
+	1. To understand synchronization java has a concept of monitor. Monitor can be though of a box which can hold only one thread. Once a thread enters the monitor all the other threads have to wait untill that thread exits the monitor.
+
+	2. wait() tells the calling thread to give up the monitor and go to sleep untill some other thread enters the same monitor and calls notify()
+
+	3. notify() wakes up the first thread that called wait() on the same object. notifyAll() wakes up all the threads that called wait() on the same object. The highest priority thread will run first.
+
+
+-> Thread Life Cycle and Thread Scheduling:
+
+- Thread Life Cycle:
+	- The start method creates the system resources, necessary to run the thread schedules the thread to run, and calls the thread's run method.
+
+	- A thread becomes "Not Runnable" when one of these event occurs: 
+		1. If sleep method is invoked
+		2. The thread calls the wait method.
+		3. The thread is blocking on I/O.
+
+	- A thread dies naturaly when the run method exits
+
+
+- Thread Scheduling: 
+	- Execution of multiple threads on a single CPU, in some order, is called scheduling.
+
+	- In general, the runnable thread with the highest priority is active (running)
+
+	- Java is priority-preemptive
+		1. If a high-priority thread wakes up, and a low-priority thread is running
+		2. Then the high-priority thread gets to run immediately
+
+	- Allows on - demand processing
+	- Efficient uses of CPU
+
+	1. Types of Scheduling: 
+		- Waiting and Notifying
+			- waiting [wait()] and notifying [notify(), notifyAll()] provides means of communication between threads that synchronize on the same object.
+		
+		- wait(): when wait() method is invoked an object, the thread executing that code gives up its lock on the object immediately and moves the thread to the wait state.
+
+		- notify(): This wakes up threads that called wait() on the same object and moves the thread to ready state.
+
+		- notifyAll(): This wakes up all threads that called wait() on the same object
+
+		- Running and Yielding: 
+			- Yield(): is used to give other threads of the same priority a chance to execute ie., causes current running thread to move to runnable state.
+		
+		- Sleeping and Waking up: 
+			- nSleep() is used to pause for a specified period of time ie., moves the current running thread to Sleep state for a specified amount of time, before moving it to runnable state. Thread.sleep(no. of milliseconds)
+
+	2. Thread Priority: 
+		- When a Java thread is created, it inherits its priority from the thread that created it.
+
+		- You can modify a thread's priority at any time after its creation using the setPriority method.
+
+		- Thread priorities are integers ranging between MIN_PRIORITY (1) and MAX_PRIORITY (10). The higher the integer, the higher the priority. Normally the thread priority will be 5.
+
+
+	3. isAlive() and join() methods: 
+		- isAlive() method is used to determine if a thread is still alive. It is the best way to determine if a thread has been started but has not yet completed its run() method. final boolean isAlive()
+
+		- The nonstatic join() method of class., Threads lets one thread "join onto the end" of another thread. This method waits untill the thread on which it is called terminates. final void join()
+
+- Blocking Threads: 
+	- When reading from a stream, if input is not available, the thread will block.
+	- Thread is suspended ("blocked") untill I/O is available
+	- Allows other threads to automatically activate
+	- When I/O available, thread wakes back up again
+		- Becomes "runnable" ie., gets into ready state
+
+- Grouping of Threads: 
+	- Thread groups provide a mechanism for collecting multiple threads into a single object and manipulating those threads all at once, rather than individually.
+	- To put a new thread in a thread group the group must
+	- be explicitly specified when the thread is created
+		- public Thread(ThreadGroup group, Runnable runnable)
+		- public Thread(ThreadGroup group, String name)
+		- public Thread(ThreadGroup group, Runnable runnable, String name)
+	- A thread cannot be moved to a new group after the thread has been created
+	- When a Java application first starts up, the Java runtime system creates a ThreadGroup named main
+	- Java thread groups are implemented by the java.lang.ThreadGroup class.

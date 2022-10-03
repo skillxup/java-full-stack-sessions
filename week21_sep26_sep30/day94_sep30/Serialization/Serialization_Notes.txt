@@ -1,0 +1,8 @@
+-> What is Serialization?
+    - Serialization is a mechanism to convert an object into stream of bytes so that it can be written into a file, transported through a network or stored into a database. 
+
+    - De-Serialization is just a vice-versa.
+
+    - In other words, the Serialization is converting an object to streams of bytes and de-Serialization is re-building the object.
+
+    

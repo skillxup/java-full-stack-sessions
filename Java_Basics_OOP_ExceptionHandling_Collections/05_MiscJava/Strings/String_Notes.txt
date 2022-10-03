@@ -1,0 +1,56 @@
+
+1. Strings in Java: 
+	- String is a sequence of characters eg., "Hello"
+	- It is an immutable object which means it is constant and cannot be changed once it is created.
+	
+	Here we are going to discuss: About String Class and String Methods
+
+-> Creating a String: 
+	- There are 2 ways to Create a String: 
+	1. String literal
+	2. Using new keyword
+
+	1. String literal: 
+		- a string literal is a sequence of characters enclosed in double quotation marks ( " " )
+		- strings can be created by assigning a String literal to a String instance: 
+
+		String str1 = "JavDoc";
+		String str2 = "JavDoc";
+
+	2. Using New Keyword: 
+		- to create a new instance of a string, we use 'new' keyword.
+		- when you create a string using new keyword, it gets a heap memory rather than string 'constant pool'
+
+		String str3 = new String("JavaDoc");
+		String str4 = new String("JavaDoc");
+
+	Example: StringLiteralvsNewString.java
+	Example: AnotherStringArrayExample.java
+	Example: DisplayingFirstAndLastCharacterOfAString.java
+	Example: CompareStringLiteralVsNewStringUsingEquals.java
+	Example: StringConcatenation.java
+
+	- Java String Methods: 
+		Refer: StringMethods.txt
+	
+	Example: ConverIntToString.java
+	Example: InputStreamToStringConversion.java
+		- We will read and convert an InputStream to a String. 		
+			1. We have initialized the InputStream after converting the file content to bytes using getBytes() method and then using the ByteArrayInputStream which contains an internal buffer that contains bytes that may be read from stream.
+			2. Read the InputStream using InputStreamReader
+			3. Read InputStreamReader using BufferedReader
+			4. Appended each line to a StringBuilder object which has been read by BufferedReader
+			5. Finally converted the StringBuilder to String using toString() method.
+
+
+	Example: FindDuplicateCharactersInAString.java
+	Example: StringToDateConversion.java
+	Example: StackTraceToStringConversion.java
+	Example: WriterToStringConversion.java
+	Example: 
+		ReverseAString.java
+		ReverseAStringEnterByUser.java
+
+	
+****************************************************************************
+
