@@ -1,0 +1,5 @@
+-> Java 1.5 introduced a special feature of auto conversion of primitive types to the corresponding Wrapper class and vice - versa.
+
+-> Autoboxing: Automatic conversion of primitive types to the object of their corresponding wrapper class is known as autoboxing. ex., conversion of int to Integer, long to Long, double to Double etc., 
+
+-> Unboxing: It is a reverse of Autoboxing.

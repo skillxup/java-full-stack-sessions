@@ -1,0 +1,18 @@
+-> Swing: 
+    - Swing is a part of Java Foundation Classes (JFC), the other parts of JFC are java2D and AWT.
+
+    - AWT, Swing and Java 2D  are used for building GUI. 
+
+    - Example: ASwingSimpleExample.java
+
+    JFrame: A frame is an instance of JFrame. Frame is a window that can have title, border, menu, button, textfield and other components. A swing application must a framew to have the components added to it.
+
+    JPanel: A panel is an instance of JPanel. A frame can have more than one panels and each panel can have several components. You can also call them parts of Frame. Panels are useful for grouping components and placing them to appropriate locations in a frame.
+
+    JLabel: A label is an instance of JLabel. A label is unselectable text and images. 
+
+    JTextField: Used for capturing user inputs, these are the text boxes where user enters the data.
+
+    JPasswordField: similar to textfields but the entered data gets hidden and displayed as dots on GUI.
+
+    JButton: A button is an instance of JButton class.
