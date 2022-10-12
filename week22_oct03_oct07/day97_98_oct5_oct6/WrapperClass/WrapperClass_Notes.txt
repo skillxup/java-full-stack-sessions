@@ -1,0 +1,30 @@
+-> In Object Oriented Programming is all about the Objects. 
+-> There are 8 Primitive Data Types: byte, short, int, long, float, double, char, and boolean and these are not Objects.
+-> Wrapper classes are used for converting primitive data types into objects. like int to Integer etc., 
+
+-> For example: while working with 'collections', we use generics for type safety like this: ArrayList<Integer> instead of the ArrayList<int>. 
+-> Here, the Integer is a wrapper class of int primitive type.
+-> We use the Wrapper class in this case because generics needs objects not primitives.
+-> There are several other reasons you would prefer a wrapper classs instead of primitive type.
+
+-> Refer: PrimitiveType_WrapperClass.doxs
+
+-> Why we need wrapper class: 
+    1. As we have discussed, one of the reason why we need wrapper is to use to them in collections API. On the other hand, the wrapper objects hold much more memory compare to primitive types. Use of primitive types when you need efficiency and use wrapper class when you need objects instead of primitive types.
+
+    The primitive data types are not objects so they do not belong to any class. While storing in data structures which support only objects, it is required to convert the primitive type to object first which we can do using wrapper class.
+
+    Example: 
+    HashMap<Integer, String> hm = new HashMap<Integer, String>();
+
+    2. Wrapper class objects allow null values while primitive data types doesn't allow it.
+
+    Example1: Converting a primitive type to wrapper object
+    PrimitiveTypeToWrapperObjectExample1.java
+
+    Example2: Converting Wrapper Class Object to Primitive
+    WrapperClassObjectToPrimitive.java
+    
+     
+
+

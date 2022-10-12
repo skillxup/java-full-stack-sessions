@@ -1,0 +1,11 @@
+1. Lambda Expressions
+2. Method References
+3. Functional Interfaces
+4. Stream
+5. Stream Filter
+6. Interface changes - Introduction of default and static methods
+7. forEach
+8. Stream Collectors class
+9. StringJoiner class
+10. Optional class
+11. Arrays Parallel Sort
