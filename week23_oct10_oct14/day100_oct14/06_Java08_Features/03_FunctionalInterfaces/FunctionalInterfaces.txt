@@ -1,0 +1,39 @@
+-> Functional Interfaces: 
+    - an interface with 'only single abstract method' is called functional interface.
+    - we can use the 'predefined functional interface' provided by java or we can create our own functional interfaces
+
+-> Predefined Functional Interfaces: 
+    - Functional Interfaces provide target types for lambda expressions and method references.
+
+    - BiConsumer<T, U>
+    - BiFunction<T, U, R> - Represents a function that accepts two arguments and produce a result
+    - BinaryOperator<T> 
+    - BiPredicate<T, U>
+    - BooleanSupplier
+    - Consumer<T>
+    - DoubleBinaryOperator
+    - DoubleConsumer
+    - DoublePredict
+    - DoubleSupplier
+    - DoubleToIntFunction
+
+-> What are the rules of defining a functional interface?
+    - the functional interface should have 'only one' abstract method. 
+    - along with the 'one abstract method', they can have any number of default and static methods.
+
+Example1: Creating your own Functional Interface
+CreatingYourOwnFunctionalInterface.java
+
+Example2: Using Predefined Functional Interface
+UsingPreDefinedFunctionalInterface.java
+
+Example3: 
+Functional Interface: Using Anonymous Inner Class vs Using Lambda Expression
+    - we have been using functional interfaces even prior to java8, they were used by creating anonymous inner class using these interfaces.
+    - we must have seen functional interfaces such as Runnable, ActionListener, Comparator etc., 
+    - they all have single abstract method.
+
+ActionListener Example: Before Java8: Using anonymous inner class
+Example: UsingAnonymousInnerClass.java 
+Example: UsingLambdaExpression.java
+
