@@ -1,0 +1,66 @@
+-> Functional Interfaces: 
+    - an interface with 'only single abstract method' is called functional interface.
+    - we can use the 'predefined functional interface' provided by java or we can create our own functional interfaces
+
+-> Predefined Functional Interfaces: 
+    - Functional Interfaces provide target types for lambda expressions and method references.
+
+    - BiConsumer<T, U>
+    - BiFunction<T, U, R> - Represents a function that accepts two arguments and produce a result
+    - BinaryOperator<T> 
+    - BiPredicate<T, U>
+    - BooleanSupplier
+    - Consumer<T>
+    - DoubleBinaryOperator
+    - DoubleConsumer
+    - DoublePredict
+    - DoubleSupplier
+    - DoubleToIntFunction
+
+-> What are the rules of defining a functional interface?
+    - the functional interface should have 'only one' abstract method. 
+    - along with the 'one abstract method', they can have any number of default and static methods.
+
+Example1: Creating your own Functional Interface
+CreatingYourOwnFunctionalInterface.java
+
+Example2: Using Predefined Functional Interface
+UsingPreDefinedFunctionalInterface.java
+
+Example3: 
+Functional Interface: Using Anonymous Inner Class vs Using Lambda Expression
+    - we have been using functional interfaces even prior to java8, they were used by creating anonymous inner class using these interfaces.
+    - we must have seen functional interfaces such as Runnable, ActionListener, Comparator etc., 
+    - they all have single abstract method.
+
+ActionListener Example: Before Java8: Using anonymous inner class
+Example: UsingAnonymousInnerClass.java 
+Example: UsingLambdaExpression.java
+
+-> Interface Changes - default method and static method
+    - interface in java, can only have abstract methods.
+    - all the methods of interface are public and abstract by default.
+    - the java 8 allows the interfaces to have default and static methods. 
+    - the reason we have the default methods in interface is to allow the developers to add new methods to the interfaces without effecting the classes that implements these interfaces.
+
+    - Why default method?
+        - for e.g., if several classes such as A, B, C and D implements an interface XYZInterface then if we add a new method to the XYZInterface, we have to change the code in all the classses (A, B, C and D) that implements this interface. 
+
+        - we use the new concept 'default methods'. 
+        - these methods can be added to any existing interface and we do not need to implement these methods in the implemementation classes mandatorily, thus we can add these default methods to existing interfaces without breaking the code.
+
+
+    - static methods: 
+        - in interfaces are similar to the default methods except that we cannot ovveride these methods in the classes that implementsthese interfaces.
+
+- Example: Default method in Interface
+    DefaultMethodInInterface.java
+
+- Example: Static method in Interface
+    - the static methods in Interface are similar to default method
+    - so we need not to implement them in the implemementation classes. 
+    - we can safely add them to the existing interfaces without changing the code in the implemementation classes. 
+    - since, these methods are static, we cannot override them in the implemementation classes.
+
+-> Abstract Class vs Interfaces:
+    - The purpose of interface is to provide full abstraction, while the purpose of abstract class is to provide partial abstraction.
