@@ -1,0 +1,27 @@
+-> Stream: 
+    - The Stream is also one the feature in Java8, named it as Stream API.
+    - All the classes and interfaces of this API is in 'java.util.stream' package.
+    - By using streams we can perform various aggregation operations on the data returned from collections, arrays, input/output operations.
+
+-> Stream Example:
+    - Example: Finding certain strings without using Stream
+    FindingCertainStringsWithoutUsingStream.java
+
+    - Example: Finding certain strings using stream
+    FindingCertainStringsUsingStreams.java
+
+-> What is the difference between these codes?
+    - in 1st Example, we are iterating the whole list to find the strings with length less than 6, there is no parallelism
+
+    - in the 2nd Example, the stream() method returns a stream of all the names, the filter() method returns another stream of names with length less than 6, the count() method reduces this stream to the result. all these operations with the help of streams.
+
+    - Parallel execution of operations using stream is faster than sequential execution without using streams.
+
+-> How to work with Stream??
+    - the working of stream: 
+        1. create a stream
+        2. perform 'intermediate operations' on the initial stream to transform it into another stream so on further intermediate operations. 
+        3. perform 'terminal operations' on the final stream to get the result.
+
+-> Stream Features:
+    
