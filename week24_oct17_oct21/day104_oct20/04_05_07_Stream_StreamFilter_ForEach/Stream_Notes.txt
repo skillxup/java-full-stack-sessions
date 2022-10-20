@@ -1,0 +1,78 @@
+-> Stream: 
+    - The Stream is also one the feature in Java8, named it as Stream API.
+    - All the classes and interfaces of this API is in 'java.util.stream' package.
+    - By using streams we can perform various aggregation operations on the data returned from collections, arrays, input/output operations.
+
+-> Stream Example:
+    - Example: Finding certain strings without using Stream
+    FindingCertainStringsWithoutUsingStream.java
+
+    - Example: Finding certain strings using stream
+    FindingCertainStringsUsingStreams.java
+
+-> What is the difference between these codes?
+    - in 1st Example, we are iterating the whole list to find the strings with length less than 6, there is no parallelism
+
+    - in the 2nd Example, the stream() method returns a stream of all the names, the filter() method returns another stream of names with length less than 6, the count() method reduces this stream to the result. all these operations with the help of streams.
+
+    - Parallel execution of operations using stream is faster than sequential execution without using streams.
+
+-> How to work with Stream??
+    - the working of stream: 
+        1. create a stream
+        2. perform 'intermediate operations' on the initial stream to transform it into another stream so on further intermediate operations. 
+        3. perform 'terminal operations' on the final stream to get the result.
+
+-> Stream Features:
+    1. Stream does not store the elements. It simply performs the aggregate operators (such as filter() and count()) to get the desired stream of data.
+
+    2. The aggregate operations that we perform on the collection, array, or any other data source do not change the data of the source, they simply return a new stream. 
+    for e.g., the code which we have discussed, is filtering the strings with length less than 6 using the stream operations but didn't change the elements of the list.
+
+    3. All the stream operations are lazy in nature which means they are not executed untill they are needed. 
+    for e.g., if we want to display only the first 2 elements of a list using stream, the stream operation would stop at the end of the second iteration after displaying the second element of list.
+
+    Example: Iterating and displaying selected integers.
+    IteratingDisplayingSelectedIntegers.java
+
+    Example: Concatenating Two Streams
+    ConcatenatingTwoStrams.java
+
+    - Methods in Stream: allMatch(), noneMatch(), anyMatch()
+
+    Example: allMatch()
+        - let's have a stream of student details that consists student id, name, and age. 
+        - we can plan the predicates: 
+            1. predicate p1 says that the student name starts with "A", 
+            2. predicate p2 says that the student age is less than 40 and 
+            3. predicate p3 says that the student age must be less than 40 and name should start with 'p'.
+
+    AllMatchPredicateExample.java
+    NoneMatchPredicateExample.java
+    AnyMatchPredicateExample.java
+        
+-> Stream Filter: 
+    - the filter() is an intermediate operation that reads the data from a stream and returns a new stream after transforming the data reads from a stream and returns a new stream after the transforming the data based on the given condition.
+
+    Example: Stream filter()
+    StreamFilterExample.java
+
+    Example: Stream filter() and collect()
+    StreamFilterCollectExample.java
+
+    Example: Stream filter() with multiple conditions
+    StreamFilterMultipleConditions.java
+
+    Example: Stream filter() and map() method
+    StreamFilterAndMapMethods.java
+
+
+    -Filter a Map by keys and values
+    Example: FilterMapByKeys.java
+    Example: FilterMapByValues.java
+    Example: FilterMapBothKeysAndValues.java
+
+    - Filter null values from a stream
+    Example: StreamWithNullValues.java
+    Example: FilterNullValuesFromStream.java
+    Example: FilterNullValuesAfterMapIntermediateOperation.java

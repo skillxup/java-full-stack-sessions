@@ -1,0 +1,22 @@
+-> Stream Collectors Class
+    - Collectors is a 'final class' that extends the object class.
+
+    java.lang.Object
+        |
+        |-- java.util.stream.Collectors
+
+-> Final keyword - Final Variable, Method and Class
+    - final keyword can be used along with variables, methods and classes.
+
+        1. final variable
+        2. final method
+        3. final class
+
+1. final variable: 
+    - final variables are nothing but constants.
+    - we cannot change the value of a final variable once it is initialized.
+
+- Blank final variable:
+    - a final variable that is not initialized at the time of declaration is known as 'blank final variable'.
+
+    
