@@ -1,0 +1,29 @@
+-> Optional Class: 
+    - We have a newly introduced Optional class in 'java.util' package.
+    - This class is introduced to avoid NullPointerException that we frequently encounters if we do not perform null checks in our code. 
+    - Using this class we can easily check whether a variable has null value or not and by doing this we can avoid the NullPointerException.
+
+- Example: Without using Optional Class
+    WithoutUsingOptionalClass.java
+
+- Example: Using Optional Class
+    - Optional.ofNullable() method of the Optional class, returns a Non-empty Optional if the given object has a value, otherwise it returns an empty Optional.
+
+    - We can check whether the returned Optional value is empty or non-empty using the isPresent() method
+
+    UsingOptionalClass.java
+
+- Example: Optional isPresent() vs ifPresent() methods
+    - We have seen that by using isPresent() method we can check whether the particular Optional object (or instance) is empty or non-empty.
+
+    - There is another method present in the Optional class, which only executes if the given Optional object is non-empty, the method is ifPresent().
+
+    IsPresentAndIfPresentMethods.java
+
+- Example: Optional orElse() and orElseGet() Methods
+    - These two methods orElse() and orElseGet() returns the value of Optional Object if it is no empty, if the object is empty then it returns the default value passed to this method as an argument.
+
+    OrElseandOrElseGetMethods.java
+
+- Example: Optional.map and Optional.flatMap
+

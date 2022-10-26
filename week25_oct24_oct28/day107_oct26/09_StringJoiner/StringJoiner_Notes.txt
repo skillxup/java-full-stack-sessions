@@ -1,0 +1,16 @@
+-> String Joiner: 
+    - It is a new class StringJoiner which is introduced in the 'java.util' package. 
+    - Using this class, we can join more than one strings with the specified delimiter, 
+    - We can also provide 'prefix' and 'suffix' to the final string while joining multiple strings.
+
+    Example: Joining Strings by Specifying Delimiter
+    JoiningStringsSpecifyingDelimiter.java
+
+    Example: Adding Prefix and Suffix to the Output String
+    AddingPrefixSuffixOutputString.java
+
+    Example: Merging 2 StringJoiner Objects
+    MergingTwoStringJoinerObjects.java
+
+    Example: setEmptyValue(), length(), and toString() methods
+    StringJoinerBuiltInMethods.java

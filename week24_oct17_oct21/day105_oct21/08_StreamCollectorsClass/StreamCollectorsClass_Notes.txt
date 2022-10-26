@@ -1,0 +1,71 @@
+-> Stream Collectors Class
+    - Collectors is a 'final class' that extends the object class.
+
+    java.lang.Object
+        |
+        |-- java.util.stream.Collectors
+
+-> Final keyword - Final Variable, Method and Class
+    - final keyword can be used along with variables, methods and classes.
+
+        1. final variable
+        2. final method
+        3. final class
+
+1. final variable: 
+    - final variables are nothing but constants.
+    - we cannot change the value of a final variable once it is initialized.
+
+    Example: FinalVariableExample.java
+
+- Blank final variable:
+    - a final variable that is not initialized at the time of declaration is known as 'blank final variable'.
+
+    - we must initialize the blank final variable in constructor of the class, otherwise it will throw a compilation error
+
+    Example: BlankFinalVariableExample.java
+
+- What's the use of blank final variable??
+    - let's say, we have a Student class which is having a field called Roll No., Since Roll No., should not be changed once the Student is registered, we can declare it as a final variable in a class but we cannot initialize Roll No., in advance  for all the Students. 
+    
+    - In such a case we can declare Roll No., variable as blank final and we initialize this value during object creation like this: 
+
+    Example: StudentDataWithBlankFinalVariable.java
+
+- Uninitalized static final variable??
+    - a static final variable that is not initialized during declaration can only be initialized in 'static block'.
+
+    Example: UninitalizedStaticBlockVariable.java
+    
+-> Static Class, Block, Methods and Variables:
+    - 'static' keyword can be used with class, variable, method and block.
+    - 'static members' belong to the class instead of a specific instance, this means, if you make a member 'static', you can access it without object. 
+
+    - Static:
+    Example: SimpleStaticExample.java
+
+    - Static Block:
+        - Static Block is used for initializing the static variables. 
+        - This block gets executed when the class is loaded in the memory., 
+        - A class can have multiple Static blocks, which will execute in the same sequence in which they have been written into the program.
+
+        Example: SingleStaticBlock.java
+
+        Example: MultipleStaticBlocks.java
+
+    
+    - Static Variables:
+        - a static variable is common to all the instances of the class because it is a class level variable.
+
+        - only a single copy of static variable is created and shared among all the instances of the class.
+
+        - memory allocation for such variables only happens once when the class is loaded in the memory.
+
+            1. static variables are also know as class variables
+            2. unlike 'non-static variables', such variables can be accessed directly in static and non-static methods.
+
+        Example: Static Variables can be accessed directly in Static method.
+        StaticVariablesAccessedDirectlyStaticMethod.java
+
+        Example: Static Variables are Shared among all the Instances of a Class
+        StaticVariablesSharedAmongAllInstancesClass.java
