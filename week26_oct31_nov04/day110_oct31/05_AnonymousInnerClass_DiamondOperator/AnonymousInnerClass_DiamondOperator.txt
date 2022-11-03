@@ -1,0 +1,18 @@
+- Anonymous Inner Class and Diamond Operator
+--------------------------------------------------
+- What is a diamond operator?
+    - the purpose of diamond operator is to avoid redundant code by leaving the generic type in the right side of the expression
+
+    code follows;
+    // in java 7
+    List<String> myList = new ArrayList<String>();
+
+    // in java 9
+    List<String> myList = new ArrayList<>();
+
+
+- Problem with the diamond operator while working with Anonymous Inner Class
+    Example: ProblemDiamondAnonymousInnerClass.java
+
+- Diamond Operator Enhancements
+    Example: DiamondOperatorEnhancements.java

@@ -1,0 +1,17 @@
+- @SafeVarargs Annotation
+---------------------------------------
+    - Java 7 introduced the @SafeVarargs annotation to suppress the unsafe operation warnings that arises when a method is having varargs (variable number of arguments)
+
+    - The @SafeVarargs annotation can only be used with methods (final or static methods or constructors) that cannot be overriden because an 'orverriding method' can still perform unsafe operation on their varargs.
+
+    - In Java 9 extended the use of @SafeVarargs annotation, it can now used with private methods as well. 
+
+    - This is because private methods cannot be overriden. 
+
+    - Earlier this annotation was limited to the final or static methods or constructors but now it can be used with private methods.
+
+    Example: When we do not use @SafeVarargs annotation?
+    WhenDoNotUseSafeVarArgsAnnotation.java
+
+    Example: Use @SafeVarargs annotation?
+    UseSafeVarArgsAnnotation.java

@@ -1,0 +1,27 @@
+-> Private Methods in Interfaces
+------------------------------------------
+    -> In Java 8, it allowed us to create 'default and static methods in interface'
+    -> The intention was to have new methods added to the interfaces without breaking the classes that already implemented those interfaces.
+
+    -> Java 9, has introduced another new features - we can have 'private methods in interfaces'.
+
+-> Why Java 9 allows us to have private methods in interfaces??
+    -> Java 9 introduced 'private methods in interfaces' to 'remove the redundancy' by sharing the common code of multiple default methods through private methods
+
+    Example: Multiple default methods with duplicate code (common code)
+    MultipleDefaultMethodsWithDuplicateCode.java
+
+    Example: Default methods sharing code using private methods
+    DefaultMethodsSharingCodePrivateMethods.java
+
+-> Advantages of having private methods in interface:
+    1. allow default methods to share common code to avoid duplicate code
+    2. improves readability of code
+
+- Private Static Methods:
+    - the use of private methods in interfaces to share common code of default methods
+    - java9 it allows us to have 'private static methods in interfaces'
+    - since java8, have 'static methods in interfaces' along with default methods
+    - we cannot share the common code of static methods using the non-static private method, we must have to use the private static method to do that., 
+
+    Example: PrivateStaticMethodsExample.java

@@ -1,0 +1,13 @@
+-> JShell
+    - JShell stands for Java Shell.
+    - It is also known as REPL (Read Evaluate Print Loop)
+
+    Example: SimpleHelloWorld.java
+
+    - To use JShell, simple type in cmd: jshell
+
+- Why use JShell?
+    - The main advantage of using JShell is that you can test your partial code (individual statements, methods etc.,) here without writing the complete program and then check the various possible scenarios.
+
+- JShell - working with variables
+- JShell - working with methods

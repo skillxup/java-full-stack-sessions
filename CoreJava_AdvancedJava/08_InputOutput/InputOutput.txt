@@ -1,0 +1,50 @@
+Input / Output
+--------------------------------------------------
+1. Create a file
+2. Read a file
+3. Write a file
+4. Append to a file
+5. Delete a file
+6. Compress a file into GZip format
+7. Copy a File to another File
+
+--------------------------------------------------
+
+1. Create a file
+    - the method createNewFile()
+    - IOException - if an Inout / Output error during file creation
+    - SecurityException - If a security manager exists and its SecurityManager.checkWrite(java.lang.String) method denies write access to the file.
+
+    Example: CreateNewFileExample.java 
+
+2. Read a file
+    - to read a file in java, we have FileInputStream and BufferedInputStream.
+        1. Create a File instance by providing the full path of the file during File Object creation.
+        
+        2. Passed the file instance to the FileInputStream which opens a connection to the actual file, the file named by the File object in the system.
+
+        3. Passed the FileInputStream instance to BufferedInputStream which creates a BufferedInputStream and saves its argument, the input stream in, for later use. An internal buffer arrays is created and stored in buf using which the read operation.
+
+        4. Used while loop to read the file with the method as available() is used for checking the end of the files as it returns 0 when the pointer reaches to the end of the file
+
+        Example: ReadingAFileExample.java
+
+3. Write a file
+    - to write the data into file, we can use write() method of FileOutputStream to write the content to the specified file. 
+
+    - syntax: public void write(byte[] b) throws IOException
+
+    Example: WriteAFileExample.java
+
+4. Append to a file
+    Example: AppendDataToFileExample.java
+    Example: AppendContentToFileUsingPrintWriter.java
+
+5. Delete a file
+    Example: DeleteTheFile.java
+
+6. Compress a file into GZip format
+    Example: CompressAFileExample.java
+
+7. Copy a File to another File
+    Example: CopyFileIntoAnotherFile.java

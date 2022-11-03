@@ -1,0 +1,58 @@
+-> Java 1.5 introduced a special feature of auto conversion of primitive types to the corresponding Wrapper class and vice - versa.
+
+-> Autoboxing: Automatic conversion of primitive types to the object of their corresponding wrapper class is known as autoboxing. ex., conversion of int to Integer, long to Long, double to Double etc., 
+
+-> Unboxing: It is a reverse of Autoboxing. 
+
+-> primitive type and wrapper class: 
+    refer: PrimitiveType_WrapperClass.docx
+
+-> When does the autoboxing and unboxing happens?
+    -> Autoboxing: 
+        case1: When a method is expecting a wrapper class object but the value that is passed as parameter is a primitive type. 
+
+        for example., we are writing myMethod() is expecting an object of integer wrapper class, however we passed a primitive int type.
+
+        Example: AutoboxingExample1.java
+
+        case2: When at some point of time, you are assigning a primitive type value to an object of its wrapper class. 
+
+        Example: Integer inum = 3; Long lnum = 32L;
+
+        case3: When dealing with collection framework classes: 
+        
+        Example: 
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+        arrayList.add(12);
+        arrayList.add(55);
+
+    -> Unboxing: 
+        case1: Method is expecting Integer object (parameter) but we have supplied int. Automatic conversion (unboxing) happened that converted Integer to int.
+
+        Example: UnboxingExample.java
+
+        case2: Assignments
+        Integer inum = new Integer(5);
+        int num = inum; // unboxing object to primitive conversion
+
+        case3: While dealing with collection classes
+        ArrayList arrayList = new ArrayList();
+        int num = arrayList.get(0);
+
+-> What happens behind the scene?
+    -> Autoboxing: What we see
+    Integer number = 100;
+
+    what compiler does (or what we used to do before java 1.5)
+    Integer number = Integer.valueOf(100);
+
+    -> Unboxing: What we see
+    Integer num2 = new Integer(56);
+    int inum = num2;
+
+    what compiler does: 
+    Integer num2 = new Integer(76);
+    int inum = num2.intValue();
+
+
+

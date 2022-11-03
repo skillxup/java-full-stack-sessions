@@ -1,0 +1,55 @@
+1. Lambda Expressions: 
+    - to create a lambda expression, we specify input parameters on the left side of the lambda operator ->, and place the expression or block of statements on the right side of the lambda operator. 
+
+    - for example, the lambda expression (x, y) -> x + y
+    - syntax: (parameter_list) -> {function_body}
+
+- lambda expression vs method: 
+    - a method (or function) has these main parts: 
+        1. name 
+        2. parameter list 
+        3. body 
+        4. return type
+
+    - at lambda expression has these main parts: 
+        1. no name - function is anonymous so we don't care about the name
+        2. parameter list
+        3. body - this is the main part of the function
+        4. no return type - the java 8 compiler is able to infer the return type by checking the code. you need not to mention it explicitly
+
+- where to use lambda?
+    - to use lambda expression, you need to either create your own functional  interface or use the pre defined functional interface provided by java. 
+    
+    - an interface with 'only single abstract method' is called functional interface (or single abstract method interface).
+
+    - example: Runnable, callable, ActionListener etc., 
+
+    - to use function interface: 
+        - pre java8: we create anonymous inner classes.
+        - post java8: you can use lambda expression instead of anonymous inner classes
+
+- lambda expression example: 
+    - without using lambda expression: prior to java8 we used the anonymous inner class to implement the only abstract method of functional interface.
+    Example: LambdaExpressionButtonListenerOldWay.java
+
+    - by using lambda expression: instead of creating anonymous inner class, we can create a lambda expression
+    Example: LambdaExpressionButtonListenerNewWay.java
+
+Note: 
+    1. as we see that we used less code with lambda expression
+    2. backward compatibility: we can use the lambda expression with your old code.
+    lambda's are backward compatibility so we can use them in existing API when we migrate the project to java8
+
+let's have few example's about lambda expressions
+
+Example1: Java Lambda Expression with no parameter
+JavaLambdaExpressionWithNoParameter.java
+
+Example2: Java Lambda Expression with single parameter
+JavaLambdaExpressionWithSingleParameter.java
+
+Example3: Java Lambda Expression with multiple parameters
+JavaLambdaExpressionWithMultipleParameters.java
+
+Example4: Iterating Collections using foreach Loop
+IteratingCollectionsUsingForEachLoop.java

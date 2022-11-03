@@ -1,0 +1,10 @@
+Java09 Features
+----------------------------------------------------
+1. Java 9 - REPL (JShell)
+2. Factory methods to create immutable List, Set, and Map
+3. Introduction of Private methods in Interfaces
+4. Try with resources enhancements
+5. Anonymous inner class and diamond operator
+6. @SafeVarargs Annotation
+7. Java 9 - Stream API Enhancements
+8. Java 9 - Modules

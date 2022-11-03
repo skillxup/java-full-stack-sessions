@@ -1,0 +1,20 @@
+-> Arrays Parallel Sort:
+    - Java 8 introduced a new method parallelSort() in the Arrays class of java.util package. 
+
+    - This method is introduced to support the parallel sorting of array elements.
+
+    - Alogorithm of parallel sorting: 
+        1. The given array is divided into the sub arrays and the sub arrays are further divided into the their sub arrays, this happens untill the sub arrays reaches a minimum graularity.
+
+        2. The sub arrays are sorted individually by multiple threads. The parallel sort uses Fork / Join Framework for sorting sub arrays parallelly.
+
+        3. The sorted sub arrays are merged.
+
+    - Advantages of Parallel Sort over Simple Sort:
+        - The parallelSort() method uses the concept of multithreading which makes it much faster compared to the normal sort when there are lot of elements
+
+    - Example: Sorting Primitive Data Types with Parallel Sort
+        SortingPrimitiveDataTypesWithParallelSort.java
+
+    - Example: Parallel Sort by Specifying the Start and End Index
+        ParallelSortBySpecStartEndIndex.java

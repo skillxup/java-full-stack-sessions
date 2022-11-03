@@ -1,0 +1,38 @@
+Factory Method Create Immutable List Set Map
+-------------------------------------------------------------------------------------
+- There are couple of useful factory methods to create immutable (unmodified) lists.
+
+1. Creating immutable list prior to java 9
+	1.1. Creating empty immutable list before java SE 9
+		- we have to use unmodifiableList() method of collections class to create immutable list
+
+		List<String> noElementList = new ArrayList<String>();
+		List<String> immuList = Collections.unmodifiableList(noElementList);
+
+	1.2. Creating Non-empty immutable list before Java SE 9
+		List<String> list = new ArrayList<String>();
+		
+		list.add("ajeet");
+		list.add("rick");
+		list.add("glen");
+
+		List<String> immuList = Collections.unmodifiableList(list);
+
+2. Creating immutable list using static factory method of()
+	- of() method
+	static <E> List<E> of()
+
+	2.1. Creating empty immutable list
+	List<String> immuList = List.of();
+
+	2.2. Creating Non-empty immutable list
+	List<String> immuList = List.of("ajeet", "rick", "glen");
+
+- What is an immutable list??
+	1. an immutable list doesn't allow the add, delete, and update of its elements
+	List<String> immuList = List.of("ajeet", "rick", "glen");
+
+	2. we can't add null elements to an immutable list
+	List<String> immuList = List.of("ajeet", "rick", "glen");
+	immuList.add(null);
+	

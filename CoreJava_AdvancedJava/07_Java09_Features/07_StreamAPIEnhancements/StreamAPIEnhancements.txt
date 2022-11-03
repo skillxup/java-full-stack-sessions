@@ -1,0 +1,49 @@
+Stream API Enhancements
+----------------------------------------
+- we have some enhancements of Stream API in java 9
+    1. dropWhile() - default method
+    2. takeWhile() - default method
+    3. iterate() - static method
+    4. ofNullable() - static method
+
+1. Stream dropWhile() method
+    Example: 
+    Stream<Integer> mystream = Stream.of(2, 8, 5, 3)
+    mystream.dropWhile(num -> num > 5).forEach(num -> System.out.println(num))
+
+    - when the Stream is unordered, the dropWhile() drops all the elements untill the given predicate fails, this method does not check further elements of the stream once the predicate fails. 
+
+    - this means that the resulted stream may have elements that matches the predicate
+
+    Example: 
+    Stream<Integer> mystream = Stream.of(11, 22, 40, 60, 10, 15, 30, 100)
+    mystream.dropWhile(num -> num < 50).forEach(num -> System.out.println(num))
+
+2. Stream takeWhile() method
+    - the method takeWhile() works just opposite to the dropWhile()
+    - using takeWhile() method on an ordered stream
+
+    Example: 
+    Stream<Integer> mystream = Stream.of(10, 20, 30, 40, 60, 90, 100);
+    mystream.takeWhile(num -> num < 50).forEach(num -> System.out.println(num));
+    mystream.dropWhile(num -> num < 50).forEach(num -> System.out.println(num));
+
+
+3. Stream iterate() method
+    - the iterate() method has 3 arguments
+    - first agrument: is the initialising value, the returned stream starts with this value.
+    - second argument: is the predicate, the iteration continues untill this given predicate returns false.
+    - third argument: updates the value of previous iteration
+
+    Example: 
+    IntStream.iterate(1, num -> num < 30, num -> num * 3).forEach(num -> System.out.println(num));
+
+
+4. Stream ofNullable() method
+    - this method is introduced to avoid NullPointerException.
+    - this method returns an empty stream if the stream is null.
+    - it can also be used on a non-empty stream where it returns a sequential stream of single element
+
+    Example: 
+    Stream<String> stream = Stream.ofNullable(null);
+    stream.forEach(str -> System.out.println(str));

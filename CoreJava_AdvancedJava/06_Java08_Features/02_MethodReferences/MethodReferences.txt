@@ -1,0 +1,26 @@
+2. Method References: 
+    - Method Reference is a shorthand notation of a lambda expression to call a method. 
+
+    - ex., str -> System.out.println(str)
+    - then, we can replace it with a method reference
+    - ex., System.out::println
+
+    - the :: operator is used in method to separate the class or object from the method name
+
+    - Four types of method references:
+        1. Method reference to an instance method of an object - object::instanceMethod
+        2. Method reference to a static method of a class - Class::staticMethod
+        3. Method reference to an instance method of an arbitrary method of a particular type - Class::instanceMethod
+        4. Method reference to a constructor - Class::new
+
+Example1: Method reference to an instance method of an object - object::instanceMethod
+MethodReferenceInstanceMethodObject.java
+
+2. Method reference to a static method of a class - Class::staticMethod
+MethodReferenceStaticMethodClass.java
+
+3. Method reference to an instance method of an arbitrary method of a particular type - Class::instanceMethod
+MethodReferenceInstanceMethodArbitraryMethodParticularType.java
+
+4. Method reference to a constructor - Class::new
+MethodReferenceConstructor.java

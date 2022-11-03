@@ -1,0 +1,18 @@
+Try with Resources Enhancements
+-------------------------------------------------
+    - This statement was first introduced in Jav 7, to avoid the 'redundant code' that we had to write for 'exception handling'
+
+    The advantages of this:
+    1. Try with resources closes all the resources (file, database connection, network connection etc.,) automatically, no need to close them explicitly. This prevents memory leaks
+
+    2. With the help of 'try with resource' we can reduce the unnecessary lines of code and makes the code more readable.
+
+- How we ued to write the code in Java 7 using Try-With-Resource?
+    Example: TryWithResourceInJavaSeven.java
+
+- Problem with Try-With-Resources in Java 7
+    - There were certain issues with the Try - With - Resource statement in Java 7. 
+    - This statement didn't allow the resources to be declared outside of the statement block.
+
+    Example: Resource declared outside the Try-With-Resources block
+    ResourceDeclaredOutsideTryWithResourceBlock.java
