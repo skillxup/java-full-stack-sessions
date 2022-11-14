@@ -1,0 +1,224 @@
+MYSQL
+-----------------------------
+    - MySql is a relational database management system based on the structured query language
+    
+    - Which is the popular language for accessing and managing the records in the database.
+
+    - MySql is open source
+
+- What is Database??
+    - A database is an application that stored the organized collection of records.
+
+    - It can be accessed and manage by the user
+
+    - It allows us to organize data into tables, rows, columns and indexes to find the relevant information very quickly.
+    
+    - Each database contains distinct API for performing database operations such as creating, managing, accessing and searching the data it stores.
+
+- What is MySql??
+    - It allows us to implement database operations on tables, rows, columns and indexes
+    
+    - It defines the database relationship in the form of tables
+    
+    - It provides the referential integrity between rows or columns of various tables
+    
+    - It allows us to updates the table indexes automatically
+    
+    - It uses many SQL queries and combines useful information for multiple tables for the end-users
+
+- How MySql Works??
+    - MySql follows the working of Client - Server architecture.
+
+    - This model is designed for end-users to access the resources from a central computer known as server using network services.
+
+    1. MySql creates a database that allows you to build many tables to store and manipulate data and defining the relationship between each table
+
+    2. Clients make requests through the GUI screen or command prompt by using specific SQL expressions on MySql
+
+    3. Finally, the server application will respond with the requested expressions and produce the desired result on the client side
+
+- Reasons
+    - MySql is an open source database
+
+    - MySql is a very powerful program that can handle a large set of functionality of the most expensive and powerful database packages
+
+    - MySql is customizable because it is an open source database
+
+    - MySql is quicker than other databases
+
+    - MySql supports many programming languages like JAVA, PHP, PERL, C, C++ etc., 
+
+- Features
+    - RDBMS (Relational Database Management System)
+    - Easy to use
+    - It is secure
+    - Client/Server Architecture
+    - Open Source
+    - It is Scalable
+    - Speed
+    - High Flexibility
+    - Compatible on many operating systems
+    - Allows roll-back - Allows transactions to be roll-back, commit, and crash recovery
+    - More efficiency
+    - High Performance 
+    - High Productivity
+    - Platform Independent
+    - Partitioning
+    - GUI support - MySql Workbench
+
+- Disadvantages
+    - MySql version less than 5.0 doesn't support ROLE, COMMIT and stored procedure
+    - MySql does not support a ver large database size as efficiently
+    - MySql doesn't handle transactions very efficiently and it is prone to data corruption
+    - MySql is accused tht it doesn't have a good developing and debugging tool compared to paid databases
+    - MySql doesn't support SQL check constraints
+
+- Features added in MySql 8.0
+    - Data Dictionary
+    - Atomic DDL Statement
+    - Upgrade Procedures
+    - Security and Account Management
+    - Resource Management
+    - Table Encryption Management
+    - InnoDB Enhancements
+    - Character Set Support
+    - JSON Enhancements
+    - Data Type Support
+    - Optimizer Enhancement
+    - Window Function
+
+- Features deprecated in MySql 8.0
+    - The character set utf8mb3
+    - The sha256_password 
+    - The validate_password
+    - The ENGINE clause will be deprecated
+
+-----------------------------------------------------------------------
+
+- Data Types: 
+    - A Data Type specifies a particular type of data like integer, floating points, boolean etc., 
+
+    - It also identifies the possible values for that types, the operations that can be performed on that type, and the way of that type are stored.
+
+    - We can determine the data type in MySql with following characteristics:
+        1. The type of values (fixed or variable) it represents
+        2. The storage space it takes is based on whether the values are fixed or variable
+        3. Its values can be indexed or not
+        4. How MySql performs a comparison of values of a particular data type
+
+
+    1. Numeric Data Type: 
+        TINYINT, SMALLINT, MEDIUMINT, INT, BIGINT, FLOAT(m, d), DOUBLE(m, d), DECIMAL(m, d), BIT(m), BOOL, BOOLEAN
+
+    2. Data and Time Data Type: 
+        YEAR[(2|4)], DATE, TIME, DATETIME, TIMESTAMP(m)
+
+    3. String Data Type: 
+        CHAR(size), VARCHAR(size), TINYTEXT(size), TEXT(size), MEDIUMTEXT(size), LONGTEXT(size), BINARY(size), VARBINARY(size), ENUM, SET
+
+    4. Binary Large Object Data Type (BLOB):
+        TINYBLOB, BLOB(size), MEDIUMBLOB, LONGBLOB
+
+    5. Spatial Data Type: 
+        GEOMETRY, POINT, POLYGON, LINESTRING, GEOMETRYCOLLECTION, MULTILINESTRING, MULTIPOINT, MULTIPOLYGON
+
+    6. JSON Data Type:
+        - It provides automatic validation of JSON documents. 
+        - It provides an optimal storage format
+
+- Variables:
+    - MySql have 3 different types of variables
+        1. User - Defined
+        2. Local 
+        3. System
+
+    1. User - Defined Variables:
+        1. By using SET statement
+            SET @var_name = value;
+
+        2. By using SELECT statement
+            SELECT @var_name := value;
+
+        Examples: 
+            > SET @name = "peter";
+            > SELECT @name;
+
+        Examples:
+            > SELECT @maxage := MAX(age) FROM students;
+
+            > SELECT @var1;
+
+    2. Local Variables: 
+        syntax:
+        > DECLARE var_name datatype(size) [DEFAULT default_value];
+        
+        example:
+        > DECLARE total_price Oct(8, 2) DEFAULT 0.0;
+
+        example: 
+        > DECLARE a, b, c INT DEFAULT 0;
+
+    3. System Variables: 
+        1. To see the current values used by the running server, execute the following command.
+            > SHOW VARIABLES;
+
+            or 
+
+            > SELECT @@var_name
+
+        2. When we want to see the value based on its compiled-in defaults
+            > mysqld --verbose --help
+
+    Examples: 
+        > SHOW VARIABLES LIKE '%wait_timeout%';
+        > SELECT @@key_buffer_size;
+        
+
+- MySql Installation
+
+- What is the Primary Key?
+    - A Primary Key is a single field or combination of fields that contains a unique record.
+
+    - It must be filled.
+
+    - None of the fields of the primary key can contain a null value.
+
+    - A table can have only one primary key.
+
+
+- MySql Connection
+    - A connection is a computer science facility that allows the user to connect with the database server software.
+
+    - A user can connect with the database server, whether on the same machine or remote locations. 
+
+- MySql Connection Types:
+    - Once we are done with installation of MySql, we can connect it using any of the client programs that are listed: 
+        1. Command-line client
+            > EXIT;
+
+        2. MySql Workbench
+
+
+- MySql Create User
+    > CREATE USER [IF NOT EXISTS] account_name@localhost IDENTIFIED BY password;
+    > CREATE USER IF NOT EXISTS javabsc@localhost IDENTIFIED BY 'jbsc123';
+
+    Selecting all Users in MySql:
+    > SELECT USER FROM MYSQL.USER;
+
+- Grant Privileges to the MySql User
+    - MySql server provides multiple types of privileges to a new user account.
+        1. ALL PRIVILEGES - it permits all previleges to a new user account
+        2. CREATE - it enables the user account to create databases and tables
+        3. DROP
+        4. DELETE
+        5. INSERT
+        6. SELECT
+        7. UPDATE
+
+    > GRANT ALL PRIVILEGES ON *.* TO javabsc@localhost;
+    > GRANT CREATE, SELECT, INSERT ON *.* TO javabsc@localhost;
+    > FLUSH PRIVILEGES
+    > SHOW GRANTS FOR javabsc@localhost;
+
+
